@@ -1,0 +1,19 @@
+# Pediatric rheumatology phenotype set — labels on purpose, so `lint` can show the label-vs-ID warning.
+Arthritis
+Uveitis
+Fever
+Recurrent fever
+Skin rash
+Hepatosplenomegaly
+Macrophage activation syndrome
+Lymphadenopathy
+Pericarditis
+Oral ulcer
+Enthesitis
+Dactylitis
+Psoriasiform dermatitis
+Elevated circulating C-reactive protein concentration
+Serositis
+Myalgia
+HP:0001369
+HP:0000554
