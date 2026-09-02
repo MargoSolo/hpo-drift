@@ -57,6 +57,15 @@ Releases are pulled from the official GitHub releases of `obophenotype/human-phe
 - **Per pair:** Resnik and Lin in both releases, Δ, and the most-informative common ancestor (MICA) — so you can see *why* a pair moved.
 - **Ontology-wide:** terms added / obsoleted / renamed, `is_a` edges added / removed.
 
+## Why two labels in the example don't resolve (on purpose)
+
+`lint` matches **exact** names and synonyms, and that is deliberate — it is the same failure mode your pipeline has if it matches by label. In the example set:
+
+- **Dactylitis** — HPO has no term literally named "Dactylitis"; the concept is split into `HP:0031090` (Finger dactylitis) and `HP:0031091` (Toe dactylitis). Exact matching fails, and a human would have picked one — or both.
+- **Macrophage activation syndrome** — no HPO term carries that string in its name or synonyms; the phenotype is captured as `HP:0012156` (Hemophagocytosis). Clinically these are the same axis; ontologically they are not the same string.
+
+Both cases are exactly why storing IDs beats storing labels, and why fuzzy resolution (roadmap) must *suggest*, never auto-map.
+
 ## How similarity is computed (and why)
 
 IC is **intrinsic** (Seco et al. 2004): `IC(t) = 1 − log(descendants(t)+1) / log(N)`. It depends only on the ontology graph, so drift measured here is caused **purely by ontology edits** — that is the effect this tool isolates. Annotation-based IC (from `phenotype.hpoa`) adds a second source of drift (annotation changes) and is on the roadmap as an option.
