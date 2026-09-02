@@ -62,7 +62,7 @@ Releases are pulled from the official GitHub releases of `obophenotype/human-phe
 `lint` matches **exact** names and synonyms, and that is deliberate — it is the same failure mode your pipeline has if it matches by label. In the example set:
 
 - **Dactylitis** — HPO has no term literally named "Dactylitis"; the concept is split into `HP:0031090` (Finger dactylitis) and `HP:0031091` (Toe dactylitis). Exact matching fails, and a human would have picked one — or both.
-- **Macrophage activation syndrome** — no HPO term carries that string in its name or synonyms; the phenotype is captured as `HP:0012156` (Hemophagocytosis). Clinically these are the same axis; ontologically they are not the same string.
+- **Macrophage activation syndrome** — no HPO term carries that string in its name or synonyms. The closest HPO concept is `HP:0012156` (Hemophagocytosis) — a histological finding, not the syndrome itself; MAS as a clinical entity is annotated at the disease level (Mondo/OMIM), not as an HPO phenotype. Clinically these sit on one axis; ontologically they are different things.
 
 Both cases are exactly why storing IDs beats storing labels, and why fuzzy resolution (roadmap) must *suggest*, never auto-map.
 
