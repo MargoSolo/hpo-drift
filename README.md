@@ -91,6 +91,6 @@ IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), so it
 
 ## Cite
 
-DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286171
+DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286288
 
 Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.0. MIT License.
