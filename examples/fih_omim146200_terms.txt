@@ -1,0 +1,12 @@
+# Hypoparathyroidism, familial isolated (OMIM:146200): its HPO-annotated phenotype profile from phenotype.hpoa v2026-06-23 — 11 phenotypic-abnormality terms
+HP:0000121   # Nephrocalcinosis
+HP:0002199   # Hypocalcemic seizures
+HP:0031817   # Decreased circulating parathyroid hormone level
+HP:0001281   # Tetany
+HP:0000829   # Hypoparathyroidism
+HP:0000518   # Cataract
+HP:0000737   # Irritability
+HP:0031990   # Chvostek sign
+HP:0002905   # Hyperphosphatemia
+HP:0002901   # Hypocalcemia
+HP:0002514   # Cerebral calcification

@@ -13,19 +13,19 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379): 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose CGD because the mechanism of its drift is clinically interpretable and fits in two sentences. Then, as a sanity check, `hpo-drift cohort` ran over the **complete** `phenotype.hpoa` corpus — 12 935 disease profiles, no size cutoff: 11 947 have at least one informative pair, 705 are single-term, 283 have root-only pairs, all of them stay in the table with a status — and `hpo-drift rank` ordered the rankable ones by mean |ΔLin|. CGD landed **50th of 11 947** (median profile 0.0013, 99th percentile 0.043). The rows above it are mostly small profiles of 2–12 terms, where one re-parenting moves a handful of pairs a lot; many of them are immunodeficiencies, because the immunology branch was restructured in this interval.
+Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of familial isolated hypoparathyroidism** (OMIM:146200): 11 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose it because the mechanism is a single edit that any clinician can judge. Then, as a sanity check, `hpo-drift cohort` ran over the **complete** `phenotype.hpoa` corpus — 12 935 disease profiles, no size cutoff: 11 947 have at least one informative pair, 705 are single-term, 283 have root-only pairs, all of them stay in the table with a status — and `hpo-drift rank` ordered the rankable ones by mean |ΔLin|. This profile is **20th of 11 947** (median profile 0.0013, 99th percentile 0.043); the same edit drives four of the top five (isolated hypoparathyroidism ×2, parathyroid agenesis, pseudohypoparathyroidism type 2).
 
 ![Lin similarity drift](docs/lin-drift.png)
 
 What happened to this profile, computed with Seco intrinsic IC on the `is_a` graph under *Phenotypic abnormality*:
 
-- **Two terms gained a parent.** HPO introduced an *Unusual infection* hierarchy: *Gingivitis* (`HP:0000230`) is now also an *Unusual oral cavity infection* (`HP:5210280`), *Sinusitis* (`HP:0000246`) also an *Unusual upper respiratory tract infection* (`HP:5210121`). No label changed, nothing was obsoleted.
-- Consequence: *Gingivitis* gained a new path through the infection/immune hierarchy. Its Lin similarity with *Meningitis* went **0.00 → 0.55**, with *Recurrent respiratory infections* 0.00 → 0.46, with *Sepsis* 0.00 → 0.43 — their most-informative common ancestor is no longer the root but *Unusual infection*. *Sinusitis* ↔ *Recurrent respiratory infections* rose 0.48 → 0.78.
-- **IC moved for 18 of 22 terms** (6 of them by more than 0.01; N also changed, 18 690 → 19 120, which by itself shifts non-leaf intrinsic IC even without a direct edit to the term, and the 4 leaves stay at 1). **All 95 informative pairs moved**, 15 of them by more than 0.1; the remaining 136 pairs share only the root (ROOT_ONLY, 0 → 0). Mean |ΔLin| 0.067; the median disease profile: 0.0013.
+- **One term lost one parent.** *Hypocalcemic seizures* (`HP:0002199`) was `is_a` *Hypocalcemia* (`HP:0002901`) and `is_a` *Symptomatic seizures*; in v2026-06-23 the *Hypocalcemia* edge is gone (so is the same edge under *Hypocalcemic tetany*, `HP:0003472`). No label changed, nothing was obsoleted, the other 10 terms were not touched.
+- Consequence: *Hypocalcemic seizures* ↔ *Hypocalcemia* went **0.94 → 0.00** — their most-informative common ancestor is now the root. *Hypocalcemic seizures* ↔ *Hyperphosphatemia* 0.59 → 0.00, ↔ *Decreased circulating PTH level* 0.21 → 0.00. *Hypocalcemia* itself, having lost its last child, became a leaf: IC 0.888 → 1.000, which nudges its pairs with *Hyperphosphatemia* (0.63 → 0.59) and *PTH level*.
+- **14 informative pairs, all 14 moved**, 3 of them by more than 0.1; 41 pairs share only the root (ROOT_ONLY, 0 → 0). IC moved by more than 0.01 for 1 of 11 terms. Mean |ΔLin| 0.129; the median disease profile: 0.0013.
 
 ![Information-content drift](docs/ic-drift.png)
 
-The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without changing the input phenotype profile. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `hpo-drift cohort` tells you where your disease of interest sits.
+Whether the edit is right is an ontology-design question (a seizure *caused by* hypocalcemia is arguably not a *kind of* hypocalcemia). What is not a matter of opinion: a phenotype-similarity score between two terms that share half their name went from near-identical to zero, **without changing the input phenotype profile.** Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release. `hpo-drift` gives you that sentence with real figures; `hpo-drift cohort` tells you where your disease of interest sits.
 
 ![Drift across all disease profiles](docs/drift-distribution.png)
 
@@ -40,7 +40,8 @@ The edit is clinically intuitive: gingivitis and sinusitis now connect more expl
 | 7 | Immunodeficiency 65, susceptibility to viral infections (OMIM:618648) | 5 | 6 | 6 | 0.175 |
 | 8 | ACTH-independent macronodular adrenal hyperplasia 2 (OMIM:615954) | 12 | 8 | 8 | 0.172 |
 | … | | | | | |
-| **50** | **Chronic granulomatous disease (ORPHA:379)** | 22 | 95 | 95 | 0.067 |
+| **20** | **Hypoparathyroidism, familial isolated (OMIM:146200)** | 11 | 14 | 14 | 0.129 |
+| 50 | Chronic granulomatous disease (ORPHA:379) | 22 | 95 | 95 | 0.067 |
 | median of 11 947 | | | | | 0.0013 |
 
 Reproduce (the annotation file is pinned: `phenotype.hpoa` from HPO release **v2026-06-23**, `#version: 2026-06-23`, SHA-256 `89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff`; the script prints the version and hash of the file it was given):
@@ -57,20 +58,20 @@ Output as run on 2026-09-03: [`examples/cohort-v2026-02-16_v2026-06-23.csv`](exa
 pip install hpo-drift
 
 # one term per line — HP IDs (recommended) or labels
-hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms my_terms.txt
+hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/fih_omim146200_terms.txt
 ```
 ```
 IC: Seco 2004 intrinsic, on the is_a graph under root HP:0000118 (Phenotypic abnormality); N = 18690 → 19120
 active terms: 19389 → 19836 (added 469, obsoleted 22, renamed 266)
 is_a edges:   +886 / −185
 
-term        label        status     parents        IC old → new
-HP:0000230  Gingivitis   unchanged  +HP:5210280    1.000 → 0.859
-HP:0000246  Sinusitis    unchanged  +HP:5210121    1.000 → 0.880
+term        label                  status     parents        IC old → new
+HP:0002199  Hypocalcemic seizures  unchanged  −HP:0002901    1.000 → 1.000
+HP:0002901  Hypocalcemia           unchanged  =              0.888 → 1.000
 …
-pair                                   Lin old → new   Δ       MICA
-Gingivitis ↔ Meningitis                0.000 → 0.553   +0.553  HP:0000118 → HP:0032158
-Sinusitis ↔ Recurrent respiratory inf. 0.480 → 0.781   +0.301  HP:0012252 → HP:0011947
+pair                                      Lin old → new   Δ       MICA
+Hypocalcemic seizures ↔ Hypocalcemia      0.941 → 0.000   −0.941  HP:0002901 → HP:0000118
+Hypocalcemic seizures ↔ Hyperphosphatemia 0.594 → 0.000   −0.594  HP:0003111 → HP:0000118
 …
 ```
 Add `--json` for a machine-readable report. Releases are pulled from the official GitHub assets of `obophenotype/human-phenotype-ontology`; any tag like `v2026-06-23` works and is cached under `~/.cache/hpo-drift`.
