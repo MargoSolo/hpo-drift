@@ -6,7 +6,7 @@ This walks through the real run behind the README figures — the HPO-annotated 
 
 `examples/cgd_orpha379_terms.txt`: the 22 phenotypic-abnormality terms annotated to the disease in `phenotype.hpoa`, IDs with the label as a comment. Inheritance, onset and frequency terms are not phenotypes and are left out: they sit outside *Phenotypic abnormality* and carry no IC.
 
-Why this disease? `examples/rank_profiles.py` scores every OMIM and Orphanet profile with 12–60 terms (7121 profiles, one inclusion rule, no subsets) by mean |ΔLin| over informative pairs. CGD ranks 12 of 7121 (top 0.2 %). It is shown because it is a classic monogenic disease whose drift mechanism fits in two sentences; the profiles ranked above it are in the CSV. The top of the ranking is dominated by inborn errors of immunity: the immunology branch was restructured in this interval.
+Why this disease? CGD was chosen because its drift has a mechanism that fits in two sentences. As a context check, `hpo-drift cohort` then ran over the complete `phenotype.hpoa` corpus (12 935 disease profiles, no size cutoff; 11 947 with at least one informative pair, the rest kept with a status) and `hpo-drift rank` ordered them by mean |ΔLin|: CGD is 50 of 11 947. The rows above it are mostly small profiles of 2–12 terms, where one re-parenting moves a handful of pairs a lot; many are immunodeficiencies, because the immunology branch was restructured in this interval. The complete table is `examples/cohort-v2026-02-16_v2026-06-23.csv`.
 
 ## 2. Lint first
 
@@ -72,4 +72,4 @@ Gaining that parent moves *Gingivitis* into the immune branch: its most-informat
 
 ## 5. What to write in Methods
 
-"Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23." One sentence; `hpo-drift` gives you the numbers to justify it, and `rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
+"Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23." One sentence; `hpo-drift` gives you the numbers to justify it, and `hpo-drift cohort` tells you where your disease of interest sits in the whole annotation corpus.

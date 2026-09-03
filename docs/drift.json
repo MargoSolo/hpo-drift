@@ -21,6 +21,7 @@
     {
       "tid": "HP:0000230",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Gingivitis",
       "new_name": "Gingivitis",
       "replaced_by": [],
@@ -34,6 +35,7 @@
     {
       "tid": "HP:0000246",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Sinusitis",
       "new_name": "Sinusitis",
       "replaced_by": [],
@@ -47,6 +49,7 @@
     {
       "tid": "HP:0000388",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Otitis media",
       "new_name": "Otitis media",
       "replaced_by": [],
@@ -58,6 +61,7 @@
     {
       "tid": "HP:0000964",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Eczematoid dermatitis",
       "new_name": "Eczematoid dermatitis",
       "replaced_by": [],
@@ -69,6 +73,7 @@
     {
       "tid": "HP:0000992",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Cutaneous photosensitivity",
       "new_name": "Cutaneous photosensitivity",
       "replaced_by": [],
@@ -80,6 +85,7 @@
     {
       "tid": "HP:0001034",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Hypermelanotic macule",
       "new_name": "Hypermelanotic macule",
       "replaced_by": [],
@@ -91,6 +97,7 @@
     {
       "tid": "HP:0001287",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Meningitis",
       "new_name": "Meningitis",
       "replaced_by": [],
@@ -102,6 +109,7 @@
     {
       "tid": "HP:0001744",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Splenomegaly",
       "new_name": "Splenomegaly",
       "replaced_by": [],
@@ -113,6 +121,7 @@
     {
       "tid": "HP:0001874",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Abnormality of neutrophils",
       "new_name": "Abnormality of neutrophils",
       "replaced_by": [],
@@ -124,6 +133,7 @@
     {
       "tid": "HP:0001945",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Fever",
       "new_name": "Fever",
       "replaced_by": [],
@@ -135,6 +145,7 @@
     {
       "tid": "HP:0002021",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Pyloric stenosis",
       "new_name": "Pyloric stenosis",
       "replaced_by": [],
@@ -146,6 +157,7 @@
     {
       "tid": "HP:0002024",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Malabsorption",
       "new_name": "Malabsorption",
       "replaced_by": [],
@@ -157,6 +169,7 @@
     {
       "tid": "HP:0002205",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Recurrent respiratory infections",
       "new_name": "Recurrent respiratory infections",
       "replaced_by": [],
@@ -168,6 +181,7 @@
     {
       "tid": "HP:0002240",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Hepatomegaly",
       "new_name": "Hepatomegaly",
       "replaced_by": [],
@@ -179,6 +193,7 @@
     {
       "tid": "HP:0002575",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Tracheoesophageal fistula",
       "new_name": "Tracheoesophageal fistula",
       "replaced_by": [],
@@ -190,6 +205,7 @@
     {
       "tid": "HP:0006510",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Chronic pulmonary obstruction",
       "new_name": "Chronic pulmonary obstruction",
       "replaced_by": [],
@@ -201,6 +217,7 @@
     {
       "tid": "HP:0012733",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Macule",
       "new_name": "Macule",
       "replaced_by": [],
@@ -212,6 +229,7 @@
     {
       "tid": "HP:0100523",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Liver abscess",
       "new_name": "Liver abscess",
       "replaced_by": [],
@@ -223,6 +241,7 @@
     {
       "tid": "HP:0100533",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Inflammatory abnormality of the eye",
       "new_name": "Inflammatory abnormality of the eye",
       "replaced_by": [],
@@ -234,6 +253,7 @@
     {
       "tid": "HP:0100721",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Mediastinal lymphadenopathy",
       "new_name": "Mediastinal lymphadenopathy",
       "replaced_by": [],
@@ -245,6 +265,7 @@
     {
       "tid": "HP:0100806",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Sepsis",
       "new_name": "Sepsis",
       "replaced_by": [],
@@ -256,6 +277,7 @@
     {
       "tid": "HP:0200042",
       "status": "unchanged",
+      "domain": "in",
       "old_name": "Skin ulcer",
       "new_name": "Skin ulcer",
       "replaced_by": [],
@@ -274,7 +296,8 @@
       "lin_old": 0.28213501478714004,
       "lin_new": 0.5167315951425765,
       "mica_old": "HP:0000234",
-      "mica_new": "HP:0032158"
+      "mica_new": "HP:0032158",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -284,7 +307,8 @@
       "lin_old": 0.0,
       "lin_new": 0.3205118058833559,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -294,7 +318,8 @@
       "lin_old": 0.0,
       "lin_new": 0.32960415954654926,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -304,7 +329,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -314,7 +340,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -324,7 +351,8 @@
       "lin_old": 0.0,
       "lin_new": 0.5525573924976273,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0032158"
+      "mica_new": "HP:0032158",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -334,7 +362,8 @@
       "lin_old": 0.0,
       "lin_new": 0.275612040321271,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -344,7 +373,8 @@
       "lin_old": 0.0,
       "lin_new": 0.3208094149171023,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -354,7 +384,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -364,7 +395,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -374,7 +406,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -384,7 +417,8 @@
       "lin_old": 0.0,
       "lin_new": 0.4560912995205514,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -394,7 +428,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -404,7 +439,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -414,7 +450,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -424,7 +461,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000230",
@@ -434,7 +472,8 @@
       "lin_old": 0.0,
       "lin_new": 0.29808757772525696,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -444,7 +483,8 @@
       "lin_old": 0.0,
       "lin_new": 0.3509575060828223,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -454,7 +494,8 @@
       "lin_old": 0.0,
       "lin_new": 0.2590937946755751,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -464,7 +505,8 @@
       "lin_old": 0.0,
       "lin_new": 0.431392074419176,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000230",
@@ -474,7 +516,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -484,7 +527,8 @@
       "lin_old": 0.5454541278401763,
       "lin_new": 0.5121253707149763,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -494,7 +538,8 @@
       "lin_old": 0.5628875741866068,
       "lin_new": 0.5266534626758982,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -504,7 +549,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -514,7 +560,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -524,7 +571,8 @@
       "lin_old": 0.35009254906733545,
       "lin_new": 0.5525573924976273,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0032158"
+      "mica_new": "HP:0032158",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -534,7 +582,8 @@
       "lin_old": 0.3039253786661246,
       "lin_new": 0.275612040321271,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -544,7 +593,8 @@
       "lin_old": 0.3539194605937314,
       "lin_new": 0.3208094149171023,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -554,7 +604,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -564,7 +615,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -574,7 +626,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -584,7 +637,8 @@
       "lin_old": 0.48016037479793716,
       "lin_new": 0.7810083394200997,
       "mica_old": "HP:0012252",
-      "mica_new": "HP:0011947"
+      "mica_new": "HP:0011947",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -594,7 +648,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -604,7 +659,8 @@
       "lin_old": 0.40284082505062657,
       "lin_new": 0.40112031567872675,
       "mica_old": "HP:0012252",
-      "mica_new": "HP:0012252"
+      "mica_new": "HP:0012252",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -614,7 +670,8 @@
       "lin_old": 0.36670506768594197,
       "lin_new": 0.3659657920992504,
       "mica_old": "HP:0002086",
-      "mica_new": "HP:0002086"
+      "mica_new": "HP:0002086",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -624,7 +681,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000246",
@@ -634,7 +692,8 @@
       "lin_old": 0.2856649125168126,
       "lin_new": 0.29808757772525696,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -644,7 +703,8 @@
       "lin_old": 0.6001866455853401,
       "lin_new": 0.5607726130789694,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -654,7 +714,8 @@
       "lin_old": 0.2856649125168126,
       "lin_new": 0.2590937946755751,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -664,7 +725,8 @@
       "lin_old": 0.33968697490568295,
       "lin_new": 0.431392074419176,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000246",
@@ -674,7 +736,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -684,7 +747,8 @@
       "lin_old": 0.5775392511740554,
       "lin_new": 0.545824752498387,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -694,7 +758,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -704,7 +769,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -714,7 +780,8 @@
       "lin_old": 0.3588170591773465,
       "lin_new": 0.34354689947591105,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -724,7 +791,8 @@
       "lin_old": 0.31126881972224296,
       "lin_new": 0.2848630367673669,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -734,7 +802,8 @@
       "lin_old": 0.3639172530477565,
       "lin_new": 0.3334126913118289,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -744,7 +813,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -754,7 +824,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -764,7 +835,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -774,7 +846,8 @@
       "lin_old": 0.3908901677363839,
       "lin_new": 0.35155739829398214,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -784,7 +857,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -794,7 +868,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -804,7 +879,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -814,7 +890,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000388",
@@ -824,7 +901,8 @@
       "lin_old": 0.2921430397281287,
       "lin_new": 0.3089385902981514,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -834,7 +912,8 @@
       "lin_old": 0.6168731893456415,
       "lin_new": 0.5825597640807121,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -844,7 +923,8 @@
       "lin_old": 0.2921430397281287,
       "lin_new": 0.26725272805593325,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -854,7 +934,8 @@
       "lin_old": 0.3478944871861606,
       "lin_new": 0.33184587555095035,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000388",
@@ -864,7 +945,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -874,7 +956,8 @@
       "lin_old": 0.4033065362240679,
       "lin_new": 0.4036054397088783,
       "mica_old": "HP:0000951",
-      "mica_new": "HP:0000951"
+      "mica_new": "HP:0000951",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -884,7 +967,8 @@
       "lin_old": 0.41089503518507703,
       "lin_new": 0.41122438754717794,
       "mica_old": "HP:0000951",
-      "mica_new": "HP:0000951"
+      "mica_new": "HP:0000951",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -894,7 +978,8 @@
       "lin_old": 0.37044771735330323,
       "lin_new": 0.3540144887925697,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -904,7 +989,8 @@
       "lin_old": 0.3210414841859038,
       "lin_new": 0.2928007742437923,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -914,7 +1000,8 @@
       "lin_old": 0.3773467413112452,
       "lin_new": 0.34433856572568683,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -924,7 +1011,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -934,7 +1022,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -944,7 +1033,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -954,7 +1044,8 @@
       "lin_old": 0.40473308886766335,
       "lin_new": 0.3625266182928386,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -964,7 +1055,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -974,7 +1066,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -984,7 +1077,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000964",
@@ -994,7 +1088,8 @@
       "lin_old": 0.4322026652194154,
       "lin_new": 0.4326224333808053,
       "mica_old": "HP:0000951",
-      "mica_new": "HP:0000951"
+      "mica_new": "HP:0000951",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -1004,7 +1099,8 @@
       "lin_old": 0.30073507072788164,
       "lin_new": 0.31829680157876233,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -1014,7 +1110,8 @@
       "lin_old": 0.6392645172390837,
       "lin_new": 0.6014324937322335,
       "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
+      "mica_new": "HP:0012649",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -1024,7 +1121,8 @@
       "lin_old": 0.30073507072788164,
       "lin_new": 0.2742273607608764,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -1034,7 +1132,8 @@
       "lin_old": 0.3588170591773466,
       "lin_new": 0.3416024417514332,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000964",
@@ -1044,7 +1143,8 @@
       "lin_old": 0.4033065362240679,
       "lin_new": 0.4036054397088783,
       "mica_old": "HP:0000951",
-      "mica_new": "HP:0000951"
+      "mica_new": "HP:0000951",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000992",
@@ -1054,7 +1154,8 @@
       "lin_old": 0.42573880470058906,
       "lin_new": 0.42738748466486,
       "mica_old": "HP:0011121",
-      "mica_new": "HP:0011121"
+      "mica_new": "HP:0011121",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000992",
@@ -1064,7 +1165,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1074,7 +1176,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1084,7 +1187,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1094,7 +1198,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1104,7 +1209,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1114,7 +1220,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1124,7 +1231,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1134,7 +1242,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1144,7 +1253,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1154,7 +1264,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1164,7 +1275,8 @@
       "lin_old": 0.44706666078054347,
       "lin_new": 0.44873339463407735,
       "mica_old": "HP:0011121",
-      "mica_new": "HP:0011121"
+      "mica_new": "HP:0011121",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0000992",
@@ -1174,7 +1286,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1184,7 +1297,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1194,7 +1308,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1204,7 +1319,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0000992",
@@ -1214,7 +1330,8 @@
       "lin_old": 0.41812582243373936,
       "lin_new": 0.41976657096164943,
       "mica_old": "HP:0011121",
-      "mica_new": "HP:0011121"
+      "mica_new": "HP:0011121",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001034",
@@ -1224,7 +1341,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1234,7 +1352,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1244,7 +1363,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1254,7 +1374,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1264,7 +1385,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1274,7 +1396,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1284,7 +1407,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1294,7 +1418,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1304,7 +1429,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1314,7 +1440,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1324,7 +1451,8 @@
       "lin_old": 0.9489274113536471,
       "lin_new": 0.9490843535550395,
       "mica_old": "HP:0012733",
-      "mica_new": "HP:0012733"
+      "mica_new": "HP:0012733",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001034",
@@ -1334,7 +1462,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1344,7 +1473,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1354,7 +1484,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1364,7 +1495,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001034",
@@ -1374,7 +1506,8 @@
       "lin_old": 0.586285207975691,
       "lin_new": 0.5867813665036824,
       "mica_old": "HP:0011355",
-      "mica_new": "HP:0011355"
+      "mica_new": "HP:0011355",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1384,7 +1517,8 @@
       "lin_old": 0.30792332943117984,
       "lin_new": 0.294379914507871,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1394,7 +1528,8 @@
       "lin_old": 0.3593526288005665,
       "lin_new": 0.3465246156101274,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1404,7 +1539,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1414,7 +1550,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1424,7 +1561,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1434,7 +1572,8 @@
       "lin_old": 0.6210082230730876,
       "lin_new": 0.4908904081448638,
       "mica_old": "HP:0032101",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1444,7 +1583,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1454,7 +1594,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1464,7 +1605,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1474,7 +1616,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001287",
@@ -1484,7 +1627,8 @@
       "lin_old": 0.2891940957190787,
       "lin_new": 0.32016380372444553,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1494,7 +1638,8 @@
       "lin_old": 0.39536594462722224,
       "lin_new": 0.3787665508397117,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1504,7 +1649,8 @@
       "lin_old": 0.2891940957190787,
       "lin_new": 0.27561204032127096,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1514,7 +1660,8 @@
       "lin_old": 0.5534350353613608,
       "lin_new": 0.4623961018120037,
       "mica_old": "HP:0032101",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001287",
@@ -1524,7 +1671,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001744",
@@ -1534,7 +1682,8 @@
       "lin_old": 0.34715269207700666,
       "lin_new": 0.3146941835948988,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1544,7 +1693,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001744",
@@ -1554,7 +1704,8 @@
       "lin_old": 0.3314133445836217,
       "lin_new": 0.3279307422998982,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1564,7 +1715,8 @@
       "lin_old": 0.3628568063419772,
       "lin_new": 0.3589605698063677,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1574,7 +1726,8 @@
       "lin_old": 0.3342265346425708,
       "lin_new": 0.30087554261965704,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1584,7 +1737,8 @@
       "lin_old": 0.9206665057413949,
       "lin_new": 0.9208725065993029,
       "mica_old": "HP:0003271",
-      "mica_new": "HP:0003271"
+      "mica_new": "HP:0003271",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1594,7 +1748,8 @@
       "lin_old": 0.3314133445836217,
       "lin_new": 0.3279307422998982,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1604,7 +1759,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001744",
@@ -1614,7 +1770,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001744",
@@ -1624,7 +1781,8 @@
       "lin_old": 0.44176278690397064,
       "lin_new": 0.49793952409686293,
       "mica_old": "HP:0002012",
-      "mica_new": "HP:0002012"
+      "mica_new": "HP:0002012",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1634,7 +1792,8 @@
       "lin_old": 0.34191431371535314,
       "lin_new": 0.3114120055696582,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1644,7 +1803,8 @@
       "lin_old": 0.5611162454337026,
       "lin_new": 0.557047892553883,
       "mica_old": "HP:0100763",
-      "mica_new": "HP:0100763"
+      "mica_new": "HP:0100763",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1654,7 +1814,8 @@
       "lin_old": 0.29892179816108433,
       "lin_new": 0.2848630367673669,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001744",
@@ -1664,7 +1825,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1674,7 +1836,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1684,7 +1847,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1694,7 +1858,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1704,7 +1869,8 @@
       "lin_old": 0.3956943809868229,
       "lin_new": 0.3555605645650925,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001874",
@@ -1714,7 +1880,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1724,7 +1891,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1734,7 +1902,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1744,7 +1913,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001874",
@@ -1754,7 +1924,8 @@
       "lin_old": 0.5217334397170386,
       "lin_new": 0.5908426550365484,
       "mica_old": "HP:0032251",
-      "mica_new": "HP:0032251"
+      "mica_new": "HP:0032251",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001874",
@@ -1764,7 +1935,8 @@
       "lin_old": 0.40651569211550337,
       "lin_new": 0.37036941365493264,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001874",
@@ -1774,7 +1946,8 @@
       "lin_old": 0.3235303193924465,
       "lin_new": 0.2933406529393233,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001874",
@@ -1784,7 +1957,8 @@
       "lin_old": 0.34715269207700666,
       "lin_new": 0.3334126913118289,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0001874",
@@ -1794,7 +1968,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1804,7 +1979,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1814,7 +1990,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1824,7 +2001,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1834,7 +2012,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1844,7 +2023,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1854,7 +2034,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1864,7 +2045,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1874,7 +2056,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1884,7 +2067,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1894,7 +2078,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1904,7 +2089,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0001945",
@@ -1914,7 +2100,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -1924,7 +2111,8 @@
       "lin_old": 0.34078628007636536,
       "lin_new": 0.33718188316289777,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002021",
@@ -1934,7 +2122,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -1944,7 +2133,8 @@
       "lin_old": 0.3314133445836217,
       "lin_new": 0.3279307422998982,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002021",
@@ -1954,7 +2144,8 @@
       "lin_old": 0.43309330137281943,
       "lin_new": 0.4313731656483737,
       "mica_old": "HP:0012718",
-      "mica_new": "HP:0012718"
+      "mica_new": "HP:0012718",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002021",
@@ -1964,7 +2155,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -1974,7 +2166,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -1984,7 +2177,8 @@
       "lin_old": 0.3129045883231256,
       "lin_new": 0.3525322054241436,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002021",
@@ -1994,7 +2188,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -2004,7 +2199,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -2014,7 +2210,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002021",
@@ -2024,7 +2221,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2034,7 +2232,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2044,7 +2243,8 @@
       "lin_old": 0.3628568063419772,
       "lin_new": 0.3589605698063677,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002024",
@@ -2054,7 +2254,8 @@
       "lin_old": 0.34078628007636536,
       "lin_new": 0.33718188316289777,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002024",
@@ -2064,7 +2265,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2074,7 +2276,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2084,7 +2287,8 @@
       "lin_old": 0.34078628007636536,
       "lin_new": 0.38864878334435343,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002024",
@@ -2094,7 +2298,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2104,7 +2309,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2114,7 +2320,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002024",
@@ -2124,7 +2331,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002205",
@@ -2134,7 +2342,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002205",
@@ -2144,7 +2353,8 @@
       "lin_old": 0.4403659300569886,
       "lin_new": 0.43549585510631766,
       "mica_old": "HP:0012252",
-      "mica_new": "HP:0012252"
+      "mica_new": "HP:0012252",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2154,7 +2364,8 @@
       "lin_old": 0.4008640836435493,
       "lin_new": 0.3973286301897882,
       "mica_old": "HP:0002086",
-      "mica_new": "HP:0002086"
+      "mica_new": "HP:0002086",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2164,7 +2375,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002205",
@@ -2174,7 +2386,8 @@
       "lin_old": 0.31227494102491976,
       "lin_new": 0.327862007738344,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2184,7 +2397,8 @@
       "lin_old": 0.4346635120818008,
       "lin_new": 0.3885270070474292,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2194,7 +2408,8 @@
       "lin_old": 0.31227494102491976,
       "lin_new": 0.2812978282440167,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2204,7 +2419,8 @@
       "lin_old": 0.600710164963182,
       "lin_new": 0.4731778129341134,
       "mica_old": "HP:0032101",
-      "mica_new": "HP:0032101"
+      "mica_new": "HP:0032101",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002205",
@@ -2214,7 +2430,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2224,7 +2441,8 @@
       "lin_old": 0.3314133445836217,
       "lin_new": 0.3279307422998982,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002240",
@@ -2234,7 +2452,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2244,7 +2463,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2254,7 +2474,8 @@
       "lin_old": 0.5611162454337026,
       "lin_new": 0.62525901712948,
       "mica_old": "HP:0410042",
-      "mica_new": "HP:0410042"
+      "mica_new": "HP:0410042",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002240",
@@ -2264,7 +2485,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2274,7 +2496,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2284,7 +2507,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002240",
@@ -2294,7 +2518,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002575",
@@ -2304,7 +2529,8 @@
       "lin_old": 0.34086252986305954,
       "lin_new": 0.3402348584396888,
       "mica_old": "HP:0002086",
-      "mica_new": "HP:0002086"
+      "mica_new": "HP:0002086",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002575",
@@ -2314,7 +2540,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002575",
@@ -2324,7 +2551,8 @@
       "lin_old": 0.3129045883231256,
       "lin_new": 0.3525322054241436,
       "mica_old": "HP:0025031",
-      "mica_new": "HP:0025031"
+      "mica_new": "HP:0025031",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0002575",
@@ -2334,7 +2562,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002575",
@@ -2344,7 +2573,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002575",
@@ -2354,7 +2584,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0002575",
@@ -2364,7 +2595,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2374,7 +2606,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2384,7 +2617,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2394,7 +2628,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2404,7 +2639,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2414,7 +2650,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0006510",
@@ -2424,7 +2661,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0012733",
@@ -2434,7 +2672,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0012733",
@@ -2444,7 +2683,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0012733",
@@ -2454,7 +2694,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0012733",
@@ -2464,7 +2705,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0012733",
@@ -2474,7 +2716,8 @@
       "lin_old": 0.6156558136133554,
       "lin_new": 0.6160882195829761,
       "mica_old": "HP:0011355",
-      "mica_new": "HP:0011355"
+      "mica_new": "HP:0011355",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100523",
@@ -2484,7 +2727,8 @@
       "lin_old": 0.31897591155884547,
       "lin_new": 0.3404127532191517,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100523",
@@ -2494,7 +2738,8 @@
       "lin_old": 0.2655334582312978,
       "lin_new": 0.2742273607608764,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100523",
@@ -2504,7 +2749,8 @@
       "lin_old": 0.2812401440416525,
       "lin_new": 0.3089385902981514,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100523",
@@ -2514,7 +2760,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0100533",
@@ -2524,7 +2771,8 @@
       "lin_old": 0.31897591155884547,
       "lin_new": 0.2904867665992591,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100533",
@@ -2534,7 +2782,8 @@
       "lin_old": 0.3821459050660922,
       "lin_new": 0.36459291551952505,
       "mica_old": "HP:0010978",
-      "mica_new": "HP:0010978"
+      "mica_new": "HP:0010978",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100533",
@@ -2544,7 +2793,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0100721",
@@ -2554,7 +2804,8 @@
       "lin_old": 0.2812401440416525,
       "lin_new": 0.26725272805593325,
       "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
+      "mica_new": "HP:0002715",
+      "kind": "INFORMATIVE"
     },
     {
       "a": "HP:0100721",
@@ -2564,7 +2815,8 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     },
     {
       "a": "HP:0100806",
@@ -2574,7 +2826,26 @@
       "lin_old": 0.0,
       "lin_new": 0.0,
       "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
+      "mica_new": "HP:0000118",
+      "kind": "ROOT_ONLY"
     }
-  ]
+  ],
+  "profile": {
+    "n_raw_terms": 22,
+    "n_retained_terms": 22,
+    "n_missing_old": 0,
+    "n_missing_new": 0,
+    "n_obsolete": 0,
+    "n_out_of_domain": 0,
+    "n_ic_changed": 18,
+    "n_pairs": 231,
+    "n_informative_pairs": 95,
+    "n_root_only_pairs": 136,
+    "n_pairs_changed": 95,
+    "n_pairs_abs_delta_gt_0.01": 68,
+    "n_pairs_abs_delta_gt_0.1": 15,
+    "mean_abs_dlin": 0.06669170117590931,
+    "max_abs_dlin": 0.5525573924976273,
+    "status": "RANKABLE"
+  }
 }

@@ -13,7 +13,7 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379): 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose CGD because the mechanism of its drift is clinically interpretable and fits in two sentences. Then, as a sanity check, `examples/rank_profiles.py` ranked **every** OMIM and Orphanet profile with 12–60 terms present in both releases — 7121 profiles, one inclusion rule — by mean |ΔLin| over informative term pairs: CGD landed **12th** (median profile 0.001, 99th percentile 0.038). The upper part of that ranking is dominated by inborn errors of immunity; the immunology branch was restructured in this interval.
+Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379): 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose CGD because the mechanism of its drift is clinically interpretable and fits in two sentences. Then, as a sanity check, `hpo-drift cohort` ran over the **complete** `phenotype.hpoa` corpus — 12 935 disease profiles, no size cutoff: 11 947 have at least one informative pair, 705 are single-term, 283 have root-only pairs, all of them stay in the table with a status — and `hpo-drift rank` ordered the rankable ones by mean |ΔLin|. CGD landed **50th of 11 947** (median profile 0.0013, 99th percentile 0.043). The rows above it are mostly small profiles of 2–12 terms, where one re-parenting moves a handful of pairs a lot; many of them are immunodeficiencies, because the immunology branch was restructured in this interval.
 
 ![Lin similarity drift](docs/lin-drift.png)
 
@@ -21,33 +21,35 @@ What happened to this profile, computed with Seco intrinsic IC on the `is_a` gra
 
 - **Two terms gained a parent.** HPO introduced an *Unusual infection* hierarchy: *Gingivitis* (`HP:0000230`) is now also an *Unusual oral cavity infection* (`HP:5210280`), *Sinusitis* (`HP:0000246`) also an *Unusual upper respiratory tract infection* (`HP:5210121`). No label changed, nothing was obsoleted.
 - Consequence: *Gingivitis* entered the immune branch. Its Lin similarity with *Meningitis* went **0.00 → 0.55**, with *Recurrent respiratory infections* 0.00 → 0.46, with *Sepsis* 0.00 → 0.43 — their most-informative common ancestor is no longer the root but *Unusual infection*. *Sinusitis* ↔ *Recurrent respiratory infections* rose 0.48 → 0.78.
-- **IC moved for 18 of 22 terms; all 95 informative pairs moved**, 15 of them by more than 0.1 (136 pairs share only the root). Mean |ΔLin| 0.067; the median disease profile: 0.001.
+- **IC moved for 18 of 22 terms** (6 of them by more than 0.01; the other shifts come from N changing, and the 4 leaves stay at 1). **All 95 informative pairs moved**, 15 of them by more than 0.1; the remaining 136 pairs share only the root (ROOT_ONLY, 0 → 0). Mean |ΔLin| 0.067; the median disease profile: 0.0013.
 
 ![Information-content drift](docs/ic-drift.png)
 
-The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without changing the input phenotype profile. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
+The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without changing the input phenotype profile. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `hpo-drift cohort` tells you where your disease of interest sits.
 
 ![Drift across all disease profiles](docs/drift-distribution.png)
 
-| rank | disease profile | terms | pairs moved | mean \|ΔLin\| |
-|---|---|---|---|---|
-| 1 | Pseudohypoparathyroidism type 2 (ORPHA:94090) | 12 | 20 / 20 | 0.209 |
-| 2 | Cytomegalovirus disease in patients with impaired cell mediated immuni (ORPHA:137698) | 14 | 23 / 23 | 0.136 |
-| 3 | Generalized glucocorticoid resistance syndrome (ORPHA:786) | 21 | 46 / 46 | 0.095 |
-| 4 | Severe combined immunodeficiency, autosomal recessive, T cell-negative (OMIM:608971) | 15 | 61 / 61 | 0.085 |
-| 5 | Leukocyte adhesion deficiency, type I (OMIM:116920) | 17 | 51 / 51 | 0.084 |
-| 6 | Severe combined immunodeficiency, autosomal recessive, T cell-negative (OMIM:601457) | 16 | 60 / 60 | 0.082 |
-| 7 | Recurrent infections associated with rare immunoglobulin isotypes defi (ORPHA:183675) | 47 | 660 / 660 | 0.073 |
-| 8 | Scedosporiosis (ORPHA:449280) | 34 | 183 / 183 | 0.072 |
-| **12** | **Chronic granulomatous disease (ORPHA:379)** | 22 | 95 / 95 | 0.067 |
-| median of 7121 | | | | 0.001 |
+| rank | disease profile | retained terms | informative pairs | changed | mean \|ΔLin\| |
+|---|---|---|---|---|---|
+| 1 | Hypoparathyroidism, familial isolated 2 (OMIM:618883) | 4 | 6 | 6 | 0.298 |
+| 2 | Deafness, autosomal recessive 37 (OMIM:607821) | 4 | 2 | 2 | 0.257 |
+| 3 | Cortisone reductase deficiency 2 (OMIM:614662) | 7 | 4 | 4 | 0.243 |
+| 4 | Familial isolated hypoparathyroidism due to agenesis of parathyroid gland (ORPHA:2239) | 8 | 12 | 12 | 0.214 |
+| 5 | Pseudohypoparathyroidism type 2 (ORPHA:94090) | 12 | 20 | 20 | 0.209 |
+| 6 | Cone-Rod dystrophy, X-linked, 2 (OMIM:300085) | 2 | 1 | 1 | 0.207 |
+| 7 | Immunodeficiency 65, susceptibility to viral infections (OMIM:618648) | 5 | 6 | 6 | 0.175 |
+| 8 | ACTH-independent macronodular adrenal hyperplasia 2 (OMIM:615954) | 12 | 8 | 8 | 0.172 |
+| … | | | | | |
+| **50** | **Chronic granulomatous disease (ORPHA:379)** | 22 | 95 | 95 | 0.067 |
+| median of 11 947 | | | | | 0.0013 |
 
 Reproduce (the annotation file is pinned: `phenotype.hpoa` from HPO release **v2026-06-23**, `#version: 2026-06-23`, SHA-256 `89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff`; the script prints the version and hash of the file it was given):
 ```bash
 curl -LO https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-06-23/phenotype.hpoa
-python examples/rank_profiles.py v2026-02-16 v2026-06-23 phenotype.hpoa > profiles.csv
+hpo-drift cohort --hpoa phenotype.hpoa --old v2026-02-16 --new v2026-06-23 --out all_profiles.csv   # every profile, ~30 s
+hpo-drift rank all_profiles.csv --metric mean_abs_dlin > ranked.csv                                  # optional
 ```
-Output as run on 2026-09-03: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv). Where familiar syndromes sit in it: hyper-IgE syndrome 0.047, X-linked agammaglobulinemia 0.033, cystic fibrosis 0.023, Wiskott–Aldrich 0.020, Kabuki / Noonan / Marfan below 0.01.
+Output as run on 2026-09-03: [`examples/cohort-v2026-02-16_v2026-06-23.csv`](examples/cohort-v2026-02-16_v2026-06-23.csv) (all 12 935 profiles with status, plus a `.meta.json` recording the annotation file's version and hash) and [`examples/ranked-v2026-02-16_v2026-06-23.csv`](examples/ranked-v2026-02-16_v2026-06-23.csv). Where familiar syndromes sit: X-linked agammaglobulinemia 0.033, autosomal dominant hyper-IgE syndrome 0.029, cystic fibrosis 0.023, Wiskott–Aldrich 0.020, Kabuki / Noonan / Marfan about 0.001.
 
 ## 30-second start
 
@@ -85,11 +87,18 @@ hpo-drift lint --release v2026-06-23 --terms my_terms.txt
 ```
 ⚠️ Arthritis: matched by LABEL — labels get renamed; store the ID → HP:0001369
 ❌ Recurrent infection: label not found (exact match on names/synonyms; the term is 'Recurrent infections')
-❌ HP:0002960: OBSOLETE → replaced_by HP:0025095
+❌ HP:0002961: OBSOLETE term → replaced_by HP:0010701
 ```
 Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is **exact** on purpose: it reproduces the failure mode of a pipeline that matches by label. Store IDs, not labels: 266 labels changed in this interval alone, and fuzzy resolution (roadmap) must suggest, never auto-map.
 
-### 3 · a monthly GitHub Action
+### 3 · `cohort` and `rank` — the whole annotation corpus, no cutoffs
+```bash
+hpo-drift cohort --hpoa phenotype.hpoa --old v2026-02-16 --new v2026-06-23 --out all_profiles.csv
+hpo-drift rank all_profiles.csv --metric mean_abs_dlin --top 20
+```
+`cohort` computes the drift summary for **every** disease in `phenotype.hpoa` (unique positive phenotypic-abnormality terms per disease). There is no minimum or maximum size: a profile that cannot support pairwise analysis stays in the table with a status — `NO_USABLE_TERMS`, `TERM_ONLY` (IC drift only), `NO_INFORMATIVE_PAIRS` (every pair shares only the root) or `RANKABLE`. Columns: raw / retained / missing / obsolete / out-of-domain term counts, IC changes, pairs split into informative and root-only, pairs changed and pairs moved by > 0.01 / > 0.1, mean and max |ΔLin|. `rank` is a separate, optional step over that complete table. `report` follows the same rules for any list you give it: 0, 1 or N terms, root-only pairs marked `ROOT_ONLY`, terms outside the root marked `OUT_OF_DOMAIN` with a pointer to `--root`.
+
+### 4 · a monthly GitHub Action
 `.github/workflows/drift.yml` fetches the latest release, compares it with your pinned one (`PINNED_HPO`) and uploads the report. Add a threshold on `lin_delta` from the JSON and it becomes a failing check.
 
 ## How it works
@@ -121,4 +130,4 @@ IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), compu
 
 DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286739
 
-Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.4. MIT License.
+Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.5. MIT License.

@@ -77,14 +77,20 @@ class Release:
     def parents(self, tid: str) -> set[str]:
         return {v for _, v, k in self.g.out_edges(tid, keys=True) if k == "is_a"} if tid in self.g else set()
 
-    def ancestors(self, tid: str) -> set[str]:
+    @lru_cache(maxsize=None)
+    def ancestors(self, tid: str) -> frozenset[str]:
         """All superclasses (following child->parent edges) incl. self."""
-        return (nx.descendants(self.isa, tid) | {tid}) if tid in self.isa else set()
+        return frozenset(nx.descendants(self.isa, tid) | {tid}) if tid in self.isa else frozenset()
+
+    def in_domain(self, tid: str) -> bool:
+        """Inside the root's is_a closure and not obsolete — i.e. carries IC and can enter a pair."""
+        return tid in self._domain
 
     @lru_cache(maxsize=None)
     def n_descendants(self, tid: str) -> int:
         return len(nx.ancestors(self.isa, tid) & self._domain) if tid in self.isa else 0
 
+    @lru_cache(maxsize=None)
     def ic(self, tid: str) -> float:
         """Intrinsic information content (Seco 2004): 1 - log(desc+1)/log(N).
         Structure-only, so drift here isolates the effect of ontology edits."""
@@ -125,6 +131,7 @@ class Release:
 class TermChange:
     tid: str
     status: str = "unchanged"        # unchanged | renamed | obsoleted | merged | missing | new-in-new
+    domain: str = "in"               # in | OUT_OF_DOMAIN (term exists but lies outside the similarity root's is_a closure: no IC, no pairs)
     old_name: str | None = None
     new_name: str | None = None
     replaced_by: list[str] = field(default_factory=list)
@@ -155,6 +162,8 @@ def diff_terms(old: Release, new: Release, terms: list[str]) -> list[TermChange]
         po, pn = old.parents(tid), new.parents(tid)
         c.parents_added, c.parents_removed = pn - po, po - pn
         c.ic_old, c.ic_new = old.ic(tid), new.ic(tid)
+        if c.status in ("unchanged", "renamed") and old.has(tid) and not (old.in_domain(tid) and new.in_domain(tid)):
+            c.domain = "OUT_OF_DOMAIN"
         out.append(c)
     return out
 
@@ -183,21 +192,88 @@ class PairDrift:
     lin_new: float
     mica_old: str | None
     mica_new: str | None
+    kind: str = "INFORMATIVE"    # INFORMATIVE (MICA below the root in at least one release) | ROOT_ONLY (MICA = root in both: Lin 0 -> 0 by construction)
 
     @property
     def lin_delta(self) -> float:
         return self.lin_new - self.lin_old
 
 
+def usable_terms(old: Release, new: Release, terms: list[str]) -> list[str]:
+    """Terms that carry IC in both releases: present, not obsolete, inside the similarity domain. Order kept, duplicates dropped."""
+    return [t for t in dict.fromkeys(terms) if old.in_domain(t) and new.in_domain(t)]
+
+
 def similarity_drift(old: Release, new: Release, terms: list[str]) -> list[PairDrift]:
-    live = [t for t in terms if old.has(t) and new.has(t) and not old.obsolete(t) and not new.obsolete(t)]
+    """All pairs among the usable terms. Nothing is dropped: root-only pairs are returned with kind=ROOT_ONLY."""
+    live = usable_terms(old, new, terms)
     out = []
     for i, a in enumerate(live):
         for b in live[i + 1:]:
             mo, ro = old.mica(a, b)
             mn, rn = new.mica(a, b)
-            out.append(PairDrift(a, b, ro, rn, old.lin(a, b), new.lin(a, b), mo, mn))
+            kind = "ROOT_ONLY" if mo in (None, old.root) and mn in (None, new.root) else "INFORMATIVE"
+            out.append(PairDrift(a, b, ro, rn, old.lin(a, b), new.lin(a, b), mo, mn, kind))
     return out
+
+
+# ---------------------------------------------------------------- profile summary (any term set, any size)
+PROFILE_COLUMNS = ["n_raw_terms", "n_retained_terms", "n_missing_old", "n_missing_new", "n_obsolete", "n_out_of_domain", "n_ic_changed",
+                   "n_pairs", "n_informative_pairs", "n_root_only_pairs", "n_pairs_changed", "n_pairs_abs_delta_gt_0.01", "n_pairs_abs_delta_gt_0.1",
+                   "mean_abs_dlin", "max_abs_dlin", "status"]
+PROFILE_STATUSES = ("NO_USABLE_TERMS", "TERM_ONLY", "NO_INFORMATIVE_PAIRS", "RANKABLE")
+
+
+def profile_drift(old: Release, new: Release, terms: list[str]) -> dict:
+    """Drift summary for one term set of any size. Never raises on 0/1/N terms; the `status` says what could be computed:
+    NO_USABLE_TERMS (nothing carries IC in both releases), TERM_ONLY (one usable term: IC drift, no pairs),
+    NO_INFORMATIVE_PAIRS (2+ terms but every pair shares only the root), RANKABLE (mean/max |dLin| defined)."""
+    raw = list(dict.fromkeys(terms))
+    live = usable_terms(old, new, raw)
+    r = {"n_raw_terms": len(raw), "n_retained_terms": len(live),
+         "n_missing_old": sum(1 for t in raw if not old.has(t)), "n_missing_new": sum(1 for t in raw if not new.has(t) and t not in new.alt),
+         "n_obsolete": sum(1 for t in raw if old.obsolete(t) or new.obsolete(t)),
+         "n_out_of_domain": sum(1 for t in raw if old.has(t) and new.has(t) and not old.obsolete(t) and not new.obsolete(t) and not (old.in_domain(t) and new.in_domain(t))),
+         "n_ic_changed": sum(1 for t in live if abs(new.ic(t) - old.ic(t)) > 1e-9),
+         "n_pairs": 0, "n_informative_pairs": 0, "n_root_only_pairs": 0, "n_pairs_changed": 0, "n_pairs_abs_delta_gt_0.01": 0, "n_pairs_abs_delta_gt_0.1": 0,
+         "mean_abs_dlin": float("nan"), "max_abs_dlin": float("nan")}
+    if not live:
+        r["status"] = "NO_USABLE_TERMS"; return r
+    if len(live) == 1:
+        r["status"] = "TERM_ONLY"; return r
+    pairs = similarity_drift(old, new, live)
+    inf = [abs(p.lin_delta) for p in pairs if p.kind == "INFORMATIVE"]
+    r.update(n_pairs=len(pairs), n_informative_pairs=len(inf), n_root_only_pairs=len(pairs) - len(inf),
+             n_pairs_changed=sum(1 for v in inf if v > 1e-9), **{"n_pairs_abs_delta_gt_0.01": sum(1 for v in inf if v > 0.01), "n_pairs_abs_delta_gt_0.1": sum(1 for v in inf if v > 0.1)})
+    if not inf:
+        r["status"] = "NO_INFORMATIVE_PAIRS"; return r
+    r.update(mean_abs_dlin=sum(inf) / len(inf), max_abs_dlin=max(inf), status="RANKABLE")
+    return r
+
+
+def read_hpoa(path: str) -> tuple[dict, dict[str, tuple[str, list[str]]]]:
+    """phenotype.hpoa -> (metadata, {disease_id: (name, [unique positive phenotypic-abnormality HP ids])}).
+    Keeps aspect P rows only (inheritance/course/modifier rows are not phenotypes), drops qualifier NOT. Every disease is kept, whatever its size."""
+    import hashlib
+    raw = Path(path).read_bytes()
+    meta = {"path": str(path), "sha256": hashlib.sha256(raw).hexdigest(), "version": None, "n_rows": 0}
+    profiles: dict[str, tuple[str, list[str]]] = {}
+    for line in raw.decode("utf-8", "replace").splitlines():
+        if line.startswith("#"):
+            if line.startswith("#version:"):
+                meta["version"] = line.split(":", 1)[1].strip()
+            continue
+        if line.startswith("database_id") or not line.strip():
+            continue
+        f = line.split("\t")
+        meta["n_rows"] += 1
+        if len(f) < 11 or f[2] == "NOT" or f[10] != "P":
+            continue
+        name, terms = profiles.get(f[0], (f[1], []))
+        if f[3] not in terms:
+            terms.append(f[3])
+        profiles[f[0]] = (name, terms)
+    return meta, profiles
 
 
 # ---------------------------------------------------------------- lint

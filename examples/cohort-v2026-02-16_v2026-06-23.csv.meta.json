@@ -1,0 +1,38 @@
+{
+  "path": "/Users/margo/Documents/biobank2/disease_anchored_umap/phenotype.hpoa",
+  "sha256": "89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff",
+  "version": "2026-06-23",
+  "n_rows": 285598,
+  "old": "v2026-02-16",
+  "new": "v2026-06-23",
+  "root": "HP:0000118",
+  "ic": "Seco 2004 intrinsic IC on the is_a graph",
+  "n_profiles": 12935,
+  "status_counts": {
+    "NO_USABLE_TERMS": 0,
+    "TERM_ONLY": 705,
+    "NO_INFORMATIVE_PAIRS": 283,
+    "RANKABLE": 11947
+  },
+  "columns": [
+    "disease",
+    "name",
+    "database",
+    "n_raw_terms",
+    "n_retained_terms",
+    "n_missing_old",
+    "n_missing_new",
+    "n_obsolete",
+    "n_out_of_domain",
+    "n_ic_changed",
+    "n_pairs",
+    "n_informative_pairs",
+    "n_root_only_pairs",
+    "n_pairs_changed",
+    "n_pairs_abs_delta_gt_0.01",
+    "n_pairs_abs_delta_gt_0.1",
+    "mean_abs_dlin",
+    "max_abs_dlin",
+    "status"
+  ]
+}
