@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 (2026-09-03)
+
+Public release: PyPI package, Zenodo archiving, PyPI metadata, trusted-publishing workflow. No functional changes.
+
 ## Unreleased
 
 - Fix: obsolete terms were dropped at parse time (obonet default `ignore_obsolete=True`), so the `obsoleted → replaced_by` status and the lint `OBSOLETE` error never fired. Found by the new toy-ontology tests.

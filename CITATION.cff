@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results"
-version: 0.1.0
+version: 0.1.1
 date-released: "2026-09-03"
 license: MIT
 repository-code: "https://github.com/MargoSolo/hpo-drift"
