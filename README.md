@@ -13,7 +13,7 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379), 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. How it was chosen: `examples/rank_profiles.py` scores **every** OMIM and Orphanet profile with 12–60 terms present in both releases — 7121 profiles, one inclusion rule, no subsets — by mean |ΔLin| over its informative term pairs. CGD ranks **12 of 7121** (top 0.2 %; median profile 0.001, 99th percentile 0.038). It is shown here rather than the eleven profiles above it because it is a classic monogenic disease and its drift has a mechanism that fits in two sentences; the profiles above it are in the CSV, and the upper part of the ranking is dominated by inborn errors of immunity — the immunology branch was restructured in this interval.
+Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379): 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose CGD because the mechanism of its drift is clinically interpretable and fits in two sentences. Then, as a sanity check, `examples/rank_profiles.py` ranked **every** OMIM and Orphanet profile with 12–60 terms present in both releases — 7121 profiles, one inclusion rule — by mean |ΔLin| over informative term pairs: CGD landed **12th** (median profile 0.001, 99th percentile 0.038). The upper part of that ranking is dominated by inborn errors of immunity; the immunology branch was restructured in this interval.
 
 ![Lin similarity drift](docs/lin-drift.png)
 
@@ -25,7 +25,7 @@ What happened to this profile, computed with Seco intrinsic IC on the `is_a` gra
 
 ![Information-content drift](docs/ic-drift.png)
 
-The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without anything about the patient changing. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
+The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without changing the input phenotype profile. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
 
 ![Drift across all disease profiles](docs/drift-distribution.png)
 
@@ -42,8 +42,9 @@ The edit is clinically intuitive: gingivitis and sinusitis now connect more expl
 | **12** | **Chronic granulomatous disease (ORPHA:379)** | 22 | 95 / 95 | 0.067 |
 | median of 7121 | | | | 0.001 |
 
-Reproduce:
+Reproduce (the annotation file is pinned: `phenotype.hpoa` from HPO release **v2026-06-23**, `#version: 2026-06-23`, SHA-256 `89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff`; the script prints the version and hash of the file it was given):
 ```bash
+curl -LO https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-06-23/phenotype.hpoa
 python examples/rank_profiles.py v2026-02-16 v2026-06-23 phenotype.hpoa > profiles.csv
 ```
 Output as run on 2026-09-03: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv). Where familiar syndromes sit in it: hyper-IgE syndrome 0.047, X-linked agammaglobulinemia 0.033, cystic fibrosis 0.023, Wiskott–Aldrich 0.020, Kabuki / Noonan / Marfan below 0.01.
@@ -120,4 +121,4 @@ IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), compu
 
 DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286739
 
-Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.0. MIT License.
+Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.4. MIT License.

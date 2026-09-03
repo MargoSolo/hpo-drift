@@ -7,7 +7,7 @@ ancestor is below the root in either release). Output: the full ranking, one row
 
 Usage:
   python examples/rank_profiles.py OLD NEW phenotype.hpoa > profiles.csv"""
-import argparse, csv, itertools, statistics, sys
+import argparse, csv, hashlib, itertools, statistics, sys
 from collections import defaultdict
 from hpo_drift.core import Release
 
@@ -15,6 +15,8 @@ ap = argparse.ArgumentParser(); ap.add_argument("old"); ap.add_argument("new"); 
 ap.add_argument("--min-terms", type=int, default=12); ap.add_argument("--max-terms", type=int, default=60); ap.add_argument("--min-pairs", type=int, default=10)
 a = ap.parse_args()
 old, new = Release(a.old), Release(a.new)
+_raw = open(a.hpoa, "rb").read(); _ver = next((l.split(":", 1)[1].strip() for l in _raw.decode("utf-8", "replace").splitlines()[:10] if l.startswith("#version:")), "unknown")
+print(f"# phenotype.hpoa version {_ver} · sha256 {hashlib.sha256(_raw).hexdigest()}", file=sys.stderr)
 dis, name = defaultdict(set), {}
 for line in open(a.hpoa, encoding="utf-8"):
     if line.startswith("#") or line.startswith("database_id"): continue

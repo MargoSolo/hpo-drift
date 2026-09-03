@@ -49,7 +49,7 @@ def _report(old: Release, new: Release, tokens: list[str], top: int) -> str:
     L = [f"# hpo-drift: {old.tag} → {new.tag}", "", f"_IC: Seco 2004 intrinsic, on the `is_a` graph under root {old.root} ({old.name(old.root) or '?'}); N = {old._n_active} → {new._n_active} active terms. Similarity: Resnik / Lin via MICA._", ""]
     L += ["## Ontology-wide",
           f"- active terms: {g['terms_old']} → {g['terms_new']} (added {g['added']}, obsoleted {g['obsoleted']}, renamed {g['renamed']})",
-          f"- `is_a` edges: +{g['is_a_added']} / −{g['is_a_removed']}  ← edge changes move information content, hence every similarity score", ""]
+          f"- `is_a` edges: +{g['is_a_added']} / −{g['is_a_removed']}  ← edge changes move information content and can propagate into downstream similarity scores", ""]
     L += [f"## Your {len(ids)} terms", "", "| term | status | old → new label | parents | IC old → new |", "|---|---|---|---|---|"]
     for c in changes:
         lab = c.old_name if c.status == "unchanged" else f"{c.old_name} → {c.new_name}"
