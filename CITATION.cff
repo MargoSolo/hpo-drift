@@ -2,12 +2,12 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results"
-version: 0.1.5
-doi: 10.5281/zenodo.22286739
+version: 0.1.6
+doi: 10.5281/zenodo.22286170
 identifiers:
   - type: doi
     value: 10.5281/zenodo.22286170
-    description: Concept DOI (all versions)
+    description: Concept DOI (resolves to the latest version; each release has its own version DOI on Zenodo)
 date-released: "2026-09-03"
 license: MIT
 repository-code: "https://github.com/MargoSolo/hpo-drift"

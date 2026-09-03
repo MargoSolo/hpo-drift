@@ -20,8 +20,8 @@ Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of c
 What happened to this profile, computed with Seco intrinsic IC on the `is_a` graph under *Phenotypic abnormality*:
 
 - **Two terms gained a parent.** HPO introduced an *Unusual infection* hierarchy: *Gingivitis* (`HP:0000230`) is now also an *Unusual oral cavity infection* (`HP:5210280`), *Sinusitis* (`HP:0000246`) also an *Unusual upper respiratory tract infection* (`HP:5210121`). No label changed, nothing was obsoleted.
-- Consequence: *Gingivitis* entered the immune branch. Its Lin similarity with *Meningitis* went **0.00 → 0.55**, with *Recurrent respiratory infections* 0.00 → 0.46, with *Sepsis* 0.00 → 0.43 — their most-informative common ancestor is no longer the root but *Unusual infection*. *Sinusitis* ↔ *Recurrent respiratory infections* rose 0.48 → 0.78.
-- **IC moved for 18 of 22 terms** (6 of them by more than 0.01; the other shifts come from N changing, and the 4 leaves stay at 1). **All 95 informative pairs moved**, 15 of them by more than 0.1; the remaining 136 pairs share only the root (ROOT_ONLY, 0 → 0). Mean |ΔLin| 0.067; the median disease profile: 0.0013.
+- Consequence: *Gingivitis* gained a new path through the infection/immune hierarchy. Its Lin similarity with *Meningitis* went **0.00 → 0.55**, with *Recurrent respiratory infections* 0.00 → 0.46, with *Sepsis* 0.00 → 0.43 — their most-informative common ancestor is no longer the root but *Unusual infection*. *Sinusitis* ↔ *Recurrent respiratory infections* rose 0.48 → 0.78.
+- **IC moved for 18 of 22 terms** (6 of them by more than 0.01; N also changed, 18 690 → 19 120, which by itself shifts non-leaf intrinsic IC even without a direct edit to the term, and the 4 leaves stay at 1). **All 95 informative pairs moved**, 15 of them by more than 0.1; the remaining 136 pairs share only the root (ROOT_ONLY, 0 → 0). Mean |ΔLin| 0.067; the median disease profile: 0.0013.
 
 ![Information-content drift](ic-drift.png)
 
@@ -75,7 +75,7 @@ Sinusitis ↔ Recurrent respiratory inf. 0.480 → 0.781   +0.301  HP:0012252 �
 ```
 Add `--json` for a machine-readable report. Releases are pulled from the official GitHub assets of `obophenotype/human-phenotype-ontology`; any tag like `v2026-06-23` works and is cached under `~/.cache/hpo-drift`.
 
-## Three things it does
+## Four things it does
 
 ### 1 · `report` — the drift itself
 Per term: status (`unchanged` / `renamed` / `obsoleted` → replacement / `merged` / `missing`), label change, parents added or removed, IC before and after. Per pair: Resnik and Lin in both releases, the delta, and the most-informative common ancestor — so you can see *why* a pair moved. Plus the ontology-wide counts.
@@ -96,7 +96,9 @@ Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Mat
 hpo-drift cohort --hpoa phenotype.hpoa --old v2026-02-16 --new v2026-06-23 --out all_profiles.csv
 hpo-drift rank all_profiles.csv --metric mean_abs_dlin --top 20
 ```
-`cohort` computes the drift summary for **every** disease in `phenotype.hpoa` (unique positive phenotypic-abnormality terms per disease). There is no minimum or maximum size: a profile that cannot support pairwise analysis stays in the table with a status — `NO_USABLE_TERMS`, `TERM_ONLY` (IC drift only), `NO_INFORMATIVE_PAIRS` (every pair shares only the root) or `RANKABLE`. Columns: raw / retained / missing / obsolete / out-of-domain term counts, IC changes, pairs split into informative and root-only, pairs changed and pairs moved by > 0.01 / > 0.1, mean and max |ΔLin|. `rank` is a separate, optional step over that complete table. `report` follows the same rules for any list you give it: 0, 1 or N terms, root-only pairs marked `ROOT_ONLY`, terms outside the root marked `OUT_OF_DOMAIN` with a pointer to `--root`.
+`cohort` computes the drift summary for **every disease with at least one positive phenotypic-abnormality annotation** in `phenotype.hpoa` — a profile is the unique HP ids of a disease's rows with aspect `P` and no `NOT` qualifier (in v2026-06-23: 12 956 disease ids in the file, 12 935 profiles, 21 ids have only negated or non-`P` rows; the sidecar `.meta.json` records both counts). There is no minimum or maximum size: a profile that cannot support pairwise analysis stays in the table with a status — `NO_USABLE_TERMS`, `TERM_ONLY` (IC drift only), `NO_INFORMATIVE_PAIRS` (every pair shares only the root) or `RANKABLE`. Columns: a mutually exclusive disposition of every raw term (`retained`, `unknown`, `new_only`, `missing_new`, `merged_or_alt`, `obsolete`, `out_of_domain` — they add up to `n_raw_terms`), IC changes, pairs split into informative and root-only, pairs changed and pairs moved by > 0.01 / > 0.1, mean and max |ΔLin|. `rank` is a separate, optional step over that complete table. `report` follows the same rules for any list you give it: 0, 1 or N terms, root-only pairs marked `ROOT_ONLY`, terms outside the root marked `OUT_OF_DOMAIN` with a pointer to `--root`. IDs and labels are resolved against **both** releases: a term that exists only in the new release is reported as `new-in-new` (not silently dropped), a label the two releases map to different ids as `ambiguous`, an unresolvable token as `unknown`.
+
+**Provenance.** Every `hp.obo` is downloaded atomically, hashed, checked against the SHA-256 the official HPO GitHub release publishes for the asset, and cached only after that check; reports, JSON and `cohort` sidecars record the SHA-256 of both ontology inputs and of the annotation file.
 
 ### 4 · a monthly GitHub Action
 `.github/workflows/drift.yml` fetches the latest release, compares it with your pinned one (`PINNED_HPO`) and uploads the report. Add a threshold on `lin_delta` from the JSON and it becomes a failing check.
@@ -128,6 +130,6 @@ IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), compu
 
 ## Cite
 
-DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286739
+DOI (all versions): [10.5281/zenodo.22286170](https://doi.org/10.5281/zenodo.22286170) — each release has its own version DOI on that Zenodo page; cite the version you ran (`hpo-drift --version`).
 
-Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.5. MIT License.
+Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026. MIT License.

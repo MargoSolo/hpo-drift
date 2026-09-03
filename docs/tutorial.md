@@ -68,7 +68,7 @@ Two terms gained a direct parent from the new *Unusual infection* hierarchy: *Gi
 | HP:0000230 ↔ HP:0000388 | 0.000 → 0.321 | +0.321 | 0.000 → 0.266 | HP:0000118 → HP:0010978 |
 | HP:0000246 ↔ HP:0002205 | 0.480 → 0.781 | +0.301 | 0.374 → 0.614 | HP:0012252 → HP:0011947 |
 
-Gaining that parent moves *Gingivitis* into the immune branch: its most-informative common ancestor with *Meningitis*, *Sepsis* or *Recurrent respiratory infections* is no longer the root, and Lin rises from 0.00 to 0.55, 0.43, 0.46. Two edits to two terms, and 95 of 95 informative pairs move, 15 of them by more than 0.1. The 136 root-only pairs stay at 0.
+Gaining that parent gives *Gingivitis* a new path through the infection/immune hierarchy: its most-informative common ancestor with *Meningitis*, *Sepsis* or *Recurrent respiratory infections* is no longer the root, and Lin rises from 0.00 to 0.55, 0.43, 0.46. Two edits to two terms, and 95 of 95 informative pairs move, 15 of them by more than 0.1. The 136 root-only pairs stay at 0.
 
 ## 5. What to write in Methods
 

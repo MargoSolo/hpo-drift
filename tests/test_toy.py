@@ -3,7 +3,7 @@ import math
 import csv, json, pytest
 from pathlib import Path
 from hpo_drift import core, cli
-from hpo_drift.core import Release, diff_terms, global_counts, similarity_drift, lint, read_terms, profile_drift, read_hpoa
+from hpo_drift.core import Release, diff_terms, global_counts, similarity_drift, lint, read_terms, profile_drift, read_hpoa, resolve_across, disposition, PROFILE_COLUMNS
 
 OLD = """format-version: 1.2
 
@@ -175,3 +175,59 @@ def test_cohort_and_rank(rels, tmp_path, monkeypatch, capsys):
     cli.main(["rank", str(out), "--metric", "mean_abs_dlin"]); o = capsys.readouterr()
     ranked = list(csv.DictReader(o.out.splitlines())); assert len(ranked) == 1 and ranked[0]["rank"] == "1" and ranked[0]["disease"] == "OMIM:1"
     assert "1 RANKABLE of 4" in o.err
+
+
+def test_resolve_across_both_releases(rels):
+    old, new, _ = rels
+    assert resolve_across(old, new, "HP:0000012") == ("HP:0000012", "new-only", "id")        # exists only in NEW
+    assert resolve_across(old, new, "HP:0000099") == ("HP:0000012", "new-only", "alt_id")    # alt id that exists only in NEW
+    assert resolve_across(old, new, "Alpha two") == ("HP:0000012", "new-only", "label")      # label only in NEW
+    assert resolve_across(old, new, "Alpha one") == ("HP:0000011", "ok", "label")            # label only in OLD (renamed in new) -> old id kept
+    assert resolve_across(old, new, "HP:0000010") == ("HP:0000010", "ok", "id")
+    assert resolve_across(old, new, "Unicorn") == (None, "unknown", "label")
+    st = {c.tid: c for c in diff_terms(old, new, ["HP:0000012", "Alpha one", "Unicorn", "HP:0000099"])}
+    assert st["HP:0000012"].status == "new-in-new" and math.isnan(st["HP:0000012"].ic_old) and not math.isnan(st["HP:0000012"].ic_new)
+    assert st["HP:0000011"].status == "renamed" and st["HP:0000011"].token == "Alpha one" and st["HP:0000011"].how == "label"
+    assert st["Unicorn"].status == "unknown"
+    assert len(diff_terms(old, new, ["HP:0000012", "Alpha one", "Unicorn", "HP:0000099"])) == 4, "nothing disappears from the per-term diff"
+
+
+def test_report_new_only_term(rels, tmp_path, monkeypatch, capsys):
+    old, new, d = rels
+    monkeypatch.setattr(core, "fetch", lambda tag: {"vOLD": d / "old.obo", "vNEW": d / "new.obo"}[tag])
+    f = tmp_path / "t.txt"; f.write_text("HP:0000012\nHP:0000010\nHP:0000011\nAlpha two\n")
+    cli.main(["report", "--old", "vOLD", "--new", "vNEW", "--terms", str(f)]); txt = capsys.readouterr().out
+    assert "new-in-new" in txt and "HP:0000012" in txt and "Alpha two" in txt and "Your 4 terms" in txt
+    cli.main(["report", "--old", "vOLD", "--new", "vNEW", "--terms", str(f), "--json"]); out = json.loads(capsys.readouterr().out)
+    assert [x["status"] for x in out["terms"]].count("new-in-new") == 2 and len(out["pairs"]) == 1   # only 10↔11 is comparable
+    assert out["old_ontology"]["sha256"] != out["new_ontology"]["sha256"] and len(out["old_ontology"]["sha256"]) == 64
+
+
+def test_disposition_exclusive_and_invariant(rels):
+    old, new, _ = rels
+    raw = ["HP:0000010", "HP:0000011", "HP:0000020", "HP:0000090", "HP:0000001", "HP:0000012", "HP:0000099", "HP:0009999"]
+    d = {t: disposition(old, new, t) for t in raw}
+    assert d["HP:0000090"] == "obsolete" and d["HP:0000001"] == "out_of_domain" and d["HP:0000012"] == "new_only" and d["HP:0000099"] == "new_only" and d["HP:0009999"] == "unknown"
+    r = profile_drift(old, new, raw)
+    parts = ["n_retained_terms", "n_unknown", "n_new_only", "n_missing_new", "n_merged_or_alt", "n_obsolete", "n_out_of_domain"]
+    assert sum(r[k] for k in parts) == r["n_raw_terms"] == 8 and all(k in PROFILE_COLUMNS for k in parts)
+    assert r["n_new_only"] == 2 and r["n_unknown"] == 1 and r["n_obsolete"] == 1 and r["n_out_of_domain"] == 1 and r["n_retained_terms"] == 3
+
+
+def test_fetch_is_atomic_and_verified(tmp_path, monkeypatch):
+    monkeypatch.setattr(core, "CACHE", tmp_path)
+    body = b"format-version: 1.2\n\n[Term]\nid: HP:0000001\nname: All\n"
+    class R:
+        def __init__(self, b): self.b = b
+        def raise_for_status(self): pass
+        def iter_content(self, n): yield self.b
+    monkeypatch.setattr(core.requests, "get", lambda *a, **k: R(body))
+    monkeypatch.setattr(core, "official_digest", lambda tag, asset="hp.obo": "0" * 64)      # published digest disagrees
+    with pytest.raises(RuntimeError):
+        core.fetch("vX")
+    assert not (tmp_path / "hp-vX.obo").exists() and not (tmp_path / "hp-vX.obo.tmp").exists()
+    import hashlib
+    monkeypatch.setattr(core, "official_digest", lambda tag, asset="hp.obo": hashlib.sha256(body).hexdigest())
+    p = core.fetch("vX"); assert p.read_bytes() == body and (tmp_path / "hp-vX.obo.sha256").read_text() == hashlib.sha256(body).hexdigest()
+    (tmp_path / "hp-vY.obo").write_bytes(b"format-version: 1.2\n[Term]\nid: HP:00")           # a stale partial file without sidecar is NOT trusted
+    monkeypatch.setattr(core.requests, "get", lambda *a, **k: R(body)); core.fetch("vY"); assert (tmp_path / "hp-vY.obo").read_bytes() == body

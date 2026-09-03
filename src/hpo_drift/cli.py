@@ -16,13 +16,8 @@ def _f(x: float) -> str:
     return "—" if x is None or (isinstance(x, float) and math.isnan(x)) else f"{x:.3f}"
 
 
-def _resolve_all(rel: Release, tokens: list[str]) -> list[str]:
-    ids = []
-    for t in tokens:
-        tid, _ = rel.resolve(t)
-        if tid:
-            ids.append(tid)
-    return list(dict.fromkeys(ids))
+def _dedupe(tokens: list[str]) -> list[str]:
+    return list(dict.fromkeys(t.strip() for t in tokens if t.strip()))
 
 
 def cmd_fetch(a):
@@ -44,30 +39,43 @@ def cmd_lint(a):
 
 
 def _report(old: Release, new: Release, tokens: list[str], top: int) -> str:
-    ids = _resolve_all(old, tokens)
+    tokens = _dedupe(tokens)
     g = global_counts(old, new)
-    changes = diff_terms(old, new, ids)
+    changes = diff_terms(old, new, tokens)
+    ids = list(dict.fromkeys(c.tid for c in changes if c.status not in ("unknown", "ambiguous")))
     drift = similarity_drift(old, new, ids)
-    L = [f"# hpo-drift: {old.tag} → {new.tag}", "", f"_IC: Seco 2004 intrinsic, on the `is_a` graph under root {old.root} ({old.name(old.root) or '?'}); N = {old._n_active} → {new._n_active} active terms. Similarity: Resnik / Lin via MICA._", ""]
+    L = [f"# hpo-drift: {old.tag} → {new.tag}", "", f"_IC: Seco 2004 intrinsic, on the `is_a` graph under root {old.root} ({old.name(old.root) or '?'}); N = {old._n_active} → {new._n_active} active terms. Similarity: Resnik / Lin via MICA._",
+         f"_Inputs: hp.obo {old.tag} sha256 `{old.sha256[:12]}…`, hp.obo {new.tag} sha256 `{new.sha256[:12]}…` (full hashes in `--json`)._", ""]
     L += ["## Ontology-wide",
           f"- active terms: {g['terms_old']} → {g['terms_new']} (added {g['added']}, obsoleted {g['obsoleted']}, renamed {g['renamed']})",
           f"- `is_a` edges: +{g['is_a_added']} / −{g['is_a_removed']}  ← edge changes move information content and can propagate into downstream similarity scores", ""]
-    L += [f"## Your {len(ids)} terms", ""]
-    if not ids:
-        L += ["**No usable terms**: nothing in the list resolved to an HPO id in the old release. Run `hpo-drift lint` on the file.", ""]
+    L += [f"## Your {len(changes)} terms", ""]
+    if not changes:
+        L += ["**No usable terms**: the list is empty.", ""]
         return "\n".join(L)
     L += ["| term | status | old → new label | parents | IC old → new |", "|---|---|---|---|---|"]
     for c in changes:
         lab = c.old_name if c.status == "unchanged" else f"{c.old_name} → {c.new_name}"
-        if c.status in ("obsoleted", "merged"):
+        if c.status == "unknown":
+            lab = f"`{c.tid}` resolves in neither release"
+        elif c.status == "new-in-new":
+            lab = f"{c.new_name} (not in {old.tag})"
+        elif c.status == "ambiguous":
+            lab = f"label `{c.token}` = {c.tid} ({c.old_name}) in {old.tag} but {c.replaced_by[0]} ({c.new_name}) in {new.tag}"
+        elif c.status in ("obsoleted", "merged"):
             lab += f" (→ {', '.join(c.replaced_by) or '?'})"
+        if c.token and c.status not in ("unknown", "ambiguous"):
+            lab += f" (from `{c.token}`, by {c.how})"
         par = ("+" + ",".join(sorted(c.parents_added)) if c.parents_added else "") + (" −" + ",".join(sorted(c.parents_removed)) if c.parents_removed else "")
-        st = "OUT_OF_DOMAIN" if c.domain == "OUT_OF_DOMAIN" else c.status
+        st = "OUT_OF_DOMAIN" if (c.domain == "OUT_OF_DOMAIN" and c.status in ("unchanged", "renamed")) else c.status
         L.append(f"| {c.tid} | {st} | {lab} | {par or '='} | {_f(c.ic_old)} → {_f(c.ic_new)} |")
     n_ic = sum(1 for c in changes if not math.isnan(c.ic_delta) and abs(c.ic_delta) > 1e-9)
     n_ic01 = sum(1 for c in changes if not math.isnan(c.ic_delta) and abs(c.ic_delta) > 0.01)
-    L += ["", f"IC changed for **{n_ic}/{len(changes)}** of your terms (|ΔIC| > 0.01 for **{n_ic01}/{len(changes)}**). N itself moved {old._n_active} → {new._n_active}, which shifts every non-leaf IC a little; leaves stay at 1.", ""]
-    ood = [c for c in changes if c.domain == "OUT_OF_DOMAIN"]
+    L += ["", f"IC changed for **{n_ic}/{len(changes)}** of your terms (|ΔIC| > 0.01 for **{n_ic01}/{len(changes)}**). N also changed ({old._n_active} → {new._n_active}), which by itself shifts non-leaf intrinsic IC even without a direct edit to the term; leaves stay at 1.", ""]
+    special = [c for c in changes if c.status in ("new-in-new", "ambiguous", "unknown")]
+    if special:
+        L += ["**Resolved against both releases**: " + "; ".join(f"{c.tid if c.status != 'unknown' else c.token} {c.status}" for c in special) + ". new-in-new terms have IC only in the new release and enter no pair; ambiguous labels are not compared — store IDs.", ""]
+    ood = [c for c in changes if c.domain == "OUT_OF_DOMAIN" and c.status in ("unchanged", "renamed")]
     if ood:
         L += [f"**{len(ood)} term(s) OUT_OF_DOMAIN**: {', '.join(f'{c.tid} ({c.old_name})' for c in ood)} lie outside the similarity domain {old.root} ({old.name(old.root) or '?'}). "
               "They have no IC here and enter no pair. If that branch is what you mean to compare, choose it with `--root HP:...`.", ""]
@@ -100,10 +108,12 @@ def cmd_report(a):
     old, new = Release(a.old, root=a.root), Release(a.new, root=a.root)
     tokens = read_terms(a.terms)
     if a.json:
-        ids = _resolve_all(old, tokens)
-        out = {"old": a.old, "new": a.new, "ic": {"method": "Seco 2004 intrinsic IC on the is_a graph", "root": a.root, "n_terms_old": old._n_active, "n_terms_new": new._n_active},
+        changes = diff_terms(old, new, _dedupe(tokens))
+        ids = list(dict.fromkeys(c.tid for c in changes if c.status not in ("unknown", "ambiguous")))
+        out = {"old": a.old, "new": a.new, "old_ontology": old.provenance(), "new_ontology": new.provenance(),
+               "ic": {"method": "Seco 2004 intrinsic IC on the is_a graph", "root": a.root, "n_terms_old": old._n_active, "n_terms_new": new._n_active},
                "similarity": "Resnik and Lin via most-informative common ancestor (is_a only)", "global": global_counts(old, new),
-               "terms": [c.__dict__ | {"parents_added": sorted(c.parents_added), "parents_removed": sorted(c.parents_removed)} for c in diff_terms(old, new, ids)],
+               "terms": [c.__dict__ | {"parents_added": sorted(c.parents_added), "parents_removed": sorted(c.parents_removed)} for c in changes],
                "pairs": [d.__dict__ for d in similarity_drift(old, new, ids)], "profile": profile_drift(old, new, ids)}
         print(json.dumps(out, ensure_ascii=False, indent=2, default=str)); return
     print(_report(old, new, tokens, a.top))
@@ -126,11 +136,13 @@ def cmd_cohort(a):
             w.writerow([d, name, d.split(":")[0]] + [_fmt(r[k]) for k in PROFILE_COLUMNS])
             if a.progress and i % 1000 == 0:
                 print(f"  {i}/{len(profiles)}", file=sys.stderr)
-    meta.update(old=a.old, new=a.new, root=a.root, ic="Seco 2004 intrinsic IC on the is_a graph", n_profiles=len(profiles), status_counts=counts, columns=cols)
+    meta.update(old=a.old, new=a.new, old_ontology=old.provenance(), new_ontology=new.provenance(), root=a.root, ic="Seco 2004 intrinsic IC on the is_a graph",
+                profile_definition="unique HP ids of rows with aspect P and no NOT qualifier; diseases with no such row have no profile", n_profiles=len(profiles), status_counts=counts, columns=cols)
     with open(a.out + ".meta.json", "w", encoding="utf-8") as fh:
         json.dump(meta, fh, indent=2)
     print(f"phenotype.hpoa version {meta['version']} · sha256 {meta['sha256']} · {meta['n_rows']} rows", file=sys.stderr)
-    print(f"{len(profiles)} disease profiles → {a.out}: " + ", ".join(f"{k} {v}" for k, v in counts.items()), file=sys.stderr)
+    print(f"hp.obo {a.old} sha256 {old.sha256} · hp.obo {a.new} sha256 {new.sha256}", file=sys.stderr)
+    print(f"{len(profiles)} disease profiles (of {meta['n_disease_ids_in_file']} disease ids in the file; {meta['n_diseases_without_positive_P']} have no positive P row) → {a.out}: " + ", ".join(f"{k} {v}" for k, v in counts.items()), file=sys.stderr)
 
 
 def cmd_rank(a):

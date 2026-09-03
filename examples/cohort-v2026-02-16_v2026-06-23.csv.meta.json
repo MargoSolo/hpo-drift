@@ -3,10 +3,23 @@
   "sha256": "89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff",
   "version": "2026-06-23",
   "n_rows": 285598,
+  "n_disease_ids_in_file": 12956,
+  "n_diseases_without_positive_P": 21,
   "old": "v2026-02-16",
   "new": "v2026-06-23",
+  "old_ontology": {
+    "tag": "v2026-02-16",
+    "file": "/Users/margo/.cache/hpo-drift/hp-v2026-02-16.obo",
+    "sha256": "8d6c23798667d4506767ce643fc3c028f0d1c85e7e1d8810e491181a345d53cd"
+  },
+  "new_ontology": {
+    "tag": "v2026-06-23",
+    "file": "/Users/margo/.cache/hpo-drift/hp-v2026-06-23.obo",
+    "sha256": "a5092cbdf605f568403cf7380d9173014015692433b2cc631bc5c1b053876b1b"
+  },
   "root": "HP:0000118",
   "ic": "Seco 2004 intrinsic IC on the is_a graph",
+  "profile_definition": "unique HP ids of rows with aspect P and no NOT qualifier; diseases with no such row have no profile",
   "n_profiles": 12935,
   "status_counts": {
     "NO_USABLE_TERMS": 0,
@@ -20,8 +33,10 @@
     "database",
     "n_raw_terms",
     "n_retained_terms",
-    "n_missing_old",
+    "n_unknown",
+    "n_new_only",
     "n_missing_new",
+    "n_merged_or_alt",
     "n_obsolete",
     "n_out_of_domain",
     "n_ic_changed",

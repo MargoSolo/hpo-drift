@@ -1,6 +1,8 @@
 """Core: load HPO releases, diff a user's term list, compute similarity drift, lint."""
 from __future__ import annotations
 
+import hashlib
+import json
 import math
 import os
 import re
@@ -14,23 +16,59 @@ import requests
 
 CACHE = Path(os.environ.get("HPO_DRIFT_CACHE", Path.home() / ".cache" / "hpo-drift"))
 RELEASE_URL = "https://github.com/obophenotype/human-phenotype-ontology/releases/download/{tag}/hp.obo"
+RELEASE_API = "https://api.github.com/repos/obophenotype/human-phenotype-ontology/releases/tags/{tag}"
 HP_ID = re.compile(r"^HP:\d{7}$")
 SYN_RE = re.compile(r'^"(.*?)"')
 ROOT = "HP:0000118"  # Phenotypic abnormality
 
 
 # ---------------------------------------------------------------- loading
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def official_digest(tag: str, asset: str = "hp.obo") -> str | None:
+    """SHA-256 that the official GitHub release publishes for an asset (None if the API is unreachable)."""
+    try:
+        r = requests.get(RELEASE_API.format(tag=tag), timeout=30, headers={"Accept": "application/vnd.github+json"})
+        r.raise_for_status()
+        for a in r.json().get("assets", []):
+            if a.get("name") == asset and str(a.get("digest", "")).startswith("sha256:"):
+                return a["digest"][7:]
+    except Exception:
+        return None
+    return None
+
+
 def fetch(tag: str) -> Path:
-    """Download hp.obo for a release tag (e.g. v2026-06-23) into the cache."""
+    """Download hp.obo for a release tag (e.g. v2026-06-23) into the cache.
+    Atomic: download to .tmp, hash, verify against the release's published digest when available, then rename.
+    A cached file is trusted only with its .sha256 sidecar (written after a verified download); a partial download never becomes the cache."""
     CACHE.mkdir(parents=True, exist_ok=True)
     dest = CACHE / f"hp-{tag}.obo"
-    if dest.exists() and dest.stat().st_size > 1_000_000:
+    side = CACHE / f"hp-{tag}.obo.sha256"
+    if dest.exists() and side.exists() and side.read_text().strip() == sha256_file(dest):
         return dest
+    tmp = CACHE / f"hp-{tag}.obo.tmp"
     r = requests.get(RELEASE_URL.format(tag=tag), timeout=120, stream=True)
     r.raise_for_status()
-    with open(dest, "wb") as fh:
+    with open(tmp, "wb") as fh:
         for chunk in r.iter_content(1 << 20):
             fh.write(chunk)
+    digest = sha256_file(tmp)
+    want = official_digest(tag)
+    if want and want != digest:
+        tmp.unlink(missing_ok=True)
+        raise RuntimeError(f"{tag}: downloaded hp.obo sha256 {digest} != published digest {want}; refusing to cache")
+    if not tmp.read_bytes()[:20].startswith(b"format-version"):
+        tmp.unlink(missing_ok=True)
+        raise RuntimeError(f"{tag}: downloaded file is not an OBO document; refusing to cache")
+    os.replace(tmp, dest)
+    side.write_text(digest)
     return dest
 
 
@@ -40,7 +78,9 @@ class Release:
     def __init__(self, tag: str, path: Path | None = None, root: str = ROOT):
         self.tag = tag
         self.root = root
-        self.g = obonet.read_obo(str(path or fetch(tag)), ignore_obsolete=False)  # keep obsolete terms so `obsoleted → replaced_by` and lint can see them
+        self.path = Path(path or fetch(tag))
+        self.sha256 = sha256_file(self.path)
+        self.g = obonet.read_obo(str(self.path), ignore_obsolete=False)  # keep obsolete terms so `obsoleted → replaced_by` and lint can see them
         # IC / ancestors / MICA are computed on the is_a graph only (child -> parent), never on other relationship types
         self.isa = nx.DiGraph()
         self.isa.add_nodes_from(self.g.nodes())
@@ -61,6 +101,9 @@ class Release:
         self._domain = ({t for t in nx.ancestors(self.isa, root)} | {root}) if root in self.isa else set(self.isa.nodes())
         self._domain = {t for t in self._domain if not self.obsolete(t)}
         self._n_active = len(self._domain)
+
+    def provenance(self) -> dict:
+        return {"tag": self.tag, "file": str(self.path), "sha256": self.sha256}
 
     def has(self, tid: str) -> bool:
         return tid in self.g
@@ -127,11 +170,42 @@ class Release:
 
 
 # ---------------------------------------------------------------- diff
+def resolve_across(old: Release, new: Release, token: str) -> tuple[str | None, str, str]:
+    """Resolve an ID or label against BOTH releases. Returns (term id or None, hint, how).
+    hint: ok | new-only | ambiguous | unknown.  how: id | alt_id | label.
+    ID in old (primary or alt)       -> that id, ok            (the diff then says missing / obsoleted / merged / renamed / unchanged)
+    ID absent from old, in new       -> that id, new-only
+    label in both, same id           -> ok;   label in old only -> old id, ok;   label in new only -> new id, new-only
+    label mapping to different ids   -> ambiguous (the two releases disagree on what the label means)
+    nothing                          -> unknown"""
+    t = token.strip()
+    if HP_ID.match(t):
+        if t in old.g:
+            return t, "ok", "id"
+        if t in old.alt:
+            return old.alt[t], "ok", "alt_id"
+        if t in new.g:
+            return t, "new-only", "id"
+        if t in new.alt:
+            return new.alt[t], "new-only", "alt_id"
+        return None, "unknown", "id"
+    a, b = old.labels.get(t.lower()), new.labels.get(t.lower())
+    if a and b:
+        return (a, "ok", "label") if a == b or new.alt.get(a) == b else (a, "ambiguous", "label")
+    if a:
+        return a, "ok", "label"
+    if b:
+        return b, "new-only", "label"
+    return None, "unknown", "label"
+
+
 @dataclass
 class TermChange:
     tid: str
-    status: str = "unchanged"        # unchanged | renamed | obsoleted | merged | missing | new-in-new
+    status: str = "unchanged"        # unchanged | renamed | obsoleted | merged | missing | new-in-new | ambiguous | unknown
     domain: str = "in"               # in | OUT_OF_DOMAIN (term exists but lies outside the similarity root's is_a closure: no IC, no pairs)
+    token: str | None = None         # what the user wrote, when it differs from tid (label, alt id)
+    how: str = "id"                  # id | alt_id | label
     old_name: str | None = None
     new_name: str | None = None
     replaced_by: list[str] = field(default_factory=list)
@@ -146,9 +220,22 @@ class TermChange:
 
 
 def diff_terms(old: Release, new: Release, terms: list[str]) -> list[TermChange]:
+    """Per-term diff for IDs *or labels*, resolved against both releases. Nothing disappears: a token that exists only in the new
+    release is reported as new-in-new, a label the releases disagree on as ambiguous, an unresolvable token as unknown."""
     out = []
-    for tid in terms:
-        c = TermChange(tid=tid, old_name=old.name(tid), new_name=new.name(tid))
+    for tok in terms:
+        tid, hint, how = resolve_across(old, new, tok)
+        if tid is None:
+            out.append(TermChange(tid=tok, status="unknown", domain="OUT_OF_DOMAIN", token=tok, how=how)); continue
+        c = TermChange(tid=tid, old_name=old.name(tid), new_name=new.name(tid), token=(tok if tok != tid else None), how=how)
+        if hint == "ambiguous":
+            c.status, c.domain, c.new_name = "ambiguous", "OUT_OF_DOMAIN", new.name(new.labels.get(tok.strip().lower()))
+            c.replaced_by = [new.labels.get(tok.strip().lower())]
+            out.append(c); continue
+        if hint == "new-only":
+            c.status, c.domain = "new-in-new", "OUT_OF_DOMAIN"
+            c.parents_added = new.parents(tid); c.ic_new = new.ic(tid)
+            out.append(c); continue
         if not new.has(tid) and tid in new.alt:
             c.status, c.replaced_by, c.new_name = "merged", [new.alt[tid]], new.name(new.alt[tid])
         elif not new.has(tid):
@@ -218,10 +305,28 @@ def similarity_drift(old: Release, new: Release, terms: list[str]) -> list[PairD
 
 
 # ---------------------------------------------------------------- profile summary (any term set, any size)
-PROFILE_COLUMNS = ["n_raw_terms", "n_retained_terms", "n_missing_old", "n_missing_new", "n_obsolete", "n_out_of_domain", "n_ic_changed",
+PROFILE_COLUMNS = ["n_raw_terms", "n_retained_terms", "n_unknown", "n_new_only", "n_missing_new", "n_merged_or_alt", "n_obsolete", "n_out_of_domain", "n_ic_changed",
                    "n_pairs", "n_informative_pairs", "n_root_only_pairs", "n_pairs_changed", "n_pairs_abs_delta_gt_0.01", "n_pairs_abs_delta_gt_0.1",
                    "mean_abs_dlin", "max_abs_dlin", "status"]
 PROFILE_STATUSES = ("NO_USABLE_TERMS", "TERM_ONLY", "NO_INFORMATIVE_PAIRS", "RANKABLE")
+
+
+def disposition(old: Release, new: Release, t: str) -> str:
+    """Mutually exclusive fate of one raw term id, in this priority order — so the counts add up to n_raw_terms:
+    unknown (in neither release) | new_only (absent from old, present in new) | merged_or_alt (alt/secondary id in old, or merged into another id in new)
+    | missing_new (in old, gone from new) | obsolete (obsolete in old or new) | out_of_domain (outside the similarity root in either) | retained"""
+    in_old, in_new = old.has(t), new.has(t)
+    if not in_old and t not in old.alt:
+        return "new_only" if (in_new or t in new.alt) else "unknown"
+    if t in old.alt or (not in_new and t in new.alt):
+        return "merged_or_alt"
+    if not in_new:
+        return "missing_new"
+    if old.obsolete(t) or new.obsolete(t):
+        return "obsolete"
+    if not (old.in_domain(t) and new.in_domain(t)):
+        return "out_of_domain"
+    return "retained"
 
 
 def profile_drift(old: Release, new: Release, terms: list[str]) -> dict:
@@ -229,11 +334,12 @@ def profile_drift(old: Release, new: Release, terms: list[str]) -> dict:
     NO_USABLE_TERMS (nothing carries IC in both releases), TERM_ONLY (one usable term: IC drift, no pairs),
     NO_INFORMATIVE_PAIRS (2+ terms but every pair shares only the root), RANKABLE (mean/max |dLin| defined)."""
     raw = list(dict.fromkeys(terms))
-    live = usable_terms(old, new, raw)
-    r = {"n_raw_terms": len(raw), "n_retained_terms": len(live),
-         "n_missing_old": sum(1 for t in raw if not old.has(t)), "n_missing_new": sum(1 for t in raw if not new.has(t) and t not in new.alt),
-         "n_obsolete": sum(1 for t in raw if old.obsolete(t) or new.obsolete(t)),
-         "n_out_of_domain": sum(1 for t in raw if old.has(t) and new.has(t) and not old.obsolete(t) and not new.obsolete(t) and not (old.in_domain(t) and new.in_domain(t))),
+    disp = {t: disposition(old, new, t) for t in raw}
+    live = [t for t in raw if disp[t] == "retained"]
+    assert live == usable_terms(old, new, raw)
+    n = lambda k: sum(1 for v in disp.values() if v == k)
+    r = {"n_raw_terms": len(raw), "n_retained_terms": len(live), "n_unknown": n("unknown"), "n_new_only": n("new_only"), "n_missing_new": n("missing_new"),
+         "n_merged_or_alt": n("merged_or_alt"), "n_obsolete": n("obsolete"), "n_out_of_domain": n("out_of_domain"),
          "n_ic_changed": sum(1 for t in live if abs(new.ic(t) - old.ic(t)) > 1e-9),
          "n_pairs": 0, "n_informative_pairs": 0, "n_root_only_pairs": 0, "n_pairs_changed": 0, "n_pairs_abs_delta_gt_0.01": 0, "n_pairs_abs_delta_gt_0.1": 0,
          "mean_abs_dlin": float("nan"), "max_abs_dlin": float("nan")}
@@ -253,10 +359,12 @@ def profile_drift(old: Release, new: Release, terms: list[str]) -> dict:
 
 def read_hpoa(path: str) -> tuple[dict, dict[str, tuple[str, list[str]]]]:
     """phenotype.hpoa -> (metadata, {disease_id: (name, [unique positive phenotypic-abnormality HP ids])}).
-    Keeps aspect P rows only (inheritance/course/modifier rows are not phenotypes), drops qualifier NOT. Every disease is kept, whatever its size."""
-    import hashlib
+    A profile = the unique HP ids of a disease's rows with aspect P and no NOT qualifier (inheritance / course / modifier rows are not
+    phenotypes, negated rows are not present phenotypes). Every disease with at least one such row is kept, whatever its size; a disease id
+    that has only NOT or non-P rows has no positive phenotype profile and is counted in meta['n_diseases_without_positive_P']."""
     raw = Path(path).read_bytes()
-    meta = {"path": str(path), "sha256": hashlib.sha256(raw).hexdigest(), "version": None, "n_rows": 0}
+    meta = {"path": str(path), "sha256": hashlib.sha256(raw).hexdigest(), "version": None, "n_rows": 0, "n_disease_ids_in_file": 0, "n_diseases_without_positive_P": 0}
+    seen: set[str] = set()
     profiles: dict[str, tuple[str, list[str]]] = {}
     for line in raw.decode("utf-8", "replace").splitlines():
         if line.startswith("#"):
@@ -267,12 +375,16 @@ def read_hpoa(path: str) -> tuple[dict, dict[str, tuple[str, list[str]]]]:
             continue
         f = line.split("\t")
         meta["n_rows"] += 1
+        if len(f) >= 11:
+            seen.add(f[0])
         if len(f) < 11 or f[2] == "NOT" or f[10] != "P":
             continue
         name, terms = profiles.get(f[0], (f[1], []))
         if f[3] not in terms:
             terms.append(f[3])
         profiles[f[0]] = (name, terms)
+    meta["n_disease_ids_in_file"] = len(seen)
+    meta["n_diseases_without_positive_P"] = len(seen - set(profiles))
     return meta, profiles
 
 
