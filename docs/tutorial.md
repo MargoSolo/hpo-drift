@@ -6,7 +6,7 @@ This walks through the real run behind the README figures — the HPO-annotated 
 
 `examples/cgd_orpha379_terms.txt`: the 22 phenotypic-abnormality terms annotated to the disease in `phenotype.hpoa`, IDs with the label as a comment. Inheritance, onset and frequency terms are not phenotypes and are left out: they sit outside *Phenotypic abnormality* and carry no IC.
 
-Why this disease? `examples/rank_profiles.py` scores disease profiles by mean |ΔLin| over their informative term pairs between the two releases. Among well-known syndromes CGD ranks first (0.067 against a median of 0.001), and the whole top of the general ranking is inborn errors of immunity: the immunology branch was restructured in this interval.
+Why this disease? `examples/rank_profiles.py` scores every OMIM and Orphanet profile with 12–25 terms (3 901) by mean |ΔLin| over informative pairs; CGD ranks 10th overall and 1st in a list of 30 well-known syndromes declared before ranking (`--subset examples/wellknown_syndromes.txt`). The top of both rankings is inborn errors of immunity: the immunology branch was restructured in this interval.
 
 ## 2. Lint first
 

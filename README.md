@@ -13,7 +13,7 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379), 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. It was chosen by drift: `examples/rank_profiles.py` scores every OMIM profile with 12–18 terms by mean |ΔLin| between the two releases, and the same scoring over well-known syndromes puts CGD at the top. The whole upper part of that ranking is inborn errors of immunity — the immunology branch was restructured in this interval.
+Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379), 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. It was chosen by a declared protocol, not by hand: `examples/rank_profiles.py` scores every OMIM and Orphanet profile with 12–25 terms (3 901 profiles) by mean |ΔLin| between the two releases, and the same script with `--subset examples/wellknown_syndromes.txt` scores a list of 30 well-known syndromes declared before ranking. CGD ranks **10th of 3 901** overall and **1st among the well-known syndromes**. The upper part of both rankings is inborn errors of immunity — the immunology branch was restructured in this interval.
 
 ![Lin similarity drift](docs/lin-drift.png)
 
@@ -25,18 +25,30 @@ What happened to this profile, computed with Seco intrinsic IC on the `is_a` gra
 
 ![Information-content drift](docs/ic-drift.png)
 
-This edit is an *improvement* — the new hierarchy is clinically right — and it still changes how a CGD patient scores against every other disease, for reasons that have nothing to do with the patient. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
+The edit is clinically intuitive: gingivitis and sinusitis now connect more explicitly to the infection hierarchy. But even a sensible ontology improvement changes the numerical representation of a CGD phenotype profile, without anything about the patient changing. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
 
-| rank | disease profile (12–18 terms) | terms | informative pairs moved | mean \|ΔLin\| | max \|ΔLin\| |
-|---|---|---|---|---|---|
-| 1 | Severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971) | 15 | 61 / 61 | 0.085 | 0.604 |
-| 2 | Leukocyte adhesion deficiency, type I (OMIM:116920) | 17 | 51 / 51 | 0.084 | 0.517 |
-| 3 | Severe combined immunodeficiency, AR (OMIM:601457) | 16 | 60 / 60 | 0.082 | 0.561 |
-| 4 | Hypophosphatemic rickets and hyperparathyroidism (OMIM:612089) | 14 | 28 / 28 | 0.071 | 0.924 |
-| 5 | Fanconi renotubular syndrome 5 (OMIM:618913) | 14 | 29 / 29 | 0.065 | 0.924 |
-| … | median of 1 345 profiles | | | 0.001 | |
+| full ranking (3 901 profiles, 12–25 terms) | terms | pairs moved | mean \|ΔLin\| |
+|---|---|---|---|
+| 1 · Pseudohypoparathyroidism type 2 (ORPHA:94090) | 12 | 20 / 20 | 0.209 |
+| 4 · Severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971) | 15 | 61 / 61 | 0.085 |
+| 5 · Leukocyte adhesion deficiency, type I (OMIM:116920) | 17 | 51 / 51 | 0.084 |
+| **10 · Chronic granulomatous disease (ORPHA:379)** | 22 | 95 / 95 | 0.067 |
+| median | | | 0.001 |
 
-Full ranking: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv). Among well-known syndromes: chronic granulomatous disease 0.067, hyper-IgE syndrome 0.047, X-linked agammaglobulinemia 0.033, Wiskott–Aldrich 0.020, cystic fibrosis 0.023 — and, for contrast, Kabuki, Noonan or Marfan profiles did not reach 0.01.
+| well-known syndromes (pre-declared list of 30; 19 with ≥ 12 terms) | terms | pairs moved | mean \|ΔLin\| |
+|---|---|---|---|
+| **1 · Chronic granulomatous disease (ORPHA:379)** | 22 | 95 / 95 | 0.067 |
+| 2 · Hyper-IgE recurrent infection syndrome 1 (OMIM:147060) | 51 | 399 / 399 | 0.047 |
+| 3 · X-linked agammaglobulinemia (OMIM:300755) | 35 | 330 / 330 | 0.033 |
+| 9 · Cystic fibrosis (ORPHA:586) | 35 | 104 / 104 | 0.023 |
+| 17–19 · Noonan, Marfan, Angelman | 43–70 | all | 0.001 |
+
+Reproduce:
+```bash
+python examples/rank_profiles.py v2026-02-16 v2026-06-23 phenotype.hpoa > profiles.csv
+python examples/rank_profiles.py v2026-02-16 v2026-06-23 phenotype.hpoa --subset examples/wellknown_syndromes.txt --max-terms 80 > wellknown.csv
+```
+Outputs as run on 2026-09-03: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv), [`examples/wellknown-v2026-02-16_v2026-06-23.csv`](examples/wellknown-v2026-02-16_v2026-06-23.csv).
 
 ## 30-second start
 

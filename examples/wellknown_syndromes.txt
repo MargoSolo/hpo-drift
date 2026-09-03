@@ -1,0 +1,32 @@
+# Pre-declared subset of well-known Mendelian syndromes for the README example selection (one id per line).
+# Declared before ranking; inborn errors of immunity and common paediatric-genetics syndromes.
+ORPHA:379      # Chronic granulomatous disease
+OMIM:306400    # Chronic granulomatous disease, X-linked
+OMIM:147060    # Hyper-IgE recurrent infection syndrome 1, AD (Job)
+OMIM:300755    # Agammaglobulinemia, X-linked (Bruton)
+OMIM:301000    # Wiskott-Aldrich syndrome
+OMIM:208900    # Ataxia-telangiectasia
+OMIM:603554    # Omenn syndrome
+OMIM:607594    # Immunodeficiency, common variable, 1
+OMIM:601859    # Autoimmune lymphoproliferative syndrome
+OMIM:102700    # Severe combined immunodeficiency due to ADA deficiency
+ORPHA:586      # Cystic fibrosis
+OMIM:147920    # Kabuki syndrome 1
+ORPHA:138      # CHARGE syndrome
+OMIM:163950    # Noonan syndrome 1
+OMIM:154700    # Marfan syndrome
+OMIM:188400    # DiGeorge syndrome
+OMIM:122470    # Cornelia de Lange syndrome 1
+OMIM:312750    # Rett syndrome
+OMIM:176270    # Prader-Willi syndrome
+OMIM:194050    # Williams-Beuren syndrome
+OMIM:270400    # Smith-Lemli-Opitz syndrome
+OMIM:180849    # Rubinstein-Taybi syndrome 1
+OMIM:105830    # Angelman syndrome
+OMIM:117550    # Sotos syndrome 1
+OMIM:135900    # Coffin-Siris syndrome 1
+OMIM:194190    # Wolf-Hirschhorn syndrome
+OMIM:615829    # Xia-Gibbs syndrome
+OMIM:225750    # Aicardi-Goutieres syndrome 1
+OMIM:249100    # Familial Mediterranean fever
+OMIM:260920    # Hyper-IgD syndrome (mevalonate kinase deficiency)
