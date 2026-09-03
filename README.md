@@ -13,15 +13,30 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026, 14 terms of a syndromic neurodevelopmental presentation as a clinical geneticist records it (developmental delay, intellectual disability, seizures, microcephaly, hypotonia, short stature, cleft palate, coloboma, hearing impairment, cryptorchidism, ptosis, hypertelorism, ASD, long palpebral fissures). **None of them changed label, status or direct `is_a` parents.** And yet, with Seco intrinsic IC computed on the `is_a` graph under *Phenotypic abnormality*:
+Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of a real disease** — severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971), 15 phenotypic-abnormality terms straight from `phenotype.hpoa` — and it was chosen by ranking all 1 345 OMIM profiles with 12–18 terms by how much their Lin similarities drifted between the two releases (`examples/rank_profiles.py`). The whole top of that ranking is inborn errors of immunity: the immunology branch was restructured in this interval.
 
 ![Lin similarity drift](docs/lin-drift.png)
 
-**IC moved for 12 of 14 terms, and every pair with an informative common ancestor — 13 of 13 — moved in Lin and Resnik.** The other 78 pairs share only the root and stay at 0. The shifts are small here (largest: Global developmental delay ↔ Intellectual disability, Lin 0.736 → 0.731), and that is the point: small, systematic, and invisible unless the release tag is in your Methods. Ontology-wide the release added 469 terms, obsoleted 22, renamed 266 and rewired the `is_a` graph by +886 / −185 edges. That is what moved your numbers.
+What happened to this profile, computed with Seco intrinsic IC on the `is_a` graph under *Phenotypic abnormality*:
+
+- **4 of 15 terms were re-parented.** New intermediate terms appeared above *Pneumonia*, *Recurrent mucocutaneous candidiasis* and *Decreased total T cell count* (e.g. `HP:5210123` *Unusual lower respiratory tract infection*). And **`HP:0008866` *Failure to thrive secondary to recurrent infections* lost its parents *Recurrent infections* and *Severe infection*.**
+- Consequence: its similarity to every infection term in the profile **collapsed to zero** — *Recurrent mucocutaneous candidiasis* ↔ *Failure to thrive secondary to recurrent infections* went from Lin 0.60 to 0.00 because their most-informative common ancestor became the root.
+- **IC moved for 8 of 15 terms; all 61 informative pairs moved** (44 pairs share only the root). Mean |ΔLin| over informative pairs: **0.085**; the median disease profile in the same ranking: 0.001.
 
 ![Information-content drift](docs/ic-drift.png)
 
-**Consequence for any paper using HPO similarity:** pin the release tag in Methods, match on IDs (266 labels changed in four months), and report how much the numbers depend on the release. `hpo-drift` gives you that sentence with real figures.
+**Consequence for any study using HPO similarity:** a patient with this profile is scored differently by Phenomizer-style tools on the two releases, for reasons that have nothing to do with the patient. Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release. `hpo-drift` gives you that sentence with real figures — and `examples/rank_profiles.py` tells you which disease profiles are most exposed.
+
+| rank | disease profile (OMIM) | terms | informative pairs moved | mean \|ΔLin\| | max \|ΔLin\| |
+|---|---|---|---|---|---|
+| 1 | Severe combined immunodeficiency, AR, T−B+NK+ (608971) | 15 | 61 / 61 | 0.085 | 0.604 |
+| 2 | Leukocyte adhesion deficiency, type I (116920) | 17 | 51 / 51 | 0.084 | 0.517 |
+| 3 | Severe combined immunodeficiency, AR (601457) | 16 | 60 / 60 | 0.082 | 0.561 |
+| 4 | Hypophosphatemic rickets and hyperparathyroidism (612089) | 14 | 28 / 28 | 0.071 | 0.924 |
+| 5 | Fanconi renotubular syndrome 5 (618913) | 14 | 29 / 29 | 0.065 | 0.924 |
+| … | median of 1 345 profiles | | | 0.001 | |
+
+Full ranking: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv).
 
 ## 30-second start
 
@@ -56,10 +71,10 @@ hpo-drift lint --release v2026-06-23 --terms my_terms.txt
 ```
 ```
 ⚠️ Arthritis: matched by LABEL — labels get renamed; store the ID → HP:0001369
-❌ Seizures: label not found (exact match on names/synonyms; the term is 'Seizure')
+❌ Recurrent infection: label not found (exact match on names/synonyms; the term is 'Recurrent infections')
 ❌ HP:0002960: OBSOLETE → replaced_by HP:0025095
 ```
-Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is **exact** on purpose: it reproduces the failure mode of a pipeline that matches by label. In the example set, "Seizures" is not an exact HPO label (the term is *Seizure*) and "Developmental delay" resolves only through a synonym — both are reasons to store IDs, and reasons why fuzzy resolution must suggest, never auto-map.
+Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is **exact** on purpose: it reproduces the failure mode of a pipeline that matches by label. Store IDs, not labels: 266 labels changed in this interval alone, and fuzzy resolution (roadmap) must suggest, never auto-map.
 
 ### 3 · a monthly GitHub Action
 `.github/workflows/drift.yml` fetches the latest release, compares it with your pinned one (`PINNED_HPO`) and uploads the report. Add a threshold on `lin_delta` from the JSON and it becomes a failing check.

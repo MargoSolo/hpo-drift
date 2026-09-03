@@ -4,7 +4,7 @@ This walks through the real run behind the README figures — 14 terms of a synd
 
 ## 1. The term list
 
-`examples/clinical_genetics_terms.txt`, IDs with the label as a comment, plus two label-only lines left in on purpose:
+`examples/scid_omim608971_terms.txt`, IDs with the label as a comment, plus two label-only lines left in on purpose:
 
 ```
 HP:0001263   # Global developmental delay
@@ -18,7 +18,7 @@ Developmental delay             # synonym → resolves, with a warning to store 
 ## 2. Lint first
 
 ```
-hpo-drift lint --release v2026-06-23 --terms examples/clinical_genetics_terms.txt
+hpo-drift lint --release v2026-06-23 --terms examples/scid_omim608971_terms.txt
 ```
 
 Every label match is a warning with the ID to store; unknown labels and obsolete IDs are errors (exit code 1). "Seizures" fails because matching is exact on purpose — the same failure mode a label-matching pipeline has; "Developmental delay" resolves through a synonym to HP:0001263 with a warning.
@@ -26,7 +26,7 @@ Every label match is a warning with the ID to store; unknown labels and obsolete
 ## 3. The report
 
 ```
-hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/clinical_genetics_terms.txt
+hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/scid_omim608971_terms.txt
 ```
 
 The header states the method: Seco 2004 intrinsic IC on the `is_a` graph under root HP:0000118 (Phenotypic abnormality), with N = 18 690 → 19 120 active terms. Then the ontology-wide counts, then your terms:

@@ -1,0 +1,1346 @@
+disease,name,n_terms,ic_moved,informative_pairs,pairs_moved,mean_abs_dlin,max_abs_dlin
+OMIM:608971,"Severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-positive, NK cell-positive",15,8,61,61,0.0846,0.604
+OMIM:116920,"Leukocyte adhesion deficiency, type I",17,10,51,51,0.0841,0.517
+OMIM:601457,"Severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-negative, NK cell-positive",16,7,60,60,0.0823,0.561
+OMIM:612089,Hypophosphatemic rickets and hyperparathyroidism,14,5,28,28,0.0706,0.924
+OMIM:618913,Fanconi renotubular syndrome 5,14,7,29,29,0.065,0.924
+OMIM:614468,Familial cold autoinflammatory syndrome 3,15,7,53,53,0.0647,0.609
+OMIM:620282,Immunodeficiency 109 with lymphoproliferation,15,5,70,70,0.0617,0.318
+OMIM:620670,"Immunodeficiency, common variable, 15",17,9,106,106,0.0599,0.424
+OMIM:619220,Immunodeficiency 78 with autoimmunity and developmental delay,16,5,58,58,0.0534,0.441
+OMIM:614564,"Cutaneous telangiectasia and cancer syndrome, familial",17,11,78,78,0.0477,0.4
+OMIM:614699,"Immunodeficiency, common variable, 7",14,9,54,54,0.0475,0.231
+OMIM:620795,Autoinflammation with episodic fever and immune dysregulation,14,8,39,39,0.0419,0.307
+OMIM:615207,Immunodeficiency 56,16,9,70,70,0.0409,0.319
+OMIM:613496,"Immunodeficiency, common variable, 6",18,8,69,69,0.0399,0.34
+OMIM:615558,"Hypobetalipoproteinemia, familial, 1",14,6,30,30,0.0389,0.141
+OMIM:620679,"Lipodystrophy, familial partial, type 8",12,8,14,14,0.0387,0.165
+OMIM:615897,Immunodeficiency 24,17,11,115,115,0.0384,0.318
+OMIM:615401,Immunodeficiency 8,12,5,37,37,0.038,0.135
+OMIM:607271,"Autoimmune lymphoproliferative syndrome, type IIB",18,12,107,107,0.0371,0.237
+OMIM:618459,Immunodeficiency 62,13,6,68,68,0.0367,0.146
+OMIM:612692,"Agammaglobulinemia 6, autosomal recessive",13,9,66,66,0.0364,0.226
+OMIM:214700,"Diarrhea 1, secretory chloride, congenital",18,10,38,38,0.0359,0.52
+OMIM:620211,"Hyperinsulinemic hypoglycemia, familial, 8",16,9,29,29,0.0357,0.18
+OMIM:615387,"Immunodeficiency 7, TCR-alpha/beta deficient",16,10,61,61,0.0351,0.143
+OMIM:616740,Immunodeficiency 46,12,8,33,33,0.0351,0.11
+OMIM:617638,Immunodeficiency 11B with atopic dermatitis,13,8,59,59,0.0349,0.167
+OMIM:312863,"Combined immunodeficiency, X-linked",12,10,66,66,0.0346,0.242
+OMIM:619281,"Immunodeficiency 14B, autosomal recessive",16,9,90,90,0.0346,0.46
+OMIM:212050,"Candidiasis, familial chronic mucocutaneous, autosomal recessive",17,11,112,112,0.0343,0.234
+OMIM:618495,Immunodeficiency 63 with lymphoproliferation and autoimmunity,17,12,59,59,0.0338,0.143
+OMIM:610984,Complement factor I deficiency,17,9,95,95,0.0337,0.182
+OMIM:609889,"Alpha/beta T-cell lymphopenia with gamma/delta T-cell expansion, severe cytomegalovirus infection, and autoimmunity",14,7,58,58,0.0337,0.441
+OMIM:301081,"Autoinflammatory disease, systemic, X-linked",15,9,76,76,0.0335,0.325
+OMIM:613953,Immunodeficiency 51,18,12,153,153,0.0334,0.156
+OMIM:618982,Immunodeficiency 72 with autoinflammation,12,6,45,45,0.0324,0.147
+OMIM:241600,Immunodeficiency 43,16,8,49,49,0.0314,0.226
+OMIM:620532,"Hyper-IgE syndrome 6, autosomal dominant, with recurrent infections",15,13,50,50,0.0313,0.083
+OMIM:613312,"Hypophosphatemic rickets, autosomal recessive, 2",12,8,15,15,0.0308,0.229
+OMIM:620825,Immunodeficiency 119,15,8,66,66,0.0303,0.136
+OMIM:607676,Immunodeficiency 67,12,10,55,55,0.0303,0.113
+OMIM:620449,Immunodeficiency 112,17,7,120,120,0.0299,0.135
+OMIM:613493,"Immunodeficiency, common variable, 3",13,8,78,78,0.0293,0.105
+OMIM:618108,Immunodeficiency 57,14,7,44,44,0.0289,0.133
+OMIM:619774,Immunodeficiency 96,15,10,43,43,0.0289,0.115
+OMIM:242700,Immune defect due to absence of thymus,15,6,61,61,0.0288,0.299
+OMIM:615160,"Mitochondrial complex III deficiency, nuclear type 5",18,9,49,49,0.0288,0.18
+OMIM:618107,"Osteopetrosis, autosomal dominant 3",12,9,12,12,0.0283,0.276
+OMIM:610163,Immunodeficiency 25,17,10,120,120,0.0281,0.133
+OMIM:618944,"Hyper-IgE recurrent infection syndrome 5, autosomal recessive",13,7,52,52,0.0281,0.115
+OMIM:615513,Immunodeficiency 14,14,6,68,68,0.0277,0.105
+OMIM:217090,"Plasminogen deficiency, type I",18,14,36,36,0.0276,0.34
+OMIM:615607,Immunodeficiency 17,15,8,61,61,0.0275,0.063
+OMIM:618969,Immunodeficiency 70,17,7,63,63,0.0265,0.109
+OMIM:614878,"Autoinflammation, antibody deficiency, and immune dysregulation, plcg2-associated",14,9,31,31,0.0261,0.105
+OMIM:615504,"Ciliary dyskinesia, primary, 27",12,3,42,42,0.0261,0.358
+OMIM:615518,Immunodeficiency 13,14,4,64,64,0.0253,0.131
+OMIM:150550,"Periodic fever, immunodeficiency, and thrombocytopenia syndrome",16,10,51,51,0.0251,0.249
+OMIM:611926,"Immunodeficiency, ovarian dysgenesis, and pulmonary fibrosis",12,9,39,39,0.0251,0.115
+OMIM:601495,"Agammaglobulinemia 1, autosomal recessive",16,8,82,82,0.0249,0.066
+OMIM:616576,"Immunodeficiency, common variable, 12",14,7,40,40,0.0249,0.104
+OMIM:618999,"Autoinflammation, immune dysregulation, and eosinophilia",14,9,35,35,0.0248,0.04
+OMIM:621252,CAOP syndrome,17,10,26,26,0.0236,0.286
+OMIM:615615,Immunodeficiency 18,15,9,105,105,0.0233,0.094
+OMIM:618394,Immunodeficiency 60,18,12,86,86,0.0232,0.115
+OMIM:619375,"Autoinflammatory syndrome, familial, with or without immunodeficiency",17,7,87,87,0.0227,0.048
+OMIM:231100,"Hemochromatosis, neonatal",14,8,26,26,0.0224,0.162
+OMIM:615767,"Immunodeficiency, common variable, 11",13,8,24,24,0.022,0.053
+OMIM:270150,Sjogren syndrome,17,7,35,35,0.0218,0.053
+OMIM:214950,"Bile acid synthesis defect, congenital, 4",16,8,39,39,0.0214,0.15
+OMIM:613313,"Hemochromatosis, type 2B",14,10,16,16,0.0214,0.131
+OMIM:616069,"Inflammatory skin and bowel disease, neonatal, 2",14,11,15,15,0.0213,0.141
+OMIM:613808,"Ciliary dyskinesia, primary, 15",16,6,61,61,0.0207,0.358
+OMIM:616744,"Autoinflammatory syndrome, familial, Behcet-like",14,9,19,19,0.0207,0.044
+OMIM:604278,"Renal tubular acidosis, proximal, with ocular abnormalities and mentalretardation",16,9,28,28,0.0204,0.402
+OMIM:618963,"Immunodeficiency 69, mycobacteriosis",14,9,33,33,0.0198,0.112
+OMIM:617049,"Cholestasis, progressive familial intrahepatic, 5",14,9,34,34,0.0198,0.18
+OMIM:604250,"Hemochromatosis, type 3",16,11,17,17,0.0197,0.131
+OMIM:617827,Immunodeficiency 55,16,14,33,33,0.0191,0.104
+OMIM:608203,Immunodeficiency 73A with defective neutrophil chemotaxix and leukocytosis,12,4,28,28,0.0189,0.177
+OMIM:613470,"Hemolytic anemia, nonspherocytic, due to glucose phosphate isomerasedeficiency",13,7,18,18,0.0189,0.266
+OMIM:619924,"Immunodeficiency 105, severe combined",16,9,104,104,0.0185,0.115
+OMIM:600649,"Carnitine palmitoyltransferase II deficiency, infantile",14,9,22,22,0.0179,0.157
+OMIM:306000,"Glycogen storage disease, type IXa1",15,11,37,37,0.0169,0.168
+OMIM:616037,"Ciliary dyskinesia, primary, 30",17,7,65,65,0.0168,0.358
+OMIM:616278,"Bile acid synthesis defect, congenital, 5",13,9,28,28,0.0168,0.145
+OMIM:613101,"Hemophagocytic lymphohistiocytosis, familial, 5",17,13,59,59,0.0167,0.056
+OMIM:614470,"RAS-associated autoimmune lymphoproliferative syndrome type IV, somatic",17,13,101,101,0.0162,0.064
+OMIM:614935,"Ciliary dyskinesia, primary, 19",13,2,34,34,0.0161,0.358
+OMIM:619374,Immunodeficiency 81,15,5,97,97,0.0161,0.045
+OMIM:609939,"Systemic lupus erythematosus, susceptibility to, 6",12,9,14,14,0.016,0.039
+OMIM:619767,"Pulmonary fibrosis and/or bone marrow failure, telomere-related, 6",13,7,20,20,0.016,0.219
+OMIM:615190,"Dyskeratosis congenita, autosomal recessive 5",12,10,13,13,0.0159,0.056
+OMIM:606763,"Ciliary dyskinesia, primary, 2",13,7,26,26,0.0159,0.301
+OMIM:612526,"Lipodystrophy, congenital generalized, type 3",16,11,27,27,0.0155,0.158
+OMIM:620514,"Immune dysregulation, autoimmunity, and autoinflammation",14,6,36,36,0.0154,0.039
+OMIM:619481,"Bile acid malabsorption, primary, 2",12,0,38,38,0.0154,0.136
+OMIM:617872,Combined oxidative phosphorylation deficiency 34,16,10,30,30,0.0145,0.162
+OMIM:613986,"Pituitary hormone deficiency, combined, 6",13,5,26,26,0.0142,0.18
+OMIM:237300,"Carbamoyl phosphate synthetase I deficiency, hyperammonemia due to",17,10,52,52,0.0141,0.257
+OMIM:193670,Whim syndrome,12,9,24,24,0.0141,0.056
+OMIM:614172,Immunodeficiency 21,16,9,87,87,0.0139,0.038
+OMIM:615505,"Ciliary dyskinesia, primary, 28",12,4,40,40,0.0139,0.358
+OMIM:612840,"Leukocyte adhesion deficiency, type III",17,13,50,50,0.0136,0.108
+OMIM:613095,Polycystic kidney disease 2,18,10,27,27,0.0133,0.15
+OMIM:611762,Familial cold autoinflammatory syndrome 2,18,13,34,34,0.0133,0.045
+OMIM:618116,Bone marrow failure syndrome 4,15,10,22,22,0.013,0.066
+OMIM:604416,"Pyogenic sterile arthritis, pyoderma gangrenosum, and acne",16,6,30,30,0.013,0.04
+OMIM:620137,"Mitochondrial complex III deficiency, nuclear type 11",13,12,22,22,0.0129,0.18
+OMIM:619658,"Cholestasis, progressive familial intrahepatic, 7, with or without hearing loss",12,8,21,21,0.0128,0.151
+OMIM:619350,Visceral myopathy 2,17,6,120,120,0.0127,0.057
+OMIM:612650,"Ciliary dyskinesia, primary, 12",15,6,32,32,0.0121,0.277
+OMIM:608647,"Ciliary dyskinesia, primary, 5",15,5,52,52,0.0121,0.358
+OMIM:245480,Specific granule deficiency,13,4,55,55,0.0118,0.032
+OMIM:620367,"Pulmonary fibrosis and/or bone marrow failure syndrome, telomere-related, 8",18,9,37,37,0.0117,0.161
+OMIM:615500,"Ciliary dyskinesia, primary, 26",15,6,50,50,0.0113,0.358
+OMIM:620680,"Lipodystrophy, congenital generalized, type 5",13,10,32,32,0.0113,0.157
+OMIM:615745,Atrial standstill 2,13,8,45,45,0.0112,0.421
+OMIM:614874,"Ciliary dyskinesia, primary, 18",15,4,40,40,0.0112,0.358
+OMIM:620366,"Osteopetrosis, autosomal recessive 9",14,6,14,14,0.0109,0.131
+OMIM:615444,"Ciliary dyskinesia, primary, 22",17,6,53,53,0.0107,0.358
+OMIM:610910,"Pulmonary alveolar proteinosis, acquired",16,10,62,62,0.0107,0.217
+OMIM:620133,"Dyskeratosis congenita, autosomal recessive 8",18,9,26,26,0.0107,0.035
+OMIM:606069,"Hemochromatosis, type 4",17,14,20,20,0.0107,0.131
+OMIM:614328,"Inflammatory skin and bowel disease, neonatal, 1",13,8,23,23,0.0106,0.042
+OMIM:618398,"T-cell lymphoma, subcutaneous panniculitis-like",12,8,22,22,0.0106,0.043
+OMIM:615285,"Neutropenia, severe congenital, 5, autosomal recessive",13,9,25,25,0.0105,0.05
+OMIM:154276,"Malignant hyperthermia, susceptibility to, 3",12,6,30,30,0.0105,0.143
+OMIM:619183,Proteasome-associated autoinflammatory syndrome 4,16,12,33,33,0.0102,0.057
+OMIM:614204,"Psoriasis 14, pustular",15,10,27,27,0.0102,0.041
+OMIM:618549,"Hepatitis, fulminant viral, susceptibility to",12,6,18,18,0.0102,0.032
+OMIM:253600,"Muscular dystrophy, limb-girdle, type 2A",12,9,32,32,0.0102,0.057
+OMIM:621235,"Autoimmune disease, multisystem, infantile-onset, 5 ",13,7,20,20,0.0101,0.034
+OMIM:301045,"Congenital disorder of glycosylation, type IIr",15,11,25,25,0.0101,0.066
+OMIM:109650,Behcet syndrome,15,4,16,16,0.01,0.032
+OMIM:612444,"Ciliary dyskinesia, primary, 9, with or without situs inversus",14,5,45,45,0.01,0.179
+OMIM:603471,"Citrullinemia, type II, adult-onset",17,7,57,57,0.0099,0.108
+OMIM:261750,Glycogen storage disease type IXb,13,9,25,25,0.0098,0.162
+OMIM:106300,"Spondyloarthropathy, susceptibility to, 1",12,5,22,22,0.0098,0.033
+OMIM:616481,"Ciliary dyskinesia, primary, 32",13,4,39,39,0.0098,0.277
+OMIM:618835,Combined oxidative phosphorylation deficiency 40,14,9,22,22,0.0097,0.178
+OMIM:618839,Combined oxidative phosphorylation deficiency 42,14,9,22,22,0.0097,0.178
+OMIM:618856,"Diabetes, permanent neonatal 2, with or without neurologic features",13,8,18,18,0.0096,0.151
+OMIM:615422,Inclusion body myopathy with early-onset Paget disease with or without frontotemporal dementia 2,13,10,32,32,0.0096,0.057
+OMIM:615237,Congenital short bowel syndrome,14,9,48,48,0.0095,0.026
+OMIM:608068,"Neutrophilic dermatosis, acute febrile",14,5,18,18,0.0094,0.032
+OMIM:603165,"Dermatitis, atopic",18,11,64,64,0.0093,0.043
+OMIM:612714,"Exocrine pancreatic insufficiency, dyserythropoietic anemia, and calvarialhyperostosis",16,9,28,28,0.0092,0.038
+OMIM:613027,Glycogen storage disease IXc,18,13,56,56,0.009,0.168
+OMIM:266150,Pyruvate carboxylase deficiency,16,11,43,43,0.009,0.162
+OMIM:604290,Aceruloplasminemia,15,9,35,35,0.009,0.131
+OMIM:620152,"Hypomagnesemia 7, renal, with or without dilated cardiomyopathy",12,6,14,14,0.0089,0.034
+OMIM:607624,"Griscelli syndrome, type 2",12,8,16,16,0.0086,0.027
+OMIM:620971,"Myopathy with myalgia, increased serum creatine kinase, and with or without episodic rhabdomyolysis 2",16,10,35,35,0.0086,0.057
+OMIM:246400,Letterer-Siwe disease,15,13,17,17,0.0085,0.03
+OMIM:235555,"Bile acid synthesis defect, congenital, 2",12,11,24,24,0.0084,0.028
+OMIM:611376,Mungan syndrome,13,7,19,19,0.0084,0.026
+OMIM:602390,"Hemochromatosis, type 2A",16,12,20,20,0.0084,0.131
+OMIM:620045,Intestinal dysmotility syndrome,14,8,12,12,0.0082,0.025
+OMIM:106100,"Angioedema, hereditary, 1",17,11,26,26,0.0081,0.047
+OMIM:619079,Inflammatory bowel disease (Crohn disease) 30,12,6,66,66,0.0081,0.04
+OMIM:615234,"Anemia, hypochromic microcytic, with iron overload 2",16,10,23,23,0.008,0.131
+OMIM:607765,"Bile acid synthesis defect, congenital, 1",18,12,65,65,0.0079,0.033
+OMIM:174900,Juvenile polyposis syndrome,14,9,38,38,0.0078,0.136
+OMIM:120100,Familial cold inflammatory syndrome 1,18,15,24,24,0.0078,0.042
+OMIM:613490,Alpha-1-Antitrypsin deficiency,16,6,48,48,0.0077,0.255
+OMIM:601847,"Cholestasis, progressive familial intrahepatic 2",13,10,31,31,0.0077,0.026
+OMIM:615883,"Myopathy, tubular aggregate, 2",12,7,25,25,0.0076,0.167
+OMIM:621433,Congenital myopathy 28 with rigid spine,15,10,46,46,0.0075,0.048
+OMIM:254200,Myasthenia gravis,14,10,17,17,0.0075,0.046
+OMIM:107320,"Antiphospholipid syndrome, familial",13,8,37,37,0.0074,0.033
+OMIM:609628,Majeed syndrome,18,13,29,29,0.0074,0.035
+OMIM:211600,"Cholestasis, progressive familial intrahepatic 1",16,13,31,31,0.0073,0.026
+OMIM:617300,Lymphatic malformation 7,15,11,35,35,0.0072,0.029
+OMIM:258360,Onychotrichodysplasia and neutropenia,14,5,34,34,0.0068,0.035
+OMIM:614741,Mitochondrial pyruvate carrier deficiency,18,13,29,29,0.0068,0.162
+OMIM:214900,Cholestasis-Lymphedema syndrome,12,9,27,27,0.0067,0.036
+OMIM:617308,"Bile acid synthesis defect, congenital, 6",13,8,27,27,0.0067,0.141
+OMIM:615139,"Facial dysmorphism, immunodeficiency, livedo, and short stature",13,7,20,20,0.0067,0.041
+OMIM:618849,Bone marrow failure syndrome 6,13,6,20,20,0.0067,0.028
+OMIM:615947,"Hyperlipoproteinemia, type ID",14,8,23,23,0.0067,0.043
+OMIM:270300,Peeling skin syndrome 1,12,10,34,34,0.0066,0.036
+OMIM:609734,"Obesity, early-onset, with adrenal insufficiency and red hair",13,6,31,31,0.0066,0.157
+OMIM:620953,"Methylmalonic aciduria, cblD type",16,10,29,29,0.0065,0.108
+OMIM:617174,"Ehlers-Danlos syndrome, periodontal type, 2",18,9,40,40,0.0065,0.061
+OMIM:619172,Hermansky-Pudlak syndrome 11,16,5,42,42,0.0064,0.223
+OMIM:618635,Siddiqi syndrome,12,10,16,16,0.0063,0.019
+OMIM:246700,Chylomicron retention disease,14,8,20,20,0.0062,0.025
+OMIM:616026,Fanconi renotubular syndrome 4 with maturity-onset diabetes of the young,17,12,71,71,0.0062,0.162
+OMIM:602347,"Cholestasis, progressive familial intrahepatic, 3",15,11,59,59,0.0061,0.027
+OMIM:614325,Pitt-Hopkins-Like syndrome 2,16,9,15,15,0.0061,0.024
+OMIM:619902,Hepatorenocardiac degenerative fibrosis,16,7,39,39,0.006,0.017
+OMIM:608600,"Lipodystrophy, familial partial, type 1",17,11,34,34,0.006,0.157
+OMIM:300555,Dent disease 2,15,8,41,41,0.0059,0.159
+OMIM:612132,Ectodermal dysplasia and immunodeficiency 2,18,10,36,36,0.0059,0.038
+OMIM:619463,"Portal hypertension, noncirrhotic, 2",16,10,33,33,0.0059,0.03
+OMIM:617395,"Congenital disorder of glycosylation, type IIq",12,7,29,29,0.0057,0.131
+OMIM:619868,"Cholestasis, progressive familial intrahepatic, 10",16,7,48,48,0.0057,0.035
+OMIM:608709,"Lipodystrophy, partial, acquired, susceptibility to",14,9,25,25,0.0057,0.035
+OMIM:620365,"Pulmonary fibrosis and/or bone marrow failure syndrome, telomere-related, 7",13,10,11,11,0.0056,0.018
+OMIM:618641,Infantile liver failure syndrome 3,18,16,36,36,0.0056,0.018
+OMIM:215600,"Cirrhosis, familial",14,8,32,32,0.0055,0.022
+OMIM:601198,"Hypocalcemia, autosomal dominant 1",17,8,28,28,0.0055,0.036
+OMIM:615710,Mitchell-Riley syndrome,18,10,97,97,0.0054,0.167
+OMIM:600803,Gallbladder disease 1,12,8,46,46,0.0054,0.014
+OMIM:614482,"Congenital cataracts, hearing loss, and neurodegeneration",14,9,30,30,0.0054,0.131
+OMIM:604484,"Neuropathy, hereditary motor and sensory, Okinawa type",18,14,72,72,0.0053,0.163
+OMIM:616000,Analbuminemia,13,8,12,12,0.0052,0.009
+OMIM:618097,"Microcephaly, growth restriction, and increased sister chromatid exchange 2",13,8,12,12,0.0052,0.035
+OMIM:313850,Thoracoabdominal syndrome,14,11,11,11,0.0051,0.024
+OMIM:602088,Nephronophthisis 2,17,2,30,30,0.0051,0.131
+OMIM:619073,"Vitamin d-dependent rickets, type 3",13,8,25,25,0.0051,0.052
+OMIM:201450,"Acyl-Coa dehydrogenase, medium-chain, deficiency of",18,13,59,59,0.0051,0.172
+OMIM:616860,"Anemia, sideroblastic, 3, pyridoxine-refractory",15,8,35,35,0.0051,0.018
+OMIM:620515,"Neurodevelopmental disorder with motor regression, progressive spastic paraplegia, and oromotor dysfunction",13,11,56,56,0.0049,0.016
+OMIM:618637,Oculopharyngeal myopathy with leukoencephalopathy 1,12,11,15,15,0.0049,0.06
+OMIM:620642,"Ciliary dyskinesia, primary, 53",17,8,68,68,0.0047,0.162
+OMIM:606842,Cardioneuromyopathy with hyaline masses and nemaline rods,13,8,15,15,0.0046,0.052
+OMIM:603278,Focal segmental glomerulosclerosis 1,12,7,20,20,0.0044,0.024
+OMIM:616323,"Myasthenic syndrome, congenital, 3C, associated with acetylcholine receptor deficiency",12,10,14,14,0.0044,0.028
+OMIM:618851,Combined oxidative phosphorylation deficiency 43,13,5,15,15,0.0043,0.024
+OMIM:617341,Cerebroretinal microangiopathy with calcifications and cysts 2,16,12,23,23,0.0042,0.017
+OMIM:620010,"Cholestasis, progressive familial intrahepatic, 12",13,9,22,22,0.0042,0.014
+OMIM:618955,Retinitis pigmentosa 89,13,9,26,26,0.0042,0.017
+OMIM:612649,"Ciliary dyskinesia, primary, 11",13,6,37,37,0.0042,0.057
+OMIM:210500,"Biliary atresia, extrahepatic",12,5,38,38,0.0042,0.018
+OMIM:607602,"Ichthyosis, cyclic, with epidermolytic hyperkeratosis",13,8,78,78,0.0042,0.02
+OMIM:617406,Bardet-Biedl syndrome 21,18,12,47,47,0.0042,0.041
+OMIM:614262,"Arthrogryposis, perthes disease, and upward gaze palsy",12,6,10,10,0.0041,0.034
+OMIM:614500,Cone-Rod dystrophy 16,13,9,66,66,0.0041,0.041
+OMIM:619170,"Mitochondrial complex I deficiency, nuclear type 36",18,9,37,37,0.0041,0.039
+OMIM:608649,Ichthyosis prematurity syndrome,15,8,47,47,0.004,0.036
+OMIM:616249,Long QT syndrome 15,12,5,56,56,0.004,0.107
+OMIM:612718,Cerebral creatine deficiency syndrome 3,16,6,43,43,0.004,0.1
+OMIM:616868,"Diarrhea 8, secretory sodium, congenital",13,4,49,49,0.0039,0.014
+OMIM:105200,"Amyloidosis, familial visceral",13,11,22,22,0.0039,0.031
+OMIM:617020,"Epileptic encephalopathy, early infantile, 38",18,7,50,50,0.0038,0.021
+OMIM:231530,3-Hydroxyacyl-Coa dehydrogenase deficiency,15,10,24,24,0.0038,0.025
+OMIM:604801,"Muscular dystrophy, congenital, 1B",14,6,56,56,0.0038,0.171
+OMIM:194380,Dehydrated hereditary stomatocytosis 1 with or without pseudohyperkalemia and/or perinatal edema,13,7,18,18,0.0038,0.01
+OMIM:614870,Peroxisome biogenesis disorder 6A (Zellweger),13,8,12,12,0.0037,0.027
+OMIM:618224,"Mitochondrial complex I deficiency, nuclear type 3",16,15,48,48,0.0036,0.018
+OMIM:312700,"Retinoschisis 1, X-linked, juvenile",12,8,66,66,0.0036,0.015
+OMIM:619793,Restrictive dermopathy 2,16,11,15,15,0.0035,0.024
+OMIM:618770,"Spastic paraplegia 82, autosomal recessive",14,11,58,58,0.0035,0.02
+OMIM:618567,Mitochondrial DNA depletion syndrome 17,16,10,55,55,0.0035,0.108
+OMIM:607361,Meckel syndrome 3,12,7,20,20,0.0035,0.018
+OMIM:300559,"Muscle glycogenosis, X-linked",18,10,76,76,0.0035,0.178
+OMIM:619228,Developmental delay with dysmorphic facies and dental anomalies,14,14,80,80,0.0035,0.02
+OMIM:619862,"Spinocerebellar ataxia, autosomal recessive 32",17,12,73,73,0.0034,0.161
+OMIM:620201,"Congenital disorder of glycosylation, type IIz",12,7,27,27,0.0034,0.018
+OMIM:609241,"Schindler disease, type I",17,12,38,38,0.0034,0.018
+OMIM:620379,"Spastic paraplegia 89, autosomal recessive",14,12,57,57,0.0034,0.02
+OMIM:619064,"Mitochondrial complex IV deficiency, nuclear type 20",17,7,20,20,0.0034,0.039
+OMIM:251240,Microcephaly with chemotactic defect and transient hypogammaglobulinemia,12,7,17,17,0.0033,0.035
+OMIM:616738,Radioulnar synostosis with amegakaryocytic thrombocytopenia 2,14,8,13,13,0.0033,0.028
+OMIM:616370,Multiple mitochondrial dysfunctions syndrome 4,13,9,32,32,0.0033,0.014
+OMIM:618229,"Mitochondrial complex I deficiency, nuclear type 7",14,12,17,17,0.0033,0.013
+OMIM:615119,"Mitochondrial complex IV deficiency, nuclear type 6",17,15,24,24,0.0033,0.014
+OMIM:204500,"Ceroid lipofuscinosis, neuronal, 2",14,10,40,40,0.0033,0.02
+OMIM:600143,"Ceroid lipofuscinosis, neuronal, 8",13,11,46,46,0.0033,0.02
+OMIM:619423,Combined oxidative phosphorylation deficiency 53,18,14,38,38,0.0032,0.013
+OMIM:610678,Combined oxidative phosphorylation deficiency 4,16,14,30,30,0.0032,0.013
+OMIM:309530,"Intellectual developmental disorder, X-linked 1",15,13,59,59,0.0032,0.02
+OMIM:620342,Cone-rod dystrophy 24,13,9,78,78,0.0032,0.018
+OMIM:300607,Developmental and epileptic encephalopathy 8,13,6,46,46,0.0032,0.018
+OMIM:230350,Galactose epimerase deficiency,16,13,19,19,0.0031,0.009
+OMIM:618165,Bone marrow failure syndrome 5,18,12,18,18,0.0031,0.019
+OMIM:617054,"Striatonigral degeneration, childhood-onset",16,12,52,52,0.0031,0.02
+OMIM:609115,"Limb-girdle muscular dystrophy, type 1G",12,6,36,36,0.0031,0.01
+OMIM:618876,"Epilepsy, progressive myoclonic, 11",15,10,78,78,0.0031,0.02
+OMIM:618331,"Encephalopathy, progressive, early-onset, with episodic rhabdomyolysis",13,9,46,46,0.0031,0.018
+OMIM:616307,Senior-Loken syndrome 8,15,9,19,19,0.003,0.008
+OMIM:619897,"Cardiomyopathy, dilated, 2G",16,3,105,105,0.003,0.036
+OMIM:613376,"Neuronopathy, distal hereditary motor, type IIC",13,7,53,53,0.003,0.011
+OMIM:128235,Dystonia 12,16,9,94,94,0.003,0.161
+OMIM:300476,"Cone-Rod dystrophy, X-linked, 3",14,11,91,91,0.003,0.019
+OMIM:615918,Combined oxidative phosphorylation deficiency 21,12,8,22,22,0.003,0.039
+OMIM:617613,Multiple mitochondrial dysfunctions syndrome 5,16,16,47,47,0.003,0.018
+OMIM:618906,"Intellectual developmental disorder with autistic features and language delay, with or without seizures",18,15,78,78,0.003,0.02
+OMIM:217080,Jalili syndrome,17,11,94,94,0.0029,0.016
+OMIM:601777,Cone-Rod dystrophy 6,13,7,78,78,0.0029,0.017
+OMIM:609165,"Erythroderma, ichthyosiform, congenital reticular",14,12,24,24,0.0029,0.028
+OMIM:238600,Type I hyperlipoproteinemia,14,4,33,33,0.0029,0.009
+OMIM:616645,"Epileptic encephalopathy, early infantile, 34",14,13,79,79,0.0029,0.018
+OMIM:618892,Harderoporphyria,14,6,29,29,0.0028,0.009
+OMIM:618201,"Epileptic encephalopathy, early infantile, 68",15,14,68,68,0.0028,0.018
+OMIM:616834,"Microcephaly, congenital cataract, and psoriasiform dermatitis",18,10,26,26,0.0028,0.034
+OMIM:173800,Poland syndrome,15,6,78,78,0.0028,0.015
+OMIM:619063,"Mitochondrial complex IV deficiency, nuclear type 19",14,6,41,41,0.0028,0.019
+OMIM:601163,"Diaphragmatic defects, limb deficiencies, and ossification defects of skull",14,8,30,30,0.0028,0.024
+OMIM:300908,"Hemolytic anemia, G6PD deficient (favism)",16,8,36,36,0.0028,0.027
+OMIM:255100,Lipid storage myopathy due to flavin adenine dinucleotide synthetase deficiency,15,12,18,18,0.0028,0.028
+OMIM:120970,Cone-Rod dystrophy 2,14,9,91,91,0.0028,0.017
+OMIM:601492,Mucopolysaccharidosis type IX,18,8,60,60,0.0027,0.015
+OMIM:266200,Pyruvate kinase deficiency of red cells,16,7,32,32,0.0027,0.01
+OMIM:621196,"Maturity-onset diabetes of the young, type 12",14,5,17,17,0.0027,0.013
+OMIM:619323,Neurodevelopmental disorder with seizures and gingival overgrowth,18,13,64,64,0.0027,0.018
+OMIM:613752,Hypermethioninemia with deficiency of S-adenosylhomocysteine hydrolase,18,9,22,22,0.0027,0.009
+OMIM:134600,Fanconi renotubular syndrome 1,16,10,57,57,0.0027,0.012
+OMIM:601954,"Muscular dystrophy, limb-girdle, type 2G",16,9,85,85,0.0027,0.012
+OMIM:620636,"Neurodegeneration, childhood-onset, with cerebellar ataxia and cognitive decline",16,14,72,72,0.0027,0.015
+OMIM:619003,"Mitochondrial complex I deficiency, nuclear type 35",15,6,40,40,0.0027,0.039
+OMIM:615369,Develomental and epileptic encephalopathy 94,17,14,136,136,0.0026,0.018
+OMIM:617391,"Epileptic encephalopathy, early infantile, 54",17,14,121,121,0.0026,0.018
+OMIM:616199,Polyglucosan body myopathy 2,12,8,37,37,0.0026,0.011
+OMIM:614970,Joubert syndrome 20,12,9,23,23,0.0026,0.013
+OMIM:617771,Developmental and epileptic encephalopathy 57,15,9,78,78,0.0026,0.018
+OMIM:611726,"Epilepsy, progressive myoclonic 3, with or without intracellular inclusions",16,14,79,79,0.0025,0.018
+OMIM:612843,"Keratosis follicularis spinulosa decalvans, autosomal dominant",18,11,86,86,0.0025,0.038
+OMIM:308800,"Keratosis follicularis spinulosa decalvans, X-linked",18,9,91,91,0.0025,0.038
+OMIM:300919,"Intellectual developmental disorder, X-linked 99",17,13,23,23,0.0025,0.021
+OMIM:613287,"Charcot-Marie-Tooth disease, axonal, type 2N",14,9,37,37,0.0024,0.02
+OMIM:616414,"Autoimmune interstitial lung, joint, and kidney disease",15,8,31,31,0.0024,0.037
+OMIM:600705,Satoyoshi syndrome,18,15,36,36,0.0024,0.027
+OMIM:616629,Senior-Loken syndrome 9,17,12,20,20,0.0024,0.01
+OMIM:619057,Combined oxidative phosphorylation deficiency 51,18,12,16,16,0.0024,0.012
+OMIM:193520,Watson syndrome,15,5,18,18,0.0024,0.007
+OMIM:614038,"Lymphedema, primary, with myelodysplasia",13,7,17,17,0.0024,0.014
+OMIM:614021,"Ventricular tachycardia, catecholaminergic polymorphic, 3",12,6,55,55,0.0024,0.01
+OMIM:185000,Overhydrated hereditary stomatocytosis,13,7,18,18,0.0024,0.009
+OMIM:619851,"Leukodystrophy, hypomyelinating, 24",18,14,79,79,0.0024,0.018
+OMIM:619795,"Osteogenesis imperfecta, type XXII",17,12,47,47,0.0023,0.03
+OMIM:231950,Glutathioninuria,17,12,34,34,0.0023,0.036
+OMIM:613630,Fetal encasement syndrome,18,12,26,26,0.0023,0.024
+OMIM:620014,Lymphatic malformation 12,13,5,20,20,0.0023,0.006
+OMIM:270420,"Diarrhea 3, secretory sodium, congenital, with or without other congenital anomalies",16,9,23,23,0.0023,0.004
+OMIM:300209,"Simpson-Golabi-Behmel syndrome, type 2",16,13,27,27,0.0022,0.008
+OMIM:616589,Adams-Oliver syndrome 6,15,11,29,29,0.0022,0.017
+OMIM:606595,"Charcot-Marie-Tooth disease, axonal, type 2F",15,8,53,53,0.0022,0.015
+OMIM:614582,Combined oxidative phosphorylation deficiency 9,18,11,49,49,0.0022,0.018
+OMIM:614652,"Coenzyme Q10 deficiency, primary, 3",12,9,15,15,0.0022,0.005
+OMIM:620460,Oculopharyngeal muscular dystrophy 2,15,13,20,20,0.0021,0.028
+OMIM:615147,"Retinal dystrophy, iris coloboma, and comedogenic acne syndrome",13,5,37,37,0.0021,0.005
+OMIM:616117,Cardiac conduction disease with or without dilated cardiomyopathy,13,8,78,78,0.0021,0.012
+OMIM:612922,"Hemolytic uremic syndrome, atypical, susceptibility to, 2",12,5,18,18,0.0021,0.011
+OMIM:612923,"Hemolytic uremic syndrome, atypical, susceptibility to, 3",12,5,18,18,0.0021,0.011
+OMIM:612926,"Hemolytic uremic syndrome, atypical, susceptibility to, 6",12,5,18,18,0.0021,0.011
+OMIM:616029,Ectodermal dysplasia/short stature syndrome,13,10,14,14,0.0021,0.011
+OMIM:613388,Fanconi renotubular syndrome 2,17,7,56,56,0.0021,0.005
+OMIM:621260,Short-rib thoracic dysplasia 22 without polydactyly,16,8,33,33,0.0021,0.015
+OMIM:616287,Lethal congenital contracture syndrome 8,15,10,33,33,0.0021,0.024
+OMIM:615348,Nemaline myopathy 8,12,6,15,15,0.0021,0.024
+OMIM:610193,"Arrhythmogenic right ventricular dysplasia, familial, 10",13,5,46,46,0.0021,0.013
+OMIM:615575,"Neuronopathy, distal hereditary motor, type IID",14,7,49,49,0.0021,0.01
+OMIM:618535,"Ectodermal dysplasia 15, Hypohidrotic/hair type",12,8,49,49,0.0021,0.036
+OMIM:614736,Glucocorticoid deficiency 4 with or without mineralocorticoid deficiency,14,7,23,23,0.0021,0.003
+OMIM:614063,N-acetylaspartate deficiency,16,12,72,72,0.002,0.015
+OMIM:616516,"Emery-Dreifuss muscular dystrophy 3, autosomal recessive",12,10,19,19,0.002,0.01
+OMIM:618063,"Ciliary dyskinesia, primary, 38",13,5,25,25,0.002,0.032
+OMIM:619780,Mitochondrial DNA depletion syndrome 20 (MNGIE type),17,12,57,57,0.002,0.051
+OMIM:617547,Retinal dystrophy with or without macular staphyloma,13,8,56,56,0.002,0.005
+OMIM:617119,Bardet-Biedl syndrome 22,13,10,16,16,0.002,0.008
+OMIM:611812,"46,XX sex reversal with dysgenesis of kidneys, adrenals, and lungs",17,9,19,19,0.002,0.006
+OMIM:618198,"Myasthenic syndrome, congenital, 24, presynaptic",18,15,27,27,0.002,0.028
+OMIM:262600,"Pituitary hormone deficiency, combined, 2",14,6,51,51,0.002,0.003
+OMIM:613982,"Osteogenesis imperfecta, type VI",16,12,56,56,0.002,0.008
+OMIM:614963,Leptin receptor deficiency,15,10,41,41,0.002,0.034
+OMIM:601472,"Charcot-Marie-Tooth disease, axonal, type 2D",15,7,63,63,0.002,0.011
+OMIM:305390,"Exudative vitreoretinopathy 2, X-linked",17,7,136,136,0.002,0.011
+OMIM:613115,"Neuropathy, hereditary sensory and autonomic, type IIB",18,9,60,60,0.002,0.011
+OMIM:614900,Diamond-Blackfan anemia 11,18,11,29,29,0.002,0.014
+OMIM:616108,"Retinal dystrophy, juvenile cataracts, and short stature syndrome",15,9,31,31,0.002,0.006
+OMIM:616687,"Charcot-Marie-Tooth disease, axonal, type 2Y",12,5,34,34,0.002,0.01
+OMIM:618511,"Neuropathy, hereditary motor and sensory, type VIC, with optic atrophy",14,10,26,26,0.0019,0.007
+OMIM:617232,"Muscular dystrophy, limb-girdle, autosomal recessive 21",12,7,20,20,0.0019,0.009
+OMIM:616138,Perrault syndrome 5,15,9,17,17,0.0019,0.01
+OMIM:612158,"Cardiomyopathy, dilated, 1AA, with or without LVNC",12,6,66,66,0.0019,0.051
+OMIM:618098,"Progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 5",18,12,27,27,0.0019,0.024
+OMIM:620507,Ichthyosis with erythrokeratoderma,13,9,78,78,0.0019,0.028
+OMIM:161700,"Necrotizing encephalomyelopathy, subacute, of leigh, adult",18,10,42,42,0.0019,0.005
+OMIM:250460,Metaphyseal dysplasia without hypotrichosis,15,14,55,55,0.0019,0.003
+OMIM:615244,"Nephrotic syndrome, type 8",13,8,22,22,0.0019,0.005
+OMIM:612925,"Hemolytic uremic syndrome, atypical, susceptibility to, 5",13,5,23,23,0.0019,0.011
+OMIM:232600,Glycogen storage disease V,13,6,22,22,0.0019,0.01
+OMIM:248190,"Hypomagnesemia 5, renal, with or without ocular involvement",18,10,60,60,0.0019,0.004
+OMIM:618230,"Mitochondrial complex I deficiency, nuclear type 8",15,11,25,25,0.0019,0.013
+OMIM:617671,Helix syndrome,14,5,15,15,0.0019,0.006
+OMIM:158300,"Arthrogryposis, distal, type 7",17,11,53,53,0.0019,0.028
+OMIM:600794,"Neuronopathy, distal hereditary motor, type VA",14,7,57,57,0.0019,0.011
+OMIM:202200,Glucocorticoid deficiency 1,14,11,13,13,0.0019,0.003
+OMIM:216100,Cleft lip/palate with abnormal thumbs and microcephaly,16,12,23,23,0.0019,0.006
+OMIM:620651,"Diabetes, deafness, developmental delay, and short stature syndrome",14,8,25,25,0.0019,0.003
+OMIM:617219,"Chromosome 19q13.11 deletion syndrome, proximal",16,13,18,18,0.0018,0.004
+OMIM:619751,Stuve-Wiedemann syndrome 2,15,14,19,19,0.0018,0.002
+OMIM:212550,Optic disc anomalies with retinal and/or macular dystrophy,13,10,78,78,0.0018,0.006
+OMIM:619814,Developmental and epileptic encephalopathy 101,16,9,37,37,0.0018,0.024
+OMIM:164900,Ophthalmomandibulomelic dysplasia,14,8,54,54,0.0018,0.003
+OMIM:608895,"Macular degeneration, age-related, 3",12,10,13,13,0.0018,0.003
+OMIM:618728,"Spondyloepimetaphyseal dysplasia, Isidor-Toutain type",12,10,37,37,0.0018,0.002
+OMIM:601154,"Cardiomyopathy, dilated, 1E",15,10,105,105,0.0018,0.011
+OMIM:158320,Muir-Torre syndrome,12,3,58,58,0.0018,0.01
+OMIM:112200,Blue rubber bleb nevus,14,9,18,18,0.0018,0.003
+OMIM:133780,Exudative vitreoretinopathy 1,16,9,105,105,0.0018,0.01
+OMIM:609040,"Arrhythmogenic right ventricular dysplasia, familial, 9",12,6,55,55,0.0018,0.01
+OMIM:614213,"Neuropathy, hereditary sensory, type IIC",14,9,38,38,0.0018,0.01
+OMIM:618373,"Cancer, alopecia, pigment dyscrasia, onychodystrophy, and keratoderma",13,9,57,57,0.0018,0.008
+OMIM:310490,Cowchock syndrome,14,11,22,22,0.0018,0.013
+OMIM:156510,Metaphyseal dysplasia with maxillary hypoplasia and brachydactyly,14,7,46,46,0.0018,0.008
+OMIM:278720,"Xeroderma pigmentosum, group C",16,12,52,52,0.0018,0.009
+OMIM:614619,Hyperekplexia 2,14,9,22,22,0.0018,0.01
+OMIM:615658,"Spastic paraplegia 57, autosomal recessive",13,10,38,38,0.0018,0.009
+OMIM:300673,"Encephalopathy, neonatal severe, due to mecp2 mutations",18,13,52,52,0.0018,0.024
+OMIM:614618,Hyperekplexia 3,14,8,21,21,0.0018,0.01
+OMIM:617239,"Myasthenic syndrome, congenital, 21, presynaptic",17,14,21,21,0.0018,0.024
+OMIM:300200,"Adrenal hypoplasia, congenital",18,12,50,50,0.0018,0.003
+OMIM:183600,Split-Hand/foot malformation 1,14,12,37,37,0.0018,0.002
+OMIM:614135,"Epiphyseal dysplasia, multiple, 6",14,7,79,79,0.0018,0.008
+OMIM:615198,Osteosclerotic metaphyseal dysplasia,12,9,21,21,0.0018,0.004
+OMIM:186000,Synpolydactyly 1,13,8,78,78,0.0017,0.002
+OMIM:615631,"Anemia, congenital dyserythropoietic, type Ib",15,12,28,28,0.0017,0.009
+OMIM:102510,Acropectorovertebral dysplasia,13,7,56,56,0.0017,0.003
+OMIM:600969,"Epiphyseal dysplasia, multiple, 3, with or without myopathy",14,10,56,56,0.0017,0.002
+OMIM:616689,Dehydrated hereditary stomatocytosis 2,12,5,31,31,0.0017,0.009
+OMIM:616298,Singleton-Merten syndrome 2,12,9,14,14,0.0017,0.002
+OMIM:615578,Combined oxidative phosphorylation deficiency 18,18,10,24,24,0.0017,0.004
+OMIM:229700,"Fructose-1,6-bisphosphatase deficiency",16,13,24,24,0.0017,0.003
+OMIM:256710,Elejalde disease,13,11,20,20,0.0017,0.008
+OMIM:302802,"Charcot-Marie-Tooth disease, X-linked recessive, 3",13,10,33,33,0.0017,0.003
+OMIM:612576,"Chromosome 17p13.3, telomeric, duplication syndrome",17,11,135,135,0.0017,0.002
+OMIM:619345,"Dysostosis multiplex, Ain-Naz type",14,7,37,37,0.0017,0.002
+OMIM:609220,Bruck syndrome 2,16,8,82,82,0.0017,0.008
+OMIM:615185,"Charcot-Marie-Tooth disease, dominant intermediate F",16,10,69,69,0.0017,0.011
+OMIM:182600,"Spastic paraplegia 3, autosomal dominant",18,12,71,71,0.0017,0.009
+OMIM:268315,"Rod-cone dystrophy, sensorineural deafness, and Fanconi-type renal dysfunction",17,11,28,28,0.0017,0.004
+OMIM:601356,"Lethal short-limb skeletal dysplasia, al Gazali type",12,6,40,40,0.0017,0.002
+OMIM:610474,"Camptodactyly, tall stature, and hearing loss syndrome",15,13,41,41,0.0017,0.004
+OMIM:620402,"Neuronopathy, distal hereditary motor, autosomal recessive 9",15,9,46,46,0.0017,0.006
+OMIM:301014,"Osteogenesis imperfecta, type XIX",16,12,79,79,0.0017,0.002
+OMIM:300905,"Charcot-Marie-Tooth disease, X-linked dominant, 6",12,6,32,32,0.0017,0.009
+OMIM:612847,Brachyolmia 4 with mild epiphyseal and metaphyseal changes,13,10,29,29,0.0017,0.002
+OMIM:613581,Retinitis pigmentosa 56,12,9,66,66,0.0017,0.003
+OMIM:266100,"Epilepsy, pyridoxine-dependent",16,12,38,38,0.0017,0.012
+OMIM:600072,Fatal familial insomnia,16,12,37,37,0.0017,0.026
+OMIM:184100,"Spondyloepiphyseal dysplasia tarda, autosomal dominant",16,8,106,106,0.0017,0.005
+OMIM:226900,"Epiphyseal dysplasia, multiple, 4",13,8,51,51,0.0017,0.002
+OMIM:607078,"Epiphyseal dysplasia, multiple, 5",18,10,106,106,0.0017,0.002
+OMIM:619131,Osteogenesis imperfecta 21,18,13,100,100,0.0017,0.002
+OMIM:612281,"Ichthyosis, congenital, autosomal recessive 6",12,7,55,55,0.0017,0.006
+OMIM:618392,"Spondyloepiphyseal dysplasia, Kondo-Fu type",18,10,33,33,0.0017,0.002
+OMIM:176200,Porphyria variegata,12,8,15,15,0.0017,0.004
+OMIM:184255,"Spondylometaphyseal dysplasia, corner Fracture type",13,6,55,55,0.0017,0.002
+OMIM:619111,Coach syndrome 2,18,11,31,31,0.0017,0.009
+OMIM:618435,"Arthrogryposis, distal, type 2B2",16,7,90,90,0.0017,0.002
+OMIM:610797,"Epiphyseal dysplasia, Baumann type",15,11,87,87,0.0017,0.002
+OMIM:123700,"Cutis laxa, autosomal dominant 1",18,8,33,33,0.0017,0.022
+OMIM:619638,"Spondylometaphyseal dysplasia, Pagnamenta type",15,10,61,61,0.0017,0.002
+OMIM:616468,Exudative vitreoretinopathy 6,17,12,136,136,0.0017,0.002
+OMIM:278740,"Xeroderma pigmentosum, complementation group E",13,10,24,24,0.0017,0.008
+OMIM:616295,"Peeling skin with leukonychia, acral punctate keratoses, cheilitis, and knuckle pads",17,8,94,94,0.0017,0.006
+OMIM:264350,"Pseudohypoaldosteronism, type I, autosomal recessive",14,9,16,16,0.0017,0.003
+OMIM:275100,"Hypothyroidism, congenital, nongoitrous, 4",16,6,20,20,0.0017,0.005
+OMIM:617162,"Epileptic encephalopathy, early infantile, 46",18,12,51,51,0.0017,0.028
+OMIM:144750,"Hyperostosis, endosteal",13,7,25,25,0.0016,0.002
+OMIM:617184,"Mitochondrial DNA depletion syndrome 12A (cardiomyopathic type), autosomal dominant",13,9,30,30,0.0016,0.003
+OMIM:618314,"Hypomagnesemia, seizures, and impaired intellectual development 2",13,9,32,32,0.0016,0.006
+OMIM:611126,"Mitochondrial complex I deficiency, nuclear type 20",18,14,34,34,0.0016,0.004
+OMIM:120200,"Coloboma, ocular",13,9,45,45,0.0016,0.002
+OMIM:143200,Wagner vitreoretinopathy,12,9,66,66,0.0016,0.003
+OMIM:621018,"Basal ganglia calcification, idiopathic, 10, autosomal recessive",15,10,58,58,0.0016,0.03
+OMIM:614464,Joubert syndrome 15,15,10,27,27,0.0016,0.007
+OMIM:611040,"Microphthalmia, isolated 5",14,8,91,91,0.0016,0.003
+OMIM:609223,"Spondyloepiphyseal dysplasia tarda, autosomal recessive, leroy-sprangertype",14,9,91,91,0.0016,0.002
+OMIM:617784,"Fanconi anemia, complementation group W",16,11,20,20,0.0016,0.003
+OMIM:615434,Retinitis pigmentosa with or without situs inversus,12,7,13,13,0.0016,0.003
+OMIM:620303,"Pituitary hormone deficiency, combined or isolated, 8",15,4,58,58,0.0016,0.003
+OMIM:114000,Caffey disease,13,5,66,66,0.0016,0.002
+OMIM:612776,Hypoglossia with situs inversus,14,6,19,19,0.0016,0.011
+OMIM:303100,Choroideremia,13,8,78,78,0.0016,0.004
+OMIM:301071,"Thrombophilia 13, X-linked, due to factor VIII defect",15,8,53,53,0.0016,0.011
+OMIM:607634,"Osteopetrosis, autosomal dominant 1",13,6,39,39,0.0016,0.003
+OMIM:610313,Cold-Induced sweating syndrome 2,12,6,22,22,0.0016,0.002
+OMIM:616366,"Epileptic encephalopathy, early infantile, 32",12,9,55,55,0.0016,0.004
+OMIM:617044,"Short stature, developmental delay, and congenital heart defects",17,13,37,37,0.0016,0.01
+OMIM:193530,Weyers acrofacial dysostosis,12,7,12,12,0.0016,0.002
+OMIM:613341,Leber congenital amaurosis 14,12,7,46,46,0.0016,0.006
+OMIM:203400,Corticosterone methyloxidase type I deficiency,12,7,13,13,0.0016,0.002
+OMIM:166220,"Osteogenesis imperfecta, type IV",15,8,56,56,0.0016,0.002
+OMIM:621091,Ocular pterygium-digital keloid dysplasia syndrome,16,12,34,34,0.0016,0.003
+OMIM:301148,Retinitis pigmentosa 99,12,6,66,66,0.0016,0.003
+OMIM:613750,Retinitis pigmentosa 27,13,9,78,78,0.0016,0.003
+OMIM:228900,Fibular hypoplasia and complex brachydactyly,15,12,79,79,0.0016,0.002
+OMIM:609324,"Epiphyseal dysplasia, multiple, with severe proximal femoral dysplasia",14,5,62,62,0.0016,0.002
+OMIM:603194,"Meckel syndrome, type 2",15,12,28,28,0.0016,0.004
+OMIM:620639,"Osteogenesis imperfecta, type XXIII",15,10,46,46,0.0016,0.002
+OMIM:601813,Exudative vitreoretinopathy 4,12,5,55,55,0.0016,0.002
+OMIM:615085,"Osteopetrosis, autosomal recessive 8",13,10,13,13,0.0016,0.004
+OMIM:620438,"Ciliary dyskinesia, primary, 51",14,4,32,32,0.0016,0.008
+OMIM:274300,"Thyroid hormone resistance, generalized, autosomal recessive",18,8,32,32,0.0016,0.003
+OMIM:113500,Brachyolmia type 3,13,8,46,46,0.0016,0.002
+OMIM:126550,Calvarial doughnut lesions with bone fragility,12,7,22,22,0.0016,0.002
+OMIM:270750,Spastic paraplegia 23,17,11,50,50,0.0016,0.01
+OMIM:616583,"Spondyloepiphyseal dysplasia, Stanescu type",14,9,55,55,0.0016,0.002
+OMIM:132450,"Epiphyseal dysplasia, multiple, with myopia and conductive deafness",13,8,15,15,0.0016,0.002
+OMIM:308990,"Proteinuria, low molecular weight, with hypercalciuric nephrocalcinosis",14,7,73,73,0.0016,0.006
+OMIM:612447,"Skeletal defects, genital hypoplasia, and impaired intellectual development",16,12,41,41,0.0016,0.008
+OMIM:612335,"Spastic paraplegia 38, autosomal dominant",14,8,60,60,0.0016,0.01
+OMIM:604369,Salla disease,17,16,43,43,0.0016,0.005
+OMIM:166600,"Osteopetrosis, autosomal dominant 2",13,5,45,45,0.0016,0.002
+OMIM:200500,Acheiropody,15,8,105,105,0.0016,0.002
+OMIM:118650,"Chondrodysplasia punctata, autosomal dominantchondrodysplasia punctata due to vitamin K deficiency, included",13,6,20,20,0.0016,0.002
+OMIM:605274,"Mesomelic dysplasia, Savarirayan type",18,10,99,99,0.0016,0.002
+OMIM:615703,Morbid obesity and spermatogenic failure,16,11,30,30,0.0016,0.002
+OMIM:187760,Thoracolaryngopelvic dysplasia,12,5,45,45,0.0016,0.002
+OMIM:611377,"Brachydactyly, type B2",17,15,91,91,0.0016,0.002
+OMIM:618811,Mitochondrial DNA depletion syndrome 18,17,11,33,33,0.0016,0.01
+OMIM:184095,"Spondyloepiphyseal dysplasia, Maroteaux type",17,11,69,69,0.0016,0.002
+OMIM:618725,Intellectual developmental disorder with behavioral abnormalities and craniofacial dysmorphism with or without seizures,15,13,38,38,0.0016,0.005
+OMIM:618889,Liberfarb syndrome,12,11,15,15,0.0016,0.004
+OMIM:610967,"Osteogenesis imperfecta, type V",18,10,96,96,0.0016,0.002
+OMIM:602540,"Ichthyosis, hystrix-like, with deafness",15,10,69,69,0.0016,0.033
+OMIM:612961,Multiple synostoses syndrome 3,12,8,46,46,0.0016,0.002
+OMIM:309620,Christianson syndrome,12,7,17,17,0.0016,0.002
+OMIM:278750,"Xeroderma pigmentosum, variant type",15,12,39,39,0.0016,0.008
+OMIM:169550,Pelvis-Shoulder dysplasia,14,10,34,34,0.0016,0.002
+OMIM:165800,"Short stature and advanced bone age, with or without early-onset osteoarthritis and/or osteochondritis dissecans",15,6,60,60,0.0016,0.002
+OMIM:130020,"Ehlers-danlos syndrome, Hypermobility type",12,10,18,18,0.0016,0.002
+OMIM:228600,Hyaline fibromatosis syndrome,17,11,17,17,0.0016,0.006
+OMIM:201910,"Adrenal hyperplasia, congenital, due to 21-hydroxylase deficiency",12,8,10,10,0.0016,0.003
+OMIM:600972,"Achondrogenesis, type IB",16,9,35,35,0.0016,0.005
+OMIM:617994,"Tumoral calcinosis, hyperphosphatemic, familial, 3",15,4,21,21,0.0016,0.003
+OMIM:618857,"Diabetes mellitus, permanent neonatal 3, with or without neurologic features",12,8,15,15,0.0015,0.002
+OMIM:250400,"Metaphyseal chondrodysplasia, Spahr type",14,9,47,47,0.0015,0.002
+OMIM:309549,"Intellectual developmental disorder, X-linked 9",16,9,51,51,0.0015,0.005
+OMIM:186570,Tarsal-Carpal coalition syndrome,14,10,66,66,0.0015,0.002
+OMIM:617350,"Epileptic encephalopathy, early infantile, 52",13,10,67,67,0.0015,0.004
+OMIM:239500,"Hyperprolinemia, type I",18,13,73,73,0.0015,0.005
+OMIM:227270,"Faciocardiomelic dysplasia, lethal",14,11,44,44,0.0015,0.002
+OMIM:615633,Short-Rib thoracic dysplasia 11 with or without polydactyly,16,10,30,30,0.0015,0.005
+OMIM:620461,"Encephalopathy, acute, infection-induced, susceptibility to, 12",15,10,25,25,0.0015,0.003
+OMIM:180300,Rheumatoid arthritis,16,7,29,29,0.0015,0.002
+OMIM:612001,Chromosome 15q13.3 microdeletion syndrome,16,11,22,22,0.0015,0.004
+OMIM:614841,Hypogonadotropic hypogonadism 12 with or without anosmia,13,5,31,31,0.0015,0.003
+OMIM:605021,"Myoclonic epilepsy, familial infantile",13,11,78,78,0.0015,0.004
+OMIM:608908,Myopia 6,15,12,15,15,0.0015,0.005
+OMIM:619970,Developmental and epileptic encephalopathy 104,18,13,120,120,0.0015,0.005
+OMIM:251255,Jawad syndrome,15,8,47,47,0.0015,0.004
+OMIM:602200,Ventriculomegaly with defects of the radius and kidney,12,9,15,15,0.0015,0.008
+OMIM:620512,"Spastic paraplegia 18A, autosomal dominant",14,11,51,51,0.0015,0.002
+OMIM:614820,Alternating hemiplegia of childhood 2,14,13,67,67,0.0015,0.004
+OMIM:149000,Klippel-Trenaunay-Weber syndrome,14,13,14,14,0.0015,0.002
+OMIM:300928,"Intellectual developmental disorder, X-linked 101",12,8,14,14,0.0015,0.004
+OMIM:112600,"Brachydactyly, type A2",15,7,105,105,0.0015,0.002
+OMIM:601427,"Anterior chamber cleavage disorder, cerebellar hypoplasia, hypothyroidism, and tracheal stenosis",16,11,17,17,0.0015,0.003
+OMIM:309510,Partington syndrome,13,11,48,48,0.0015,0.005
+OMIM:619468,Nephronophthisis-like nephropathy 2,12,5,17,17,0.0015,0.006
+OMIM:620570,"Ciliary dyskinesia, primary, 52",18,8,83,83,0.0015,0.024
+OMIM:149400,Hyperekplexia 1,12,6,21,21,0.0015,0.002
+OMIM:615871,"Epileptic encephalopathy, early infantile, 24",13,10,78,78,0.0015,0.004
+OMIM:621280,Retinitis pigmentosa 100,17,10,105,105,0.0015,0.003
+OMIM:620968,Microphthalmia/coloboma 13,18,15,136,136,0.0015,0.003
+OMIM:217085,"Congenital heart defects, hamartomas of tongue, and polysyndactyly",13,7,15,15,0.0015,0.004
+OMIM:618425,Neurodevelopmental disorder with impaired speech and hyperkinetic movements,14,11,69,69,0.0015,0.005
+OMIM:604187,"Spastic paraplegia 10, autosomal dominant",18,11,74,74,0.0015,0.01
+OMIM:617662,"Joint laxity, short stature, and myopia",16,10,31,31,0.0015,0.002
+OMIM:619115,Combined osteogenesis imperfecta and Ehlers-Danlos syndrome 1,15,9,30,30,0.0015,0.002
+OMIM:614814,Adams-Oliver syndrome 3,12,6,26,26,0.0015,0.004
+OMIM:613835,Leber congenital amaurosis 8,13,6,66,66,0.0015,0.002
+OMIM:234500,Hartnup disorder,17,9,56,56,0.0015,0.005
+OMIM:615705,"Spinocerebellar ataxia, autosomal recessive 15",17,15,106,106,0.0015,0.005
+OMIM:606631,"Camurati-engelmann disease, type 2",16,10,32,32,0.0015,0.003
+OMIM:266130,Glutathione synthetase deficiency,13,7,25,25,0.0015,0.002
+OMIM:177735,"Pseudohypoaldosteronism, type I, autosomal dominant",13,8,15,15,0.0015,0.003
+OMIM:112350,Weismann-Netter syndrome,12,4,38,38,0.0015,0.002
+OMIM:300850,"Intellectual developmental disorder, X-linked 90",14,9,24,24,0.0015,0.005
+OMIM:618436,"Arthrogryposis, distal, type 2B3",12,6,20,20,0.0015,0.002
+OMIM:118651,"Chondrodysplasia punctata, Tibia-Metacarpal type",13,6,58,58,0.0015,0.002
+OMIM:146300,"Hypophosphatasia, adult",13,7,25,25,0.0015,0.002
+OMIM:612291,Joubert syndrome 8,18,12,41,41,0.0015,0.009
+OMIM:612285,Joubert syndrome 9,17,12,38,38,0.0015,0.005
+OMIM:616544,Retinitis pigmentosa 73,17,9,136,136,0.0015,0.003
+OMIM:614018,"Epilepsy, progressive myoclonic, 6",16,15,78,78,0.0015,0.002
+OMIM:609465,Al-Gazali syndrome,16,7,27,27,0.0015,0.002
+OMIM:616330,"Myasthenic syndrome, congenital, 18",13,10,37,37,0.0015,0.002
+OMIM:618453,Intellectual developmental disorder with short stature and variable skeletal anomalies,14,11,31,31,0.0015,0.004
+OMIM:241510,"Hypophosphatasia, childhood",18,8,35,35,0.0015,0.002
+OMIM:309541,"Methylmalonic acidemia and homocysteinemia, Cblx type",18,11,55,55,0.0015,0.012
+OMIM:617601,"Intellectual developmental disorder, autosomal dominant 46",14,10,55,55,0.0015,0.005
+OMIM:243500,Isovaleric acidemia,18,10,41,41,0.0015,0.002
+OMIM:617171,"Dyskinesia, seizures, and intellectual developmental disorder",16,12,91,91,0.0015,0.005
+OMIM:614524,Fibrochondrogenesis 2,18,11,103,103,0.0015,0.002
+OMIM:615376,"Charcot-Marie-Tooth disease, recessive intermediate C",12,6,22,22,0.0015,0.003
+OMIM:615363,Estrogen resistance,15,7,17,17,0.0015,0.003
+OMIM:619217,"Endove syndrome, Limb-Only type",14,4,39,39,0.0015,0.002
+OMIM:614257,Chromosome 20q11-q12 deletion syndrome,18,9,31,31,0.0015,0.004
+OMIM:617831,"Intellectual developmental disorder, autosomal dominant 55, with seizures",17,16,136,136,0.0015,0.005
+OMIM:201250,"Acromesomelic dysplasia, Hunter-Thompson type",17,9,120,120,0.0015,0.002
+OMIM:605376,"Heterotaxy, visceral, 2, autosomal",14,8,52,52,0.0015,0.011
+OMIM:615159,"Mitochondrial complex III deficiency, nuclear type 4",14,9,47,47,0.0015,0.004
+OMIM:608323,"Charcot-Marie-Tooth disease, dominant intermediate C",13,10,33,33,0.0015,0.011
+OMIM:616531,"Polymicrogyria, perisylvian, with cerebellar hypoplasia and arthrogryposis",16,9,37,37,0.0015,0.002
+OMIM:618252,"Mitochondrial complex I deficiency, nuclear type 32",15,9,18,18,0.0015,0.002
+OMIM:608257,"Mandibulofacial dysostosis with ptosis, autosomal dominant",13,8,23,23,0.0015,0.014
+OMIM:613661,"Congenital disorder of glycosylation, type Ip",18,11,27,27,0.0015,0.006
+OMIM:133701,"Exostoses, multiple, type II",13,4,46,46,0.0015,0.002
+OMIM:615984,Bardet-Biedl syndrome 7,13,7,16,16,0.0015,0.002
+OMIM:617836,Developmental delay and seizures with or without movement abnormalities,16,12,79,79,0.0015,0.005
+OMIM:610023,"Brachydactyly, coloboma, and anterior segment dysgenesis",12,9,18,18,0.0015,0.002
+OMIM:211900,"Tumoral calcinosis, hyperphosphatemic, familial, 1",17,7,25,25,0.0015,0.002
+OMIM:133700,"Exostoses, multiple, type I",13,4,46,46,0.0015,0.002
+OMIM:303110,Xq21 deletion syndrome,13,10,19,19,0.0014,0.004
+OMIM:600361,Hereditary motor and sensory neuropathy V,18,12,67,67,0.0014,0.003
+OMIM:265120,"Surfactant metabolism dysfunction, pulmonary, 1",15,10,66,66,0.0014,0.006
+OMIM:400044,46XY sex reversal 1,15,8,61,61,0.0014,0.003
+OMIM:618103,"Intellectual developmental disorder, autosomal recessive 64",12,10,47,47,0.0014,0.004
+OMIM:619180,"Microcephaly 27, primary, autosomal dominant",18,7,52,52,0.0014,0.002
+OMIM:620265,"Congenital myopathy 2B, severe infantile, autosomal recessive",15,8,31,31,0.0014,0.028
+OMIM:615553,"Arthrogryposis, impaired intellectual development, and seizures",14,11,51,51,0.0014,0.004
+OMIM:613861,Retinitis pigmentosa 59,17,14,17,17,0.0014,0.004
+OMIM:615960,Poretti-Boltshauser syndrome,18,16,65,65,0.0014,0.006
+OMIM:620065,"Developmental delay, behavioral abnormalities, and neuropsychiatric disorders",16,11,58,58,0.0014,0.005
+OMIM:615155,Steel syndrome,18,10,47,47,0.0014,0.002
+OMIM:271630,"Brachyolmia type 1, Toledo type",16,8,78,78,0.0014,0.002
+OMIM:620448,"Megalencephalic leukoencephalopathy with subcortical cysts 4, remitting",15,12,81,81,0.0014,0.004
+OMIM:210740,Bangstad syndrome,13,7,10,10,0.0014,0.003
+OMIM:616111,"Mitochondrial complex III deficiency, nuclear type 9",15,11,28,28,0.0014,0.002
+OMIM:130010,"Ehlers-Danlos syndrome, classic type, 2",18,10,66,66,0.0014,0.005
+OMIM:616267,Ataxia-oculomotor apraxia 4,15,11,58,58,0.0014,0.009
+OMIM:617384,"Hyperphenylalaninemia, MILD, non-bh4-deficient",14,8,42,42,0.0014,0.004
+OMIM:619352,"Ataxia, intention tremor, and hypotonia syndrome, childhood-onset",12,8,17,17,0.0014,0.002
+OMIM:620712,Polydactyly-macrocephaly syndrome,18,13,23,23,0.0014,0.002
+OMIM:617829,"Epileptic encephalopathy, infantile or early childhood, 2",17,14,105,105,0.0014,0.004
+OMIM:616921,"Dyskinesia, limb and orofacial, infantile-onset",14,8,46,46,0.0014,0.002
+OMIM:613640,"Neuropathy, hereditary sensory and autonomic, type IC",17,9,57,57,0.0014,0.01
+OMIM:613668,"Microcephaly, postnatal progressive, with seizures and brain atrophy",15,10,69,69,0.0014,0.028
+OMIM:619033,Vissers-Bodmer syndrome,17,16,38,38,0.0014,0.005
+OMIM:619966,"Spastic paraplegia 87, autosomal recessive",15,11,70,70,0.0014,0.004
+OMIM:302801,"Charcot-Marie-Tooth disease, X-linked recessive, 2",12,8,27,27,0.0014,0.003
+OMIM:618808,Intellectual developmental disorder with poor growth and with or without seizures or ataxia,14,8,46,46,0.0014,0.004
+OMIM:617938,Developmental and epileptic encephalopathy 62,16,10,69,69,0.0014,0.024
+OMIM:614837,Hypogonadotropic hypogonadism 8 with or without anosmia,14,5,28,28,0.0014,0.003
+OMIM:184460,Stapes ankylosis with broad thumb and toes,14,8,24,24,0.0014,0.002
+OMIM:620417,"Spastic paraplegia 90B, autosomal recessive",18,12,45,45,0.0014,0.004
+OMIM:300915,"Microphthalmia, syndromic 13",14,11,26,26,0.0014,0.004
+OMIM:607876,"Epilepsy, familial adult myoclonic, 2",14,9,91,91,0.0014,0.002
+OMIM:610329,Aicardi-Goutieres syndrome 3,18,14,63,63,0.0014,0.025
+OMIM:607682,"Epilepsy, idiopathic generalized, susceptibility to, 9",18,10,120,120,0.0014,0.002
+OMIM:609308,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 1",17,10,69,69,0.0014,0.01
+OMIM:618760,Neurodevelopmental disorder with hypotonia and autistic features with or without hyperkinetic movements,15,12,78,78,0.0014,0.004
+OMIM:617121,Joubert syndrome 28,18,12,47,47,0.0014,0.005
+OMIM:618400,"Charcot-Marie-Tooth disease, axonal, type 2EE",17,8,42,42,0.0014,0.003
+OMIM:616794,Combined oxidative phosphorylation deficiency 28,16,8,16,16,0.0014,0.002
+OMIM:300659,"Intellectual developmental disorder, X-linked 93",12,7,12,12,0.0014,0.005
+OMIM:616421,Myoclonic-atonic epilepsy,14,10,67,67,0.0014,0.004
+OMIM:171420,Pheochromocytoma-Islet cell tumor syndrome,13,7,22,22,0.0014,0.008
+OMIM:601389,"Cervical ribs, sprengel anomaly, anal atresia, and urethral obstruction",13,5,20,20,0.0014,0.003
+OMIM:249700,Langer mesomelic dysplasia,18,8,107,107,0.0014,0.002
+OMIM:601216,Dental anomalies and short stature,15,12,48,48,0.0014,0.002
+OMIM:618221,"Intellectual developmental disorder, autosomal recessive 66",13,11,32,32,0.0014,0.005
+OMIM:251950,Mitochondrial myopathy with lactic acidosis,17,12,48,48,0.0014,0.002
+OMIM:617270,"Intellectual developmental disorder, autosomal recessive 58",14,10,58,58,0.0014,0.005
+OMIM:203780,"Alport syndrome 2, autosomal recessive",14,11,34,34,0.0014,0.005
+OMIM:610250,"Spastic paraplegia 31, autosomal dominant",14,10,53,53,0.0014,0.004
+OMIM:617113,"Epileptic encephalopathy, early infantile, 43",16,10,105,105,0.0014,0.004
+OMIM:618793,Intellectual developmental disorder 62,12,7,12,12,0.0014,0.002
+OMIM:619338,"Cataracts, spastic paraparesis, and speech delay",13,10,39,39,0.0014,0.002
+OMIM:619489,"Short stature, Dauber-Argente type",15,8,30,30,0.0014,0.002
+OMIM:300844,"Intellectual developmental disorder, X-linked 19",14,6,19,19,0.0014,0.005
+OMIM:145350,Hypotaurinemic retinal degeneration and cardiomyopathy,13,7,42,42,0.0014,0.002
+OMIM:300886,"Intellectual developmental disorder, X-linked, syndromic 32",12,8,19,19,0.0014,0.004
+OMIM:619649,Chromosome 16q12 duplication syndrome,12,5,66,66,0.0014,0.002
+OMIM:184900,Stiff skin syndrome,13,9,16,16,0.0014,0.003
+OMIM:158600,"Spinal muscular atrophy, lower extremity-predominant, 1, autosomal dominant",12,7,30,30,0.0014,0.01
+OMIM:619611,Interstitial lung disease 1,13,7,66,66,0.0014,0.006
+OMIM:263000,"Interstitial pneumonitis, desquamative, familial",12,7,21,21,0.0014,0.006
+OMIM:129600,"Ectopia lentis, familial",18,12,33,33,0.0014,0.002
+OMIM:618687,Intellectual developmental disorder with short stature and behavioral abnormalities,14,10,56,56,0.0014,0.004
+OMIM:162370,"Neuropathy, congenital, with arthrogryposis multiplex",13,7,44,44,0.0014,0.003
+OMIM:618240,"Mitochondrial complex I deficiency, nuclear type 18",16,10,22,22,0.0014,0.002
+OMIM:618724,Heyn-Sproul-Jackson syndrome,15,12,24,24,0.0014,0.002
+OMIM:605373,Paragangliomas 3,17,7,47,47,0.0014,0.004
+OMIM:613855,"Episodic ataxia, type 5",14,10,66,66,0.0014,0.002
+OMIM:300406,FG syndrome 3,18,11,23,23,0.0014,0.004
+OMIM:619405,"Spinocerebellar ataxia, autosomal recessive 30",17,12,84,84,0.0014,0.01
+OMIM:610357,"Spastic paraplegia 30, autosomal recessive",13,10,54,54,0.0014,0.007
+OMIM:616040,"Myasthenic syndrome, congenital, 7, presynaptic",17,10,54,54,0.0014,0.003
+OMIM:619373,Neurodevelopmental disorder with infantile epileptic spasms,12,9,23,23,0.0014,0.005
+OMIM:616083,"Intellectual developmental disorder, autosomal dominant 30",16,10,29,29,0.0014,0.004
+OMIM:620135,"Mitochondrial complex I deficiency, nuclear type 39",15,7,12,12,0.0014,0.002
+OMIM:619561,Developmental and epileptic encephalopathy 97,18,10,106,106,0.0014,0.005
+OMIM:309585,Wilson-Turner syndrome,15,7,30,30,0.0014,0.005
+OMIM:312600,"Retinitis pigmentosa 2, X-linked",13,7,78,78,0.0014,0.002
+OMIM:619548,"Usmani-Riazuddin syndrome, autosomal recessive",18,15,39,39,0.0014,0.005
+OMIM:151623,Li-Fraumeni syndrome,12,5,66,66,0.0014,0.002
+OMIM:614898,"Spastic paraplegia 53, autosomal recessive",15,13,51,51,0.0014,0.002
+OMIM:615006,Developmental and epileptic encephalopathy 15,15,9,91,91,0.0014,0.003
+OMIM:620731,Microphthalmia/coloboma 11,15,9,105,105,0.0014,0.002
+OMIM:204100,"Leber congenital amaurosis, type II",16,9,84,84,0.0014,0.003
+OMIM:616056,Developmental and epileptic encephalopathy 26,12,6,55,55,0.0014,0.002
+OMIM:615220,"Osteogenesis imperfecta, type XV",12,9,21,21,0.0013,0.002
+OMIM:214450,"Griscelli syndrome, type 1",12,6,24,24,0.0013,0.008
+OMIM:300425,"Autism susceptibility, X-linked 1",12,6,55,55,0.0013,0.005
+OMIM:610628,Hypogonadotropic hypogonadism 4 with or without anosmia,14,8,23,23,0.0013,0.003
+OMIM:610006,2-Methylbutyryl-Coa dehydrogenase deficiency,12,10,16,16,0.0013,0.002
+OMIM:158580,"Neuronopathy, distal hereditary motor, type VIIA",12,9,27,27,0.0013,0.003
+OMIM:535000,Leber optic atrophy,12,8,22,22,0.0013,0.002
+OMIM:147891,Ischiocoxopodopatellar syndrome with or without pulmonary arterial hypertension,17,8,80,80,0.0013,0.002
+OMIM:616852,"Myopathy, scapulohumeroperoneal",18,10,111,111,0.0013,0.01
+OMIM:606895,"Symphalangism, distal, with microdontia, dental pulp stones, and narrowedzygomatic arch",14,11,47,47,0.0013,0.002
+OMIM:601042,Dystonia 9,14,12,78,78,0.0013,0.002
+OMIM:617352,Mulchandani-Bhoj-Conlin syndrome,18,13,30,30,0.0013,0.002
+OMIM:611131,Retinitis pigmentosa 37,12,8,66,66,0.0013,0.002
+OMIM:615236,Woods syndrome,17,9,27,27,0.0013,0.004
+OMIM:615597,"Congenital disorder of glycosylation, type Ix",16,14,15,15,0.0013,0.004
+OMIM:618266,"Pontocerebellar hypoplasia, type 12",13,6,29,29,0.0013,0.002
+OMIM:100100,Prune belly syndrome,15,7,16,16,0.0013,0.003
+OMIM:608049,"Autism, susceptibility to, 3",13,7,55,55,0.0013,0.005
+OMIM:617182,Language delay and attention deficit-hyperactivity disorder/cognitive impairment with or without cardiac arrhythmia,16,10,49,49,0.0013,0.005
+OMIM:135150,Birt-Hogg-Dube syndrome,13,7,43,43,0.0013,0.006
+OMIM:261630,"Hyperphenylalaninemia, bh4-deficient, C",18,15,75,75,0.0013,0.004
+OMIM:615225,"Palmoplantar carcinoma, multiple self-healing",18,10,38,38,0.0013,0.002
+OMIM:251280,"Microcephaly, seizures, spasticity, and brain calcifications",17,10,81,81,0.0013,0.004
+OMIM:605432,Radioulnar synostosis with amegakaryocytic thrombocytopenia,15,5,43,43,0.0013,0.002
+OMIM:258501,"3-methylglutaconic aciduria, type III",13,10,32,32,0.0013,0.002
+OMIM:611490,"Osteopetrosis, autosomal recessive 4",15,11,21,21,0.0013,0.002
+OMIM:108600,"Spastic ataxia 1, autosomal dominant",14,11,36,36,0.0013,0.002
+OMIM:620062,"Developmental delay with short stature, dysmorphic facial features, and sparse hair 2",16,11,30,30,0.0013,0.008
+OMIM:617194,Lethal congenital contracture syndrome 11,12,7,24,24,0.0013,0.002
+OMIM:245800,Laurence-Moon syndrome,13,11,13,13,0.0013,0.002
+OMIM:614377,Nephronophthisis 13,14,5,48,48,0.0013,0.008
+OMIM:160120,"Episodic ataxia, type 1",15,13,46,46,0.0013,0.002
+OMIM:244600,Keratoconus posticus circumscriptus,15,8,20,20,0.0013,0.002
+OMIM:313200,"Spinal and bulbar muscular atrophy, X-linked 1",16,12,35,35,0.0013,0.011
+OMIM:615493,"Intellectual developmental disorder, autosomal recessive 37",13,11,60,60,0.0013,0.005
+OMIM:619083,Delpire-Mcneill syndrome,15,11,43,43,0.0013,0.011
+OMIM:123150,Jackson-Weiss syndrome,15,5,73,73,0.0013,0.002
+OMIM:259730,"Osteopetrosis, autosomal recessive 3",17,10,25,25,0.0013,0.002
+OMIM:209850,Autism susceptibility 1,12,6,55,55,0.0013,0.005
+OMIM:619042,"Spinal muscular atrophy, infantile, James type",17,12,51,51,0.0013,0.003
+OMIM:278850,"46,XX sex reversal 2",16,4,69,69,0.0013,0.002
+OMIM:601382,"Charcot-Marie-Tooth disease, type 4B1",12,9,31,31,0.0013,0.003
+OMIM:617244,"Fanconi anemia, complementation group R",18,9,23,23,0.0013,0.004
+OMIM:603543,Limb-Mammary syndrome,13,6,22,22,0.0013,0.002
+OMIM:143880,"Hypercalcemia, infantile, 1",13,8,17,17,0.0013,0.004
+OMIM:614198,"Myasthenic syndrome, congenital, 16",13,10,18,18,0.0013,0.002
+OMIM:217100,"Constricting bands, congenital",15,12,30,30,0.0013,0.002
+OMIM:619735,"Spastic paraplegia 86, autosomal recessive",16,12,70,70,0.0013,0.004
+OMIM:604229,"Anterior segment dysgenesis 5, multiple subtypes",14,6,91,91,0.0013,0.002
+OMIM:602499,"Macrophthalmia, colobomatous, with microcornea",13,6,78,78,0.0013,0.002
+OMIM:618402,"Intellectual developmental disorder, autosomal recessive 70",16,11,53,53,0.0013,0.005
+OMIM:300496,"Autism susceptibility, X-linked 3",13,7,55,55,0.0013,0.005
+OMIM:617337,"Ectodermal dysplasia 12, Hypohidrotic/hair/tooth/nail type",17,5,92,92,0.0013,0.041
+OMIM:254210,"Myasthenic syndrome, congenital, 6, presynaptic",18,7,38,38,0.0013,0.024
+OMIM:203200,"Albinism, oculocutaneous, type II",14,9,46,46,0.0013,0.008
+OMIM:617915,"Hypotonia, ataxia, developmental delay, and tooth enamel defect syndrome",17,13,49,49,0.0013,0.005
+OMIM:617929,"Epileptic encephalopathy, early infantile, 60",14,7,91,91,0.0013,0.004
+OMIM:617120,Joubert syndrome 27,15,9,27,27,0.0013,0.004
+OMIM:300495,"Autism, susceptibility to, X-linked 2",13,7,55,55,0.0013,0.004
+OMIM:605726,"Spinal muscular atrophy, distal, autosomal recessive, 2",12,3,32,32,0.0013,0.003
+OMIM:618236,"Mitochondrial complex I deficiency, nuclear type 14",15,13,18,18,0.0013,0.002
+OMIM:618418,"Spastic paraplegia 80, autosomal dominant",17,11,69,69,0.0013,0.002
+OMIM:616353,"Dyskeratosis congenita, autosomal recessive 6",16,12,19,19,0.0013,0.004
+OMIM:616409,Developmental and epileptic encephalopathy 33,17,14,108,108,0.0013,0.002
+OMIM:193300,von Hippel-Lindau syndrome,18,9,58,58,0.0013,0.009
+OMIM:226700,"Epidermolysis bullosa, junctional, Herlitz type",12,8,25,25,0.0013,0.003
+OMIM:263300,Polycythemia vera,14,8,65,65,0.0013,0.027
+OMIM:616230,"Epilepsy, progressive myoclonic, 8",18,14,136,136,0.0013,0.005
+OMIM:614369,"Peripheral neuropathy, myopathy, hoarseness, and hearing loss",12,8,15,15,0.0013,0.003
+OMIM:620027,"Neurodevelopmental disorder with microcephaly, short stature, and speech delay",14,7,49,49,0.0013,0.004
+OMIM:610090,Pyridoxamine 5-prime-phosphate oxidase deficiency,17,13,30,30,0.0013,0.002
+OMIM:225753,"Pontocerebellar hypoplasia, type 4",17,11,72,72,0.0013,0.028
+OMIM:620427,"Dystonia 37, early-onset, with striatal lesions",14,11,79,79,0.0013,0.005
+OMIM:211960,"Camptodactyly with muscular hypoplasia, skeletal dysplasia, and abnormalpalmar creases",15,9,29,29,0.0013,0.003
+OMIM:177650,Exfoliation syndrome,13,8,66,66,0.0013,0.006
+OMIM:618972,Mitochondrial DNA depletion syndrome 19,16,14,35,35,0.0013,0.002
+OMIM:254780,Myoclonic epilepsy of Lafora,16,14,78,78,0.0013,0.002
+OMIM:621101,Perrault syndrome 7,18,11,29,29,0.0013,0.004
+OMIM:617935,"Epilepsy, familial focal, with variable foci 4",13,10,57,57,0.0013,0.004
+OMIM:608747,Insulin-Like growth factor I deficiency,17,14,32,32,0.0013,0.005
+OMIM:302950,"Chondrodysplasia punctata 1, X-linked recessive",14,11,18,18,0.0013,0.003
+OMIM:300982,"Intellectual developmental disorder, X-linked 103",14,6,32,32,0.0013,0.005
+OMIM:258900,Orotic aciduria,14,7,26,26,0.0013,0.003
+OMIM:616640,"Epilepsy, progressive myoclonic, 10",18,12,136,136,0.0013,0.002
+OMIM:604536,Ectodermal dysplasia/skin fragility syndrome,13,9,78,78,0.0013,0.005
+OMIM:259410,"Osteogenesis imperfecta congenita, microcephaly, and cataracts",12,5,29,29,0.0013,0.002
+OMIM:151800,"Lipomatosis, multiple symmetric, with or without peripheral neuropathy",14,13,27,27,0.0013,0.002
+OMIM:225320,"Ehlers-Danlos syndrome, autosomal recessive, cardiac valvular form",14,7,33,33,0.0013,0.003
+OMIM:617830,Developmental and epileptic encephalopathy 58,18,13,83,83,0.0013,0.004
+OMIM:619028,"Coenzyme Q10 deficiency, primary, 9",18,13,95,95,0.0013,0.002
+OMIM:620326,Congenital myopathy 21 with early respiratory failure,15,10,18,18,0.0013,0.005
+OMIM:613464,Retinitis pigmentosa 51,15,11,46,46,0.0013,0.002
+OMIM:620086,Intellectual developmental disorder with ocular anomalies and distinctive facial features,14,9,26,26,0.0013,0.004
+OMIM:613672,"Spastic ataxia 4, autosomal recessive",15,6,61,61,0.0013,0.002
+OMIM:613886,"Obesity, hyperphagia, and developmental delay",12,9,36,36,0.0013,0.004
+OMIM:620243,"Leukodystrophy, hypomyelinating, 25",17,10,80,80,0.0013,0.004
+OMIM:607373,"Autism, susceptibility to, 8",12,6,55,55,0.0013,0.005
+OMIM:618284,"Microcephaly, cataracts, impaired intellectual development, and dystonia with abnormal striatum",16,12,45,45,0.0013,0.005
+OMIM:615830,"Pigmented nodular adrenocortical disease, primary, 4",18,11,29,29,0.0013,0.003
+OMIM:614859,Peroxisome biogenesis disorder 3A (Zellweger),17,9,20,20,0.0013,0.004
+OMIM:178500,"Pulmonary fibrosis, idiopathic",12,6,36,36,0.0013,0.006
+OMIM:618244,"Mitochondrial complex I deficiency, nuclear type 23",12,9,15,15,0.0013,0.002
+OMIM:617188,"Intellectual developmental disorder, autosomal recessive 57",17,14,97,97,0.0013,0.004
+OMIM:605361,Spinocerebellar ataxia 14,15,10,91,91,0.0013,0.002
+OMIM:616321,"Myasthenic syndrome, congenital, 3A, slow-channel",12,5,25,25,0.0013,0.002
+OMIM:619012,Combined oxidative phosphorylation deficiency 48,15,12,24,24,0.0013,0.002
+OMIM:620447,Megalencephalic leukoencephalopathy with subcortical cysts 3,18,11,127,127,0.0013,0.002
+OMIM:129200,Basan syndrome,14,7,62,62,0.0013,0.002
+OMIM:609638,"Epidermolysis bullosa, lethal acantholytic",15,8,43,43,0.0013,0.002
+OMIM:122600,Spondylocostal dysostosis 5,13,7,56,56,0.0012,0.009
+OMIM:620728,Ullrich congenital muscular dystrophy 1C,14,9,67,67,0.0012,0.002
+OMIM:616488,"Neuropathy, hereditary sensory and autonomic, type VIII",15,12,32,32,0.0012,0.002
+OMIM:162350,"Ceroid lipofuscinosis, neuronal, 4B, autosomal dominant",17,11,81,81,0.0012,0.002
+OMIM:615625,"Spastic paraplegia 72, autosomal recessive",13,8,48,48,0.0012,0.002
+OMIM:614897,Hypogonadotropic hypogonadism 16 with or without anosmia,15,5,35,35,0.0012,0.003
+OMIM:617018,Spinocerebellar ataxia 43,18,12,62,62,0.0012,0.003
+OMIM:618840,Alopecia-intellectual disability syndrome 4,14,10,34,34,0.0012,0.005
+OMIM:618855,Combined oxidative phosphorylation deficiency 44,12,11,28,28,0.0012,0.002
+OMIM:610951,"Ceroid lipofuscinosis, neuronal, 7",15,15,55,55,0.0012,0.003
+OMIM:125800,"Diabetes insipidus, nephrogenic, 2",15,8,14,14,0.0012,0.002
+OMIM:614879,Peroxisome biogenesis disorder 9B,17,13,21,21,0.0012,0.002
+OMIM:617633,"Spinocerebellar ataxia, autosomal recessive 26",18,12,97,97,0.0012,0.002
+OMIM:607346,Spinocerebellar ataxia 19,17,12,72,72,0.0012,0.002
+OMIM:616471,Bethlem myopathy 2,18,12,94,94,0.0012,0.003
+OMIM:611134,"Meckel syndrome, type 4",18,14,47,47,0.0012,0.002
+OMIM:618845,"Vertebral, cardiac, renal, and limb defects syndrome 3",14,7,23,23,0.0012,0.003
+OMIM:619031,"Intellectual developmental disorder with epilepsy, behavioral abnormalities, and coarse facies",13,7,56,56,0.0012,0.004
+OMIM:617008,"Cerebral palsy, spastic quadriplegic, 3",17,14,76,76,0.0012,0.002
+OMIM:618501,Cerebellar atrophy with seizures and variable developmental delay,18,12,70,70,0.0012,0.002
+OMIM:618924,"Episodic ataxia, type 9",15,11,56,56,0.0012,0.002
+OMIM:616710,"Parkinson disease 22, autosomal dominant",13,8,55,55,0.0012,0.002
+OMIM:619609,Galloway-Mowat syndrome 10,15,7,41,41,0.0012,0.004
+OMIM:614305,Sclerosteosis 2,16,11,37,37,0.0012,0.002
+OMIM:259780,Otoonychoperoneal syndrome,14,8,25,25,0.0012,0.002
+OMIM:619972,"Neurodevelopmental disorder with severe motor impairment, absent language, cerebral hypomyelination, and brain atrophy",15,8,44,44,0.0012,0.005
+OMIM:615386,"Spinocerebellar ataxia, autosomal recessive 14",14,11,58,58,0.0012,0.002
+OMIM:216900,Achromatopsia 2,14,5,91,91,0.0012,0.002
+OMIM:204690,"Amelogenesis imperfecta, type IG (enamel-renal syndrome)",12,4,25,25,0.0012,0.006
+OMIM:256840,"Neuropathy, hereditary sensory, with spastic paraplegia, autosomal recessive",18,11,75,75,0.0012,0.009
+OMIM:611555,"Renal tubular acidosis, distal, with nephrocalcinosis, short stature, impaired intellectual development, and distinctive facies",14,8,24,24,0.0012,0.003
+OMIM:601815,Phosphoglycerate dehydrogenase deficiency,15,7,22,22,0.0012,0.002
+OMIM:300718,"Myopathy, reducing body, X-linked, childhood-onset",16,8,78,78,0.0012,0.002
+OMIM:145001,Hyperparathyroidism 2,15,5,49,49,0.0012,0.008
+OMIM:601357,"Brachial amelia, cleft lip, and holoprosencephaly",15,11,28,28,0.0012,0.002
+OMIM:617051,Neurodevelopmental disorder with microcephaly and gray sclerae,13,10,39,39,0.0012,0.004
+OMIM:163400,Nievergelt syndrome,14,11,35,35,0.0012,0.002
+OMIM:612713,Kahrizi syndrome,13,8,13,13,0.0012,0.004
+OMIM:617899,"Leukodystrophy, hypomyelinating, 14",14,13,30,30,0.0012,0.004
+OMIM:610099,"Myopathy, distal 3",12,5,31,31,0.0012,0.003
+OMIM:605899,Glycine encephalopathy,18,14,80,80,0.0012,0.002
+OMIM:500018,Mitochondrial spastic paraplegia,17,7,94,94,0.0012,0.002
+OMIM:615043,"Spastic paraplegia 43, autosomal recessive",16,12,61,61,0.0012,0.003
+OMIM:615731,Nemaline myopathy 9,14,9,21,21,0.0012,0.002
+OMIM:124200,Darier-White disease,14,4,42,42,0.0012,0.002
+OMIM:300695,"Scapuloperoneal myopathy, X-linked dominant",15,5,48,48,0.0012,0.01
+OMIM:612463,Pseudopseudohypoparathyroidism,17,12,32,32,0.0012,0.002
+OMIM:619052,"Mitochondrial complex IV deficiency, nuclear type 8",13,7,47,47,0.0012,0.002
+OMIM:615522,Cole disease,15,9,47,47,0.0012,0.002
+OMIM:613151,"Muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 3",12,12,25,25,0.0012,0.005
+OMIM:618776,"Mitochondrial complex I deficiency, nuclear type 34",12,8,10,10,0.0012,0.002
+OMIM:614170,Brittle cornea syndrome 2,17,7,42,42,0.0012,0.002
+OMIM:119800,"Clubfoot, congenital, with or without deficiency of long bones and/or mirror-image polydactyly",15,4,30,30,0.0012,0.002
+OMIM:610100,"Giant axonal neuropathy, autosomal dominant",14,8,35,35,0.0012,0.003
+OMIM:620028,Developmental and epileptic encephalopathy 106,15,13,42,42,0.0012,0.004
+OMIM:615911,Frontotemporal dementia and/or amyotrophic lateral sclerosis 2,17,12,79,79,0.0012,0.002
+OMIM:612918,"Congenital lipomatous overgrowth, vascular malformations, and epidermal nevi",18,12,26,26,0.0012,0.002
+OMIM:617082,"Congenital disorder of glycosylation, type IAA",17,13,34,34,0.0012,0.002
+OMIM:609727,"Spastic paraplegia 29, autosomal dominant",17,9,38,38,0.0012,0.004
+OMIM:609055,"Ceroid lipofuscinosis, neuronal, 9",17,13,43,43,0.0012,0.002
+OMIM:614561,"Leukoencephalopathy, brain calcifications, and cysts",15,15,105,105,0.0012,0.002
+OMIM:612138,Epidermolysis bullosa simplex with pyloric atresia,12,7,10,10,0.0012,0.002
+OMIM:617691,Spinocerebellar ataxia 44,14,11,56,56,0.0012,0.002
+OMIM:615938,Megalencephaly-Polymicrogyria-Polydactyly-Hydrocephalus syndrome 3,12,8,32,32,0.0012,0.004
+OMIM:616570,Cerebrooculofacioskeletal syndrome 3,17,14,28,28,0.0012,0.002
+OMIM:309300,"Megalocornea 1, X-linked",15,10,105,105,0.0012,0.002
+OMIM:615538,Chromosome 22q13 duplication syndrome,13,4,42,42,0.0012,0.002
+OMIM:616025,Glycosylphosphatidylinositol biosynthesis defect 11,18,10,58,58,0.0012,0.004
+OMIM:303350,MASA syndrome,18,16,66,66,0.0012,0.008
+OMIM:618800,"Spinocerebellar ataxia, autosomal recessive 28",14,10,38,38,0.0012,0.004
+OMIM:614592,Bent bone dysplasia syndrome,18,8,52,52,0.0012,0.002
+OMIM:613612,"Congenital disorder of glycosylation, type IIi",13,10,29,29,0.0012,0.005
+OMIM:620033,Developmental and epileptic encephalopathy 107,14,9,45,45,0.0012,0.004
+OMIM:601957,Odontotrichoungual-Digital-Palmar syndrome,15,10,46,46,0.0012,0.002
+OMIM:615665,Joubert syndrome 22,17,11,31,31,0.0012,0.002
+OMIM:618396,"Epileptic encephalopathy, early infantile, 74",16,9,91,91,0.0012,0.002
+OMIM:603563,"Spastic paraplegia 8, autosomal dominant",18,11,80,80,0.0012,0.002
+OMIM:212840,Cerebellar ataxia and hypogonadotropic hypogonadism,13,8,30,30,0.0012,0.003
+OMIM:300049,"Heterotopia, periventricular, X-linked dominant",18,17,47,47,0.0012,0.002
+OMIM:181510,Schizophrenia 1,14,6,15,15,0.0012,0.002
+OMIM:302500,"Spinocerebellar ataxia, X-linked 1",15,13,42,42,0.0012,0.002
+OMIM:614195,Craniofacial anomalies and anterior segment dysgenesis syndrome,18,12,54,54,0.0012,0.002
+OMIM:621314,"Pompe disease, late-onset",12,5,16,16,0.0012,0.002
+OMIM:243000,"Indifference to pain, congenital, autosomal recessive",15,11,67,67,0.0012,0.002
+OMIM:604802,Huntington disease-like 3,17,15,93,93,0.0012,0.002
+OMIM:551500,"Neuropathy, ataxia, and retinitis pigmentosa",14,13,28,28,0.0012,0.002
+OMIM:500001,Leber optic atrophy and dystonia,18,15,65,65,0.0012,0.002
+OMIM:272800,Tay-Sachs disease,14,7,17,17,0.0012,0.002
+OMIM:612126,Glut1 deficiency syndrome 2,17,12,81,81,0.0012,0.002
+OMIM:620779,"Intellectual developmental disorder, autosomal recessive 82",13,10,55,55,0.0012,0.005
+OMIM:619661,"Leukoencephalopathy, hereditary diffuse, with spheroids 2",12,7,36,36,0.0012,0.002
+OMIM:613402,"Microcephaly, seizures, and developmental delay",15,12,83,83,0.0012,0.004
+OMIM:618557,"Epileptic encephalopathy, early infantile, 78",17,14,75,75,0.0012,0.002
+OMIM:275000,Graves disease,17,10,19,19,0.0012,0.003
+OMIM:619339,"Popliteal pterygium syndrome, Bartsocas-Papas type 2",17,6,56,56,0.0012,0.002
+OMIM:619844,Intellectual developmental disorder with or without peripheral neuropathy,16,7,37,37,0.0012,0.004
+OMIM:619688,"Leukodystrophy, hypomyelinating, 23, with ataxia, deafness, liver dysfunction, and dilated cardiomyopathy",13,12,45,45,0.0012,0.005
+OMIM:619065,"Mitochondrial complex IV deficiency, nuclear type 21",18,8,71,71,0.0012,0.002
+OMIM:610256,Anterior segment dysgenesis 2,14,6,91,91,0.0012,0.002
+OMIM:616425,"46,XY sex reversal 10",13,4,78,78,0.0012,0.001
+OMIM:616948,"Spinocerebellar ataxia, autosomal recessive 22",13,12,66,66,0.0012,0.002
+OMIM:613818,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 9",13,8,31,31,0.0012,0.005
+OMIM:617370,Peroxisome biogenesis disorder 10B,14,7,12,12,0.0012,0.002
+OMIM:611067,"Spinal muscular atrophy, distal, autosomal recessive, 4",16,12,62,62,0.0012,0.003
+OMIM:614321,"Myopathy, distal, Tateyama type",13,3,34,34,0.0012,0.01
+OMIM:115310,Paragangliomas 4,18,9,64,64,0.0012,0.004
+OMIM:225280,"Ectodermal dysplasia, ectrodactyly, and macular dystrophy syndrome",17,11,50,50,0.0012,0.003
+OMIM:613077,"Progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal dominant 5",17,14,28,28,0.0012,0.002
+OMIM:617205,"Heterotaxy, visceral, 8, autosomal",12,4,55,55,0.0012,0.003
+OMIM:124480,"Deafness, congenital, and onychodystrophy, autosomal dominant",16,10,24,24,0.0012,0.003
+OMIM:610542,"Myasthenic syndrome, congenital, with tubular aggregates 1",16,10,55,55,0.0012,0.01
+OMIM:619016,"Ichthyosis, follicular, with atrichia and photophobia syndrome 2",12,6,28,28,0.0012,0.008
+OMIM:278780,"Xeroderma pigmentosum, complementation group G",13,9,17,17,0.0012,0.002
+OMIM:607823,Hypotrichosis-lymphedema-telangiectasia syndrome,13,8,38,38,0.0012,0.006
+OMIM:616053,Spinocerebellar ataxia 40,14,8,91,91,0.0012,0.002
+OMIM:616045,Combined oxidative phosphorylation deficiency 22,13,9,18,18,0.0012,0.002
+OMIM:613908,Spinocerebellar ataxia 35,15,12,79,79,0.0012,0.002
+OMIM:619565,Dystonia 31,12,5,45,45,0.0012,0.002
+OMIM:212360,Palmoplantar keratoderma and congenital alopecia 2,12,7,37,37,0.0012,0.002
+OMIM:607565,"Spastic paraplegia, ataxia, and impaired intellectual development",18,13,85,85,0.0012,0.002
+OMIM:193003,"Nystagmus 4, congenital, autosomal dominant",15,9,38,38,0.0012,0.002
+OMIM:602541,"Muscular dystrophy, congenital, megaconial type",18,12,56,56,0.0012,0.005
+OMIM:615217,Ataxia-Oculomotor apraxia 3,15,13,42,42,0.0012,0.003
+OMIM:604326,Spinocerebellar ataxia 12,18,12,136,136,0.0012,0.003
+OMIM:300577,"Intellectual developmental disorder, X-linked 91",17,9,36,36,0.0012,0.004
+OMIM:602418,Weyers ulnar ray/oligodactyly syndrome,16,8,49,49,0.0012,0.008
+OMIM:255600,"Myosclerosis, autosomal recessive",12,8,36,36,0.0012,0.002
+OMIM:618905,Silver-Russell syndrome 2,16,7,32,32,0.0012,0.002
+OMIM:605407,"Segawa syndrome, autosomal recessive",15,11,56,56,0.0012,0.002
+OMIM:619562,Joubert syndrome 39,13,5,19,19,0.0012,0.003
+OMIM:620453,"Dystonia 22, juvenile-onset",14,9,67,67,0.0012,0.002
+OMIM:250800,Methemoglobinemia due to deficiency of methemoglobin reductase,15,11,21,21,0.0012,0.004
+OMIM:618251,"Mitochondrial complex I deficiency, nuclear type 31",16,14,24,24,0.0012,0.002
+OMIM:616917,"Neurodevelopmental disorder with or without hypotonia, seizures, and cerebellar atrophy",15,12,56,56,0.0012,0.004
+OMIM:618709,Neurodevelopmental disorder with nonspecific brain abnormalities and with or without seizures,18,17,99,99,0.0012,0.008
+OMIM:618721,"Epileptic encephalopathy, early infantile, 82",18,14,60,60,0.0012,0.006
+OMIM:614116,"Neuropathy, hereditary sensory, type IE",16,12,68,68,0.0011,0.01
+OMIM:301075,"Myopathy, distal, 7, adult-onset, X-linked",15,8,56,56,0.0011,0.01
+OMIM:607432,Lissencephaly 1,16,11,107,107,0.0011,0.004
+OMIM:311070,"Charcot-Marie-Tooth disease, X-linked recessive, 5",16,12,27,27,0.0011,0.003
+OMIM:619208,Olmsted syndrome 2,12,9,45,45,0.0011,0.003
+OMIM:613730,"Hemorrhagic destruction of the brain, subependymal calcification,and cataracts",15,14,27,27,0.0011,0.002
+OMIM:617768,Kleefstra syndrome 2,18,14,56,56,0.0011,0.005
+OMIM:600348,Band heterotopia,17,13,108,108,0.0011,0.004
+OMIM:611721,Combined saposin deficiency,15,11,39,39,0.0011,0.004
+OMIM:619425,Mitochondrial DNA depletion syndrome 16B (neuroophthalmic type),13,10,32,32,0.0011,0.002
+OMIM:620501,Ziegler-Huang syndrome,15,7,24,24,0.0011,0.003
+OMIM:619196,"Deafness, congenital, and adult-onset progressive leukoencephalopathy",16,14,58,58,0.0011,0.002
+OMIM:614074,Hermansky-Pudlak syndrome 5,16,6,44,44,0.0011,0.002
+OMIM:610992,Phosphoserine aminotransferase deficiency,13,8,27,27,0.0011,0.002
+OMIM:618504,"Intellectual developmental disorder, autosomal recessive 71",17,9,22,22,0.0011,0.004
+OMIM:600363,"Spastic paraplegia 6, autosomal dominant",15,10,52,52,0.0011,0.002
+OMIM:615030,"Spastic paraplegia 56, autosomal recessive",15,11,105,105,0.0011,0.005
+OMIM:617169,"Intellectual developmental disorder, autosomal recessive 74",16,9,53,53,0.0011,0.005
+OMIM:615352,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 14",15,13,22,22,0.0011,0.004
+OMIM:122000,"Corneal dystrophy, posterior polymorphous, 1",13,5,78,78,0.0011,0.002
+OMIM:618688,"Leukodystrophy, hypomyelinating, 19, transient infantile",15,9,40,40,0.0011,0.004
+OMIM:620115,Developmental and epileptic encephalopathy 108,13,12,78,78,0.0011,0.002
+OMIM:612951,"Leukoencephalopathy, cystic, without megalencephaly",18,15,106,106,0.0011,0.002
+OMIM:618273,Mega-corpus-callosum syndrome with cerebellar hypoplasia and cortical malformations,17,12,105,105,0.0011,0.004
+OMIM:619806,Spinocerebellar ataxia 49,16,11,69,69,0.0011,0.002
+OMIM:620711,"Leukoencephalopathy, porphyria-related",14,11,48,48,0.0011,0.002
+OMIM:610003,"Ceroid lipofuscinosis, neuronal, 8, northern epilepsy variant",12,9,55,55,0.0011,0.002
+OMIM:614073,Hermansky-Pudlak syndrome 4,12,5,18,18,0.0011,0.002
+OMIM:620314,"Leukoencephalopathy with vanishing white matter 4, with or without ovarian failure",12,7,37,37,0.0011,0.003
+OMIM:620658,"Amyloidosis, hereditary systemic 5",13,8,23,23,0.0011,0.005
+OMIM:615768,"Spinocerebellar ataxia, autosomal recessive 16",15,12,67,67,0.0011,0.002
+OMIM:607152,"Spastic paraplegia 19, autosomal dominant",12,7,35,35,0.0011,0.002
+OMIM:618559,"Epileptic encephalopathy, early infantile, 79",17,13,122,122,0.0011,0.004
+OMIM:143100,Huntington disease,13,9,55,55,0.0011,0.002
+OMIM:604213,Chudley-Mccullough syndrome,15,10,78,78,0.0011,0.004
+OMIM:619054,"Mitochondrial complex IV deficiency, nuclear type 11",18,10,67,67,0.0011,0.002
+OMIM:104100,Palmoplantar keratoderma with congenital alopecia,12,8,66,66,0.0011,0.002
+OMIM:617319,Anterior segment dysgenesis 8,12,4,66,66,0.0011,0.002
+OMIM:602099,"Amyotrophic lateral sclerosis 5, juvenile",16,12,72,72,0.0011,0.003
+OMIM:618572,Neurodevelopmental disorder with cerebellar hypoplasia and spasticity,13,8,32,32,0.0011,0.002
+OMIM:614228,"Charcot-marie-tooth disease, axonal, type 2O",12,9,24,24,0.0011,0.002
+OMIM:618374,"Epileptic encephalopathy, early infantile, 72",18,8,94,94,0.0011,0.002
+OMIM:603218,Huntington disease-like 1,16,11,105,105,0.0011,0.003
+OMIM:616198,Combined oxidative phosphorylation deficiency 23,16,12,15,15,0.0011,0.002
+OMIM:300068,Androgen insensitivity syndrome,13,4,10,10,0.0011,0.001
+OMIM:615686,"Spastic paraplegia 63, autosomal recessive",14,10,60,60,0.0011,0.004
+OMIM:600512,"Epilepsy, familial temporal lobe, 1",15,13,105,105,0.0011,0.001
+OMIM:619692,"Trichothiodystrophy 9, nonphotosensitive",15,12,28,28,0.0011,0.004
+OMIM:608984,"Ataxia, sensory, autosomal dominant",17,9,105,105,0.0011,0.002
+OMIM:102200,"Pituitary adenoma, growth hormone-secreting, 1",13,6,18,18,0.0011,0.003
+OMIM:617917,Neurodegeneration with brain iron accumulation 8,13,13,55,55,0.0011,0.002
+OMIM:615683,"Spastic paraplegia 64, autosomal recessive",13,11,39,39,0.0011,0.002
+OMIM:304800,"Diabetes insipidus, nephrogenic, X-linked",16,9,15,15,0.0011,0.002
+OMIM:608029,"Spinocerebellar ataxia, autosomal recessive 6",14,12,48,48,0.0011,0.002
+OMIM:108500,"Episodic ataxia, type 2",16,11,31,31,0.0011,0.002
+OMIM:242300,"Ichthyosis, congenital, autosomal recessive 1",15,12,67,67,0.0011,0.002
+OMIM:616439,Frontotemporal dementia and/or amyotrophic lateral sclerosis 4,17,12,108,108,0.0011,0.002
+OMIM:615681,"Spastic paraplegia 62, autosomal recessive",16,11,100,100,0.0011,0.002
+OMIM:607736,"Charcot-Marie-Tooth disease, type 2J",15,8,26,26,0.0011,0.003
+OMIM:251750,"Microspherophakia and/or megalocornea, with ectopia lentis and with or without secondary glaucoma",13,8,37,37,0.0011,0.002
+OMIM:619291,Dystonia 30,17,6,136,136,0.0011,0.002
+OMIM:186700,"Syringomyelia, isolated",18,13,68,68,0.0011,0.002
+OMIM:618008,Developmental and epileptic encephalopathy 65,15,9,65,65,0.0011,0.002
+OMIM:615048,"Spinal muscular atrophy, Jokela type",15,12,35,35,0.0011,0.002
+OMIM:612069,Amyotrophic lateral sclerosis 10 with or without frontotemporal dementia,14,9,61,61,0.0011,0.002
+OMIM:180750,Robinow-Sorauf syndrome,16,7,68,68,0.0011,0.002
+OMIM:610246,Spinocerebellar ataxia 28,18,14,58,58,0.0011,0.002
+OMIM:268650,Rudiger syndrome,15,7,23,23,0.0011,0.003
+OMIM:300261,"Intellectual developmental disorder, X-linked syndromic, Armfield type",13,8,15,15,0.0011,0.002
+OMIM:203740,Oxoglutarate dehydrogenase deficiency,16,14,51,51,0.0011,0.002
+OMIM:618155,"Ophthalmoplegia, external, with rib and vertebral anomalies",12,11,34,34,0.0011,0.002
+OMIM:602482,"Axenfeld-Rieger syndrome, type 3",16,8,32,32,0.0011,0.002
+OMIM:619908,Neurodevelopmental disorder with language delay and seizure,17,11,55,55,0.0011,0.005
+OMIM:616540,"Epilepsy, progressive myoclonic, 9",16,11,61,61,0.0011,0.002
+OMIM:618960,Mitchell syndrome,13,10,58,58,0.0011,0.002
+OMIM:613606,Forsythe-Wakeling syndrome,15,11,15,15,0.0011,0.002
+OMIM:611588,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 4",18,12,95,95,0.0011,0.009
+OMIM:620806,Developmental and epileptic encephalopathy 116,18,11,121,121,0.0011,0.002
+OMIM:256540,Galactosialidosis,14,7,13,13,0.0011,0.005
+OMIM:617933,"Epileptic encephalopathy, early infantile, 61",17,13,57,57,0.0011,0.002
+OMIM:180800,Roussy-Levy hereditary areflexic dystasia,18,12,73,73,0.0011,0.003
+OMIM:615473,Developmental and epileptic encephalopathy 17,14,8,91,91,0.0011,0.002
+OMIM:604218,"Encephalopathy, familial, with neuroserpin inclusion bodies",13,10,56,56,0.0011,0.002
+OMIM:618383,"Intellectual developmental disorder, autosomal recessive 69",14,9,57,57,0.0011,0.004
+OMIM:616437,Frontotemporal dementia and/or amyotrophic lateral sclerosis 3,17,12,108,108,0.0011,0.002
+OMIM:206570,"Angiomatosis, diffuse corticomeningeal, of divry and van bogaert",16,12,59,59,0.0011,0.002
+OMIM:613163,GABA-transaminase deficiency,15,12,41,41,0.0011,0.002
+OMIM:193510,"Waardenburg syndrome, type 2A",13,3,36,36,0.0011,0.007
+OMIM:300475,"Deafness, dystonia, and cerebral hypomyelination",16,14,48,48,0.0011,0.004
+OMIM:612292,Birk-Barel syndrome,18,9,63,63,0.0011,0.027
+OMIM:619884,"Osteoporosis, childhood- or juvenile-onset, with developmental delay",14,10,60,60,0.0011,0.004
+OMIM:614436,"Charcot-Marie-Tooth disease, axonal, type 2P",16,8,63,63,0.0011,0.003
+OMIM:613239,"Thyrotoxic periodic paralysis, susceptibility to, 2",13,10,20,20,0.0011,0.003
+OMIM:619264,Neurodevelopmental disorder with dysmorphic facies and variable seizures,18,10,52,52,0.0011,0.004
+OMIM:601238,"Cerebellar ataxia, Cayman type",18,14,61,61,0.0011,0.002
+OMIM:618741,"Neurodevelopmental disorder with epilepsy, spasticity, and brain atrophy",12,8,26,26,0.0011,0.004
+OMIM:620790,Neurodevelopmental disorder with hypotonia and seizures,17,9,68,68,0.0011,0.002
+OMIM:602531,Grange syndrome,12,8,20,20,0.0011,0.002
+OMIM:618384,"Leukoencephalopathy, acute reversible, with increased urinary alpha-ketoglutarate",15,9,64,64,0.0011,0.002
+OMIM:598500,"Wolfram syndrome, mitochondrial form",16,15,14,14,0.0011,0.003
+OMIM:620343,Basal cell nevus syndrome 2,15,11,39,39,0.0011,0.003
+OMIM:616155,"Charcot-Marie-Tooth disease, axonal, type 2S",15,10,49,49,0.0011,0.002
+OMIM:613159,Nephronophthisis-Like nephropathy 1,14,7,22,22,0.0011,0.008
+OMIM:619605,Developmental and epileptic encephalopathy 98,18,13,137,137,0.0011,0.002
+OMIM:615771,"Cortical dysplasia, complex, with other brain malformations 6",15,9,79,79,0.0011,0.002
+OMIM:615942,"Intellectual developmental disorder, autosomal recessive 44",14,7,26,26,0.0011,0.004
+OMIM:616654,Joubert syndrome 24,16,15,54,54,0.0011,0.002
+OMIM:618863,Retinal dystrophy with leukodystrophy,18,9,46,46,0.0011,0.002
+OMIM:611884,"Ciliary dyskinesia, primary, 7",13,5,38,38,0.0011,0.017
+OMIM:616494,"Leukodystrophy, hypomyelinating, 11",14,13,55,55,0.0011,0.004
+OMIM:614526,Chromosome 17Q12 duplication syndrome,17,10,31,31,0.0011,0.002
+OMIM:191830,Renal hypodysplasia/aplasia 1,15,5,17,17,0.0011,0.01
+OMIM:605588,"Charcot-Marie-Tooth disease, axonal, type 2B1",16,10,53,53,0.0011,0.003
+OMIM:618730,"Neurodevelopmental disorder with microcephaly, cortical malformations, and spasticity",17,13,122,122,0.0011,0.004
+OMIM:277300,"Spondylocostal dysostosis, autosomal recessive 1",17,12,60,60,0.0011,0.001
+OMIM:618524,"Myopathy, congenital, with tremor",15,7,52,52,0.0011,0.002
+OMIM:611105,Leukoencephalopathy with brainstem and spinal cord involvement and lactate elevation,15,14,61,61,0.0011,0.002
+OMIM:253300,"Spinal muscular atrophy, type I",14,11,20,20,0.0011,0.005
+OMIM:616291,Lichtenstein-Knorr syndrome,18,14,79,79,0.0011,0.002
+OMIM:608097,"Periventricular heterotopia with microcephaly, autosomal recessive",15,10,71,71,0.0011,0.004
+OMIM:204300,"Ceroid lipofuscinosis, neuronal, 6B (Kufs type)",18,12,94,94,0.0011,0.002
+OMIM:616647,"Epileptic encephalopathy, early infantile, 35",16,12,56,56,0.0011,0.002
+OMIM:618468,"Epileptic encephalopathy, early infantile, 76",16,11,94,94,0.0011,0.004
+OMIM:225250,"Hypothyroidism, congenital, nongoitrous, 5",13,4,30,30,0.0011,0.003
+OMIM:614483,Brain small vessel disease 2,13,11,55,55,0.0011,0.002
+OMIM:619825,"Aortic aneurysm, familial thoracic 12",13,7,14,14,0.0011,0.005
+OMIM:609161,"Striatal degeneration, autosomal dominant",12,7,55,55,0.0011,0.002
+OMIM:604321,"Microcephaly 4, primary, autosomal recessive",16,8,51,51,0.0011,0.005
+OMIM:176670,Hutchinson-Gilford progeria syndrome,13,6,22,22,0.0011,0.002
+OMIM:614076,Hermansky-Pudlak syndrome 7,13,5,35,35,0.001,0.002
+OMIM:613724,Leukoencephalopathy with dystonia and motor neuropathy,15,10,46,46,0.001,0.002
+OMIM:614671,Chromosome 16p11.2 duplication syndrome,18,11,42,42,0.001,0.005
+OMIM:118210,"Charcot-Marie-Tooth disease, axonal, type 2A1",18,11,84,84,0.001,0.003
+OMIM:118400,Cherubism,17,10,59,59,0.001,0.002
+OMIM:615424,Inclusion body myopathy with early-onset Paget disease without frontotemporal dementia 3,14,7,46,46,0.001,0.009
+OMIM:254300,"Myasthenia, limb-girdle, familial",18,9,51,51,0.001,0.003
+OMIM:611252,"Spastic paraplegia 32, autosomal recessive",13,9,61,61,0.001,0.002
+OMIM:614882,Peroxisome biogenesis disorder 10A (Zellweger),18,11,32,32,0.001,0.004
+OMIM:617800,"Microcephaly 19, primary, autosomal recessive",12,6,31,31,0.001,0.002
+OMIM:619024,Combined oxidative phosphorylation deficiency 49,12,5,17,17,0.001,0.002
+OMIM:619025,Combined oxidative phosphorylation deficiency 50,16,8,49,49,0.001,0.002
+OMIM:277480,"von Willebrand disease, type 3",12,4,66,66,0.001,0.001
+OMIM:248510,"Mannosidosis, beta",16,12,21,21,0.001,0.002
+OMIM:167210,Pachyonychia congenita 2,15,8,64,64,0.001,0.002
+OMIM:605355,"Nemaline myopathy 5, Amish type",14,9,48,48,0.001,0.005
+OMIM:620777,"Pulmonary hypertension, primary, 6",17,11,48,48,0.001,0.005
+OMIM:620158,Spinocerebellar ataxia 50,16,13,69,69,0.001,0.002
+OMIM:605253,"Neuropathy, congenital hypomyelinating, 1, autosomal recessive",12,10,27,27,0.001,0.003
+OMIM:617127,Orofaciodigital syndrome XV,15,6,19,19,0.001,0.002
+OMIM:235830,Histidinuria due to A renal tubular defect,13,6,10,10,0.001,0.004
+OMIM:613751,"Heterotaxy, visceral, 4, autosomal",15,7,93,93,0.001,0.011
+OMIM:600274,Frontotemporal dementia,17,9,136,136,0.001,0.002
+OMIM:611590,"Renal tubular acidosis, distal, with hemolytic anemia",16,10,14,14,0.001,0.003
+OMIM:617532,Intellectual developmental disorder with neuropsychiatric features,14,6,30,30,0.001,0.004
+OMIM:184840,"Stickler syndrome, type III",13,6,25,25,0.001,0.002
+OMIM:246560,Split-Hand/foot malformation 3,14,11,18,18,0.001,0.002
+OMIM:607734,"Charcot-Marie-Tooth disease, demyelinating, type 1F",16,11,79,79,0.001,0.003
+OMIM:613390,"Fanconi anemia, complementation group O",15,8,21,21,0.001,0.002
+OMIM:257320,Lissencephaly 2,12,9,32,32,0.001,0.002
+OMIM:614039,"Cortical dysplasia, complex, with other brain malformations 1",18,13,108,108,0.001,0.005
+OMIM:620161,Congenital myopathy 15,16,9,40,40,0.001,0.002
+OMIM:604772,"Ventricular tachycardia, catecholaminergic polymorphic, 1, with or without atrial dysfunction and/or dilated cardiomyopathy",13,5,67,67,0.001,0.002
+OMIM:612702,Hypogonadotropic hypogonadism 6 with or without anosmia,12,9,17,17,0.001,0.003
+OMIM:613811,"Pontocerebellar hypoplasia, type 2D",18,12,123,123,0.001,0.004
+OMIM:618763,Joubert syndrome 36,14,10,20,20,0.001,0.004
+OMIM:607855,"Muscular dystrophy, congenital, merosin deficient or partially deficient",16,15,36,36,0.001,0.005
+OMIM:607458,Spinocerebellar ataxia 18,13,8,38,38,0.001,0.002
+OMIM:619699,Ferguson-Bonni neurodevelopmental syndrome,15,10,13,13,0.001,0.002
+OMIM:268320,Rodrigues blindness,14,8,12,12,0.001,0.002
+OMIM:616192,"Ataxia, combined cerebellar and peripheral, with hearing loss and diabetes mellitus",16,9,55,55,0.001,0.002
+OMIM:609924,Aminoacylase 1 deficiency,18,15,39,39,0.001,0.002
+OMIM:618197,"Myasthenic syndrome, congenital, 23, presynaptic",16,8,54,54,0.001,0.002
+OMIM:609304,"Epileptic encephalopathy, early infantile, 3",12,10,50,50,0.001,0.002
+OMIM:608768,Spinocerebellar ataxia 8,15,14,61,61,0.001,0.002
+OMIM:610245,Spinocerebellar ataxia 23,17,11,106,106,0.001,0.002
+OMIM:615314,Craniosynostosis 3,14,5,31,31,0.001,0.002
+OMIM:616779,"Cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 2",14,10,82,82,0.001,0.002
+OMIM:618973,"Neurodegeneration, infantile-onset, biotin-responsive",18,13,65,65,0.001,0.002
+OMIM:611228,"Charcot-Marie-Tooth disease, type 4J",14,9,51,51,0.001,0.002
+OMIM:610644,"Palmoplantar hyperkeratosis with squamous cell carcinoma of skin and 46,xx sex reversal",18,6,32,32,0.001,0.002
+OMIM:619072,Neurodevelopmental disorder with seizures and brain atrophy,16,9,56,56,0.001,0.002
+OMIM:300717,"Myopathy, reducing body, X-linked, early-onset, severe",13,8,32,32,0.001,0.002
+OMIM:614594,Olmsted syndrome 1,17,11,68,68,0.001,0.002
+OMIM:172700,Pick disease of brain,17,9,136,136,0.001,0.002
+OMIM:607313,"Gaze palsy, familial horizontal, with progressive scoliosis, 1",16,10,40,40,0.001,0.002
+OMIM:150400,"Tooth agenesis, selective, 4",16,7,73,73,0.001,0.003
+OMIM:614019,Lissencephaly 4,16,10,58,58,0.001,0.004
+OMIM:105400,Amyotrophic lateral sclerosis 1,13,9,51,51,0.001,0.002
+OMIM:300067,"Lissencephaly, X-linked, 1",15,12,56,56,0.001,0.005
+OMIM:620047,"Microcephaly 29, primary, autosomal recessive",17,6,48,48,0.001,0.004
+OMIM:606889,Alzheimer disease-4,18,12,120,120,0.001,0.002
+OMIM:263570,"Polyglucosan body neuropathy, adult form",15,11,68,68,0.001,0.002
+OMIM:249400,"Neurocutaneous melanosis, somatic",12,8,48,48,0.001,0.002
+OMIM:613710,Thiamine metabolism dysfunction syndrome 4 (bilateral striatal degenerationand progressive polyneuropathy type),12,11,27,27,0.001,0.002
+OMIM:202400,"Afibrinogenemia, congenitalhypofibrinogenemia, congenital, included",14,2,82,82,0.001,0.003
+OMIM:612989,Optic atrophy 7 with or without auditory neuropathy,12,11,36,36,0.001,0.002
+OMIM:615599,"Neurodevelopmental disorder with feeding difficulties, thin corpus callosum, and foot deformity",17,14,79,79,0.001,0.005
+OMIM:613671,"Impaired intellectual development, anterior maxillary protrusion, and strabismus",15,9,29,29,0.001,0.004
+OMIM:615982,Bardet-Biedl syndrome 4,14,14,16,16,0.001,0.002
+OMIM:619835,"3-methylglutaconic aciduria, type VIIA, autosomal dominant",17,11,59,59,0.001,0.002
+OMIM:620865,"Ehlers-Danlos syndrome, classic-like, 3",18,12,48,48,0.001,0.002
+OMIM:615821,"Cardiomyopathy, dilated, with woolly hair, keratoderma, and tooth agenesis",15,10,52,52,0.001,0.003
+OMIM:613676,Seckel syndrome 4,12,4,18,18,0.001,0.002
+OMIM:615763,"Cortical dysplasia, complex, with other brain malformations 5",16,9,81,81,0.001,0.002
+OMIM:616322,"Myasthenic syndrome, congenital, 3B, fast-channel",14,12,23,23,0.001,0.001
+OMIM:616684,"Charcot-Marie-Tooth disease, type 4K",14,12,32,32,0.001,0.002
+OMIM:306700,Hemophilia A,13,3,68,68,0.001,0.002
+OMIM:601098,"Charcot-Marie-Tooth disease, demyelinating, type 1C",18,10,106,106,0.001,0.003
+OMIM:193400,"von Willebrand disease, type 1",16,4,90,90,0.001,0.011
+OMIM:617598,Mosaic variegated aneuploidy syndrome 3,16,9,12,12,0.001,0.002
+OMIM:304100,"Corpus callosum, partial agenesis of, X-linked",17,14,82,82,0.001,0.004
+OMIM:137200,"Neuromyotonia and axonal neuropathy, autosomal recessive",12,9,17,17,0.001,0.002
+OMIM:248450,Manitoba oculotrichoanal syndrome,15,6,30,30,0.001,0.003
+OMIM:300419,"Intellectual developmental disorder, X-linked 29",12,6,10,10,0.0009,0.002
+OMIM:277450,"Vitamin K-dependent clotting factors, combined deficiency of, 1",17,8,82,82,0.0009,0.002
+OMIM:187900,"Bleeding disorder, platelet-type, 17",16,6,120,120,0.0009,0.001
+OMIM:615368,Lethal congenital contracture syndrome 5,16,10,23,23,0.0009,0.002
+OMIM:615382,Nephronophthisis 16,12,5,21,21,0.0009,0.009
+OMIM:619816,"Epidermolysis bullosa, junctional 5A, intermediate",12,5,46,46,0.0009,0.002
+OMIM:306900,Hemophilia B,14,4,67,67,0.0009,0.001
+OMIM:620703,Yuksel-Vogel-Bauser syndrome,17,8,22,22,0.0009,0.002
+OMIM:231200,Bernard-Soulier syndrome,13,5,78,78,0.0009,0.001
+OMIM:609583,Joubert syndrome 4,17,10,46,46,0.0009,0.002
+OMIM:613096,"Spastic paraplegia 36, autosomal dominant",13,8,41,41,0.0009,0.002
+OMIM:602400,"Ichthyosis, congenital, autosomal recessive 11",17,11,88,88,0.0009,0.003
+OMIM:105120,"Amyloidosis, Finnish type",16,8,25,25,0.0009,0.007
+OMIM:616501,"Mitochondrial complex IV deficiency, nuclear type 13",14,9,22,22,0.0009,0.006
+OMIM:611722,"Krabbe disease, atypical, due to saposin A deficiency",16,10,58,58,0.0009,0.002
+OMIM:614514,"Thrombophilia due to protein S deficiency, autosomal recessive",12,7,39,39,0.0009,0.001
+OMIM:614931,"Ectodermal dysplasia 9, hair/nail type",18,13,69,69,0.0009,0.002
+OMIM:618663,"Epileptic encephalopathy, early infantile, 81",17,9,50,50,0.0009,0.004
+OMIM:245552,Lambotte syndrome,14,9,17,17,0.0009,0.002
+OMIM:155100,Macrothrombocytopenia and granulocyte inclusions with or without nephritis or sensorineural hearing loss,17,7,93,93,0.0009,0.001
+OMIM:258850,Orofaciodigital syndrome III,16,9,26,26,0.0009,0.002
+OMIM:256100,Nephronophthisis 1,12,4,28,28,0.0009,0.004
+OMIM:601494,"Cardiomyopathy, dilated, 1D",12,5,55,55,0.0009,0.005
+OMIM:203100,"Albinism, oculocutaneous, type IA",16,10,72,72,0.0009,0.002
+OMIM:606772,"Impaired intellectual development, obesity, mandibular prognathism, and eye and skin anomalies",17,11,28,28,0.0009,0.005
+OMIM:615524,"Microphthalmia, syndromic 12",15,10,15,15,0.0009,0.002
+OMIM:619724,"Dystonia 34, myoclonic",13,7,36,36,0.0009,0.001
+OMIM:615490,"Charcot-Marie-Tooth disease, axonal, type 2R",18,10,52,52,0.0009,0.002
+OMIM:615862,Nephronophthisis 18,12,8,13,13,0.0009,0.002
+OMIM:621331,Brain small vessel disease 5 with osteoporosis,17,11,95,95,0.0009,0.002
+OMIM:609654,Short stature and facioauriculothoracic malformations,16,12,30,30,0.0009,0.001
+OMIM:139090,Gray platelet syndrome,13,5,67,67,0.0009,0.001
+OMIM:273900,Thrombocytopenia 3,13,6,69,69,0.0009,0.001
+OMIM:153670,"Bernard-Soulier syndrome, type A2, autosomal dominant",15,6,94,94,0.0009,0.001
+OMIM:601345,"Ectodermal dysplasia with natal teeth, Turnpenny type",15,9,66,66,0.0009,0.006
+OMIM:613225,"Factor XIII, A subunit, deficiency of",12,5,66,66,0.0009,0.001
+OMIM:277580,Waardenburg-Shah syndrome,16,11,29,29,0.0009,0.002
+OMIM:244200,Hypogonadotropic hypogonadism 3 with or without anosmia,17,10,27,27,0.0009,0.002
+OMIM:620193,Lacrimoauriculodentodigital syndrome-3,16,10,35,35,0.0009,0.002
+OMIM:618815,"Chromosome 1p36.33 duplication syndrome, ATAD3 gene cluster",18,13,20,20,0.0009,0.002
+OMIM:219730,Ventriculomegaly with cystic kidney disease,14,9,18,18,0.0009,0.002
+OMIM:619303,"Pontocerebellar hypoplasia, type 1E",14,8,31,31,0.0009,0.002
+OMIM:604387,Nephronophthisis 3,14,7,55,55,0.0009,0.005
+OMIM:601003,Brody myopathy,16,13,46,46,0.0009,0.002
+OMIM:621106,"Tubulointerstitial kidney disease, autosomal dominant 6",15,10,68,68,0.0009,0.005
+OMIM:611773,"Angiopathy, hereditary, with nephropathy, aneurysms, and muscle cramps",13,11,24,24,0.0009,0.002
+OMIM:619267,Glanzmann thrombasthenia 2,13,2,78,78,0.0009,0.001
+OMIM:310300,"Emery-Dreifuss muscular dystrophy 1, X-linked",18,8,44,44,0.0009,0.002
+OMIM:616784,Joubert syndrome 26,16,11,22,22,0.0009,0.003
+OMIM:600858,"Cardiomyopathy, familial hypertrophic, 6",16,8,105,105,0.0009,0.006
+OMIM:618959,"Epileptic encephalopathy, early infantile, 88",16,5,41,41,0.0009,0.002
+OMIM:614296,"Wolfram-like syndrome, autosomal dominant",18,12,36,36,0.0009,0.002
+OMIM:615957,Spinocerebellar ataxia 38,12,9,37,37,0.0009,0.002
+OMIM:616286,Lethal congenital contracture syndrome 7,17,12,52,52,0.0009,0.002
+OMIM:602032,"Ectodermal dysplasia 4, hair/nail type",14,9,68,68,0.0009,0.001
+OMIM:621164,"Polycystic kidney disease 9, susceptibility to",15,5,52,52,0.0009,0.004
+OMIM:615411,"Cortical dysplasia, complex, with other brain malformations 3",14,12,66,66,0.0009,0.002
+OMIM:253700,"Muscular dystrophy, limb-girdle, type 2C",18,8,68,68,0.0009,0.002
+OMIM:620486,"Bleeding disorder, platelet-type, 25",12,2,66,66,0.0009,0.001
+OMIM:309545,"Intellectual developmental disorder, X-linked syndromic 12",12,7,21,21,0.0009,0.005
+OMIM:620452,Amyotrophic lateral sclerosis 28,17,10,49,49,0.0009,0.002
+OMIM:618655,"Myopathy, distal, 6, adult onset",12,5,45,45,0.0009,0.003
+OMIM:164300,Oculopharyngeal muscular dystrophy,14,10,23,23,0.0009,0.002
+OMIM:619142,Cardioacrofacial dysplasia 1,15,8,39,39,0.0008,0.002
+OMIM:618300,"Ciliary dyskinesia, primary, 40",17,10,38,38,0.0008,0.002
+OMIM:610205,Alagille syndrome 2,18,12,32,32,0.0008,0.005
+OMIM:618129,"Muscular dystrophy, limb-girdle, autosomal dominant 4",14,9,56,56,0.0008,0.002
+OMIM:613243,"Cardiomyopathy, familial hypertrophic, 13",14,6,56,56,0.0008,0.002
+OMIM:300580,"Myopathy, congenital, with fiber-type disproportion, X-linked",15,8,23,23,0.0008,0.002
+OMIM:144755,Hyperostosis cranialis interna,18,12,46,46,0.0008,0.002
+OMIM:171300,Pheochromocytoma,16,9,39,39,0.0008,0.002
+OMIM:231005,"Gaucher disease, type IIIC",17,12,32,32,0.0008,0.002
+OMIM:606072,Rippling muscle disease,12,5,45,45,0.0008,0.001
+OMIM:106995,Anonychia-Onychodystrophy with hypoplasia or absence of distal phalanges,13,6,24,24,0.0008,0.002
+OMIM:165500,Optic atrophy 1,14,9,56,56,0.0008,0.002
+OMIM:133020,"Erythermalgia, primary",13,8,11,11,0.0008,0.001
+OMIM:601419,"Myopathy, myofibrillar, 1",15,10,34,34,0.0008,0.002
+OMIM:611554,Leopard syndrome 2,18,6,41,41,0.0008,0.002
+OMIM:300484,Orofaciodigital syndrome VIII,17,10,20,20,0.0008,0.002
+OMIM:615297,Adams-Oliver syndrome 4,13,8,22,22,0.0008,0.002
+OMIM:616827,"Muscular dystrophy, limb-girdle, type 2W",12,9,23,23,0.0008,0.002
+OMIM:129490,"Ectodermal dysplasia 10A, hypohidrotic/hair/nail type, autosomal dominant",13,8,45,45,0.0008,0.002
+OMIM:612098,"Cardiomyopathy, familial hypertrophic, 11",17,11,105,105,0.0008,0.002
+OMIM:141300,"Hemifacial atrophy, progressive",16,11,28,28,0.0008,0.002
+OMIM:616559,Noonan syndrome 9,17,9,16,16,0.0008,0.002
+OMIM:169100,Char syndrome,17,7,23,23,0.0008,0.004
+OMIM:194072,"Wilms tumor, aniridia, genitourinary anomalies and impaired intellectual development syndrome",12,8,36,36,0.0008,0.001
+OMIM:617336,"Nemaline myopathy 11, autosomal recessive",15,7,27,27,0.0008,0.002
+OMIM:604804,"Microcephaly 3, primary, autosomal recessive",15,8,32,32,0.0008,0.004
+OMIM:617070,"Progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 4",18,14,35,35,0.0008,0.002
+OMIM:620192,Lacrimoauriculodentodigital syndrome-2,14,7,33,33,0.0008,0.002
+OMIM:618021,Tetraamelia syndrome 2,14,5,19,19,0.0008,0.005
+OMIM:201550,Adducted thumbs syndrome,15,9,36,36,0.0008,0.002
+OMIM:142946,Holoprosencephaly 4,15,6,37,37,0.0008,0.002
+OMIM:613204,"Muscular dystrophy, congenital, due to integrin alpha-7 deficiency",12,9,39,39,0.0008,0.005
+OMIM:619113,COACH syndrome 3,16,10,28,28,0.0008,0.002
+OMIM:102150,Acromegaloid facial appearance syndrome,18,6,67,67,0.0008,0.004
+OMIM:600252,Lowry-Maclean syndrome,12,9,20,20,0.0008,0.004
+OMIM:253601,"Muscular dystrophy, limb-girdle, type 2B",13,7,37,37,0.0008,0.002
+OMIM:175050,Juvenile polyposis/hereditary hemorrhagic telangiectasia syndrome,14,9,29,29,0.0008,0.003
+OMIM:614651,"Coenzyme Q10 deficiency, primary, 2",15,8,14,14,0.0008,0.002
+OMIM:613102,Hypotrichosis and recurrent skin vesicles,14,9,62,62,0.0008,0.002
+OMIM:520000,"Diabetes and deafness, maternally inherited",14,14,17,17,0.0008,0.002
+OMIM:616324,"Myasthenic syndrome, congenital, 4B, fast-channel",13,10,29,29,0.0008,0.001
+OMIM:214300,"Klippel-Feil syndrome, autosomal recessive",13,8,23,23,0.0008,0.001
+OMIM:613854,"Congenital heart defects, multiple types, 6",14,9,91,91,0.0008,0.003
+OMIM:620246,Congenital myopathy 18 due to dihydropyridine receptor defect,12,7,21,21,0.0008,0.002
+OMIM:617158,"Myopathy, distal, with rimmed vacuoles",13,3,44,44,0.0008,0.009
+OMIM:613266,"Waardenburg syndrome, type 4C",13,8,18,18,0.0008,0.002
+OMIM:603511,"Muscular dystrophy, limb-girdle, type 1E",18,9,69,69,0.0008,0.002
+OMIM:123100,Craniosynostosis 1,14,5,56,56,0.0008,0.001
+OMIM:247990,Macdermot-Winter syndrome,15,8,17,17,0.0008,0.002
+OMIM:601846,Vacuolar neuromyopathy,13,5,39,39,0.0008,0.009
+OMIM:609200,"Myopathy, myofibrillar, 3",16,9,49,49,0.0008,0.003
+OMIM:602433,"Amyotrophic lateral sclerosis 4, juvenile",17,8,94,94,0.0008,0.003
+OMIM:620725,Bethlem myopathy 1B,13,8,66,66,0.0008,0.002
+OMIM:619354,"Deafness, cataract, impaired intellectual development, and polyneuropathy",14,4,20,20,0.0007,0.002
+OMIM:614473,"Arterial calcification, generalized, of infancy, 2",14,6,68,68,0.0007,0.002
+OMIM:273390,Tetra-Amelia with ectodermal dysplasia and lacrimal duct abnormalities,17,6,38,38,0.0007,0.004
+OMIM:300143,"Intellectual developmental disorder, X-linked 21",18,6,33,33,0.0007,0.002
+OMIM:613509,Chromosome 4q21 deletion syndrome,15,7,28,28,0.0007,0.002
+OMIM:618879,"Neurodevelopmental disorder with hypotonia and cerebellar atrophy, with or without seizures",16,9,23,23,0.0007,0.002
+OMIM:210745,"Blepharophimosis with ptosis, syndactyly, and short stature",16,8,39,39,0.0007,0.002
+OMIM:614072,Hermansky-Pudlak syndrome 3,15,11,36,36,0.0007,0.002
+OMIM:613550,Nephronophthisis 11,15,8,22,22,0.0007,0.002
+OMIM:618823,"Myopathy, congenital proximal, with minicore lesions",15,8,29,29,0.0007,0.002
+OMIM:616201,Chronic atrial and intestinal dysrhythmia,12,7,37,37,0.0007,0.002
+OMIM:613838,"Cardiomyopathy, familial hypertrophic, 16",12,8,46,46,0.0007,0.002
+OMIM:609273,Nemaline myopathy 6,12,8,37,37,0.0007,0.002
+OMIM:210700,"Microcephalic primordial dwarfism, Montreal type",12,9,11,11,0.0007,0.002
+OMIM:608390,"Myotonia, potassium-aggravated",12,9,24,24,0.0007,0.001
+OMIM:612242,Chromosome 10q22.3-q23.2 deletion syndrome,14,5,22,22,0.0007,0.002
+OMIM:616812,"Muscular dystrophy, limb-girdle, autosomal recessive 25",17,12,38,38,0.0007,0.002
+OMIM:604379,Hypotrichosis 7,13,11,69,69,0.0007,0.002
+OMIM:608751,"Cardiomyopathy, familial hypertrophic, 8",13,6,66,66,0.0007,0.002
+OMIM:620022,"Stickler syndrome, type VI",12,5,12,12,0.0007,0.002
+OMIM:614838,Hypogonadotropic hypogonadism 9 with or without anosmia,12,6,14,14,0.0007,0.002
+OMIM:604169,Left ventricular noncompaction 1,15,7,92,92,0.0007,0.006
+OMIM:278150,Hypotrichosis 8,13,8,69,69,0.0007,0.001
+OMIM:273400,"Tetramelic deficiencies, ectodermal dysplasia, deformed ears, andother abnormalities",16,13,12,12,0.0007,0.002
+OMIM:606242,Kondoh syndrome,16,9,34,34,0.0007,0.002
+OMIM:133100,"Erythrocytosis, familial, 1",13,6,17,17,0.0007,0.001
+OMIM:620294,"Congenital heart defects, multiple types, 9",16,7,66,66,0.0007,0.002
+OMIM:300614,"Deafness, X-linked 5",13,10,25,25,0.0007,0.002
+OMIM:606482,"Charcot-Marie-Tooth disease, dominant intermediate B",12,8,37,37,0.0007,0.003
+OMIM:611936,Chromosome 3q29 duplication syndrome,17,8,60,60,0.0007,0.008
+OMIM:615750,Moyamoya disease 6 with achalasia,12,6,25,25,0.0006,0.002
+OMIM:620067,Cardiac valvular dysplasia 2,16,8,91,91,0.0006,0.002
+OMIM:605637,"Myopathy, proximal, and ophthalmoplegia",18,12,69,69,0.0006,0.002
+OMIM:621236,"Rhabdomyolysis, susceptibility to, 2",15,9,51,51,0.0006,0.005
+OMIM:300581,FG syndrome 5,14,6,38,38,0.0006,0.002
+OMIM:271150,"Spinal muscular atrophy, type IV",17,6,78,78,0.0006,0.003
+OMIM:618388,Fetal akinesia deformation sequence 2,17,9,25,25,0.0006,0.002
+OMIM:616165,Nemaline myopathy 10,18,12,72,72,0.0006,0.001
+OMIM:613157,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 3",13,7,36,36,0.0006,0.002
+OMIM:617047,"Cardiomyopathy, familial hypertrophic, 26",13,6,78,78,0.0006,0.002
+OMIM:612937,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 15",13,6,25,25,0.0006,0.002
+OMIM:224900,"Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, autosomal recessive",18,8,106,106,0.0006,0.002
+OMIM:613426,"Cardiomyopathy, dilated, 1S",18,7,136,136,0.0006,0.005
+OMIM:608758,"Cardiomyopathy, familial hypertrophic, 10",15,9,67,67,0.0006,0.002
+OMIM:621446,Oculopharyngodistal myopathy 5,14,9,38,38,0.0006,0.002
+OMIM:617069,"Progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 3",14,10,33,33,0.0006,0.002
+OMIM:610706,"Deafness, congenital, with inner ear agenesis, microtia, and microdontia",15,6,42,42,0.0006,0.002
+OMIM:108900,"Atrial septal defect 7, with or without AV conduction defects",13,7,78,78,0.0006,0.003
+OMIM:617072,"Muscular dystrophy, limb-girdle, type 2Y",16,10,78,78,0.0006,0.002
+OMIM:277000,Mayer-Rokitansky-Kuster-Hauser syndrome,15,4,79,79,0.0006,0.002
+OMIM:616816,"Hypotonia, infantile, with psychomotor retardation",17,11,23,23,0.0006,0.002
+OMIM:208000,"Arterial calcification, generalized, of infancy, 1",18,8,71,71,0.0006,0.002
+OMIM:620286,"Myopathy, sarcoplasmic body",12,6,45,45,0.0006,0.009
+OMIM:609166,Branchiogenic-deafness syndrome,14,7,23,23,0.0006,0.002
+OMIM:619981,Braddock-Carey syndrome 2,13,8,25,25,0.0006,0.002
+OMIM:616898,Chromosome 15q14 deletion syndrome,17,7,41,41,0.0006,0.004
+OMIM:613717,Treacher collins syndrome 2,17,10,67,67,0.0006,0.002
+OMIM:263400,"Erythrocytosis, familial, 2",15,9,27,27,0.0006,0.001
+OMIM:615989,Bardet-Biedl syndrome 12,13,9,18,18,0.0005,0.002
+OMIM:227260,"Focal facial dermal dysplasia 3, Setleis type",13,2,52,52,0.0005,0.001
+OMIM:137550,"Melanocytic nevus syndrome, congenital",18,2,94,94,0.0005,0.002
+OMIM:613456,Frontonasal dysplasia 3,14,6,38,38,0.0005,0.002
+OMIM:123320,"Creatine phosphokinase, elevated serum",12,10,37,37,0.0005,0.001
+OMIM:617681,Blepharocheilodontic syndrome 2,13,7,46,46,0.0005,0.003
+OMIM:608980,Bifid nose with or without anorectal and renal anomalies,17,4,28,28,0.0005,0.001
+OMIM:609452,"Myopathy, myofibrillar, 4",12,5,29,29,0.0005,0.001
+OMIM:615278,Cardiofaciocutaneous syndrome 2,15,8,19,19,0.0005,0.001
+OMIM:301950,"Branchial arch syndrome, X-linked",12,7,14,14,0.0005,0.001
+OMIM:616001,"Breasts and/or nipples, aplasia or hypoplasia of, 2",12,2,15,15,0.0005,0.001
+OMIM:132900,"Aortic aneurysm, familial thoracic 4",18,10,136,136,0.0005,0.001
+OMIM:601349,"Microphthalmia, syndromic 8",14,9,32,32,0.0005,0.002
+OMIM:266900,Senior-Loken syndrome 1,12,4,22,22,0.0005,0.001
+OMIM:314400,"Cardiac valvular dysplasia, X-linked",16,10,31,31,0.0005,0.001
+OMIM:178600,"Pulmonary hypertension, primary, 1",14,6,66,66,0.0005,0.001
+OMIM:601076,"Mullerian duct aplasia, unilateral renal agenesis, and cervicothoracicsomite anomalies",16,12,27,27,0.0005,0.002
+OMIM:202370,Peroxisome biogenesis disorder 2B,17,10,47,47,0.0005,0.002
+OMIM:618939,Treacher-Collins syndrome 4,13,9,37,37,0.0005,0.001
+OMIM:620903,Polycystic kidney disease 8,12,4,22,22,0.0005,0.001
+OMIM:611867,"Chromosome 22q11.2 deletion syndrome, distal",14,7,24,24,0.0004,0.002
+OMIM:141400,Hemifacial microsomia with radial defects,13,10,34,34,0.0004,0.002
+OMIM:166780,Otofaciocervical syndrome,13,2,22,22,0.0004,0.001
+OMIM:300238,"Intellectual developmental disorder, X-linked syndromic, Shashi type",12,6,22,22,0.0004,0.001
+OMIM:300946,Diamond-Blackfan anemia 14 with mandibulofacial dysostosis,13,7,19,19,0.0004,0.001
