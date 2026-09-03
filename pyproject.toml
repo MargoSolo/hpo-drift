@@ -9,7 +9,7 @@ description = "Diff two Human Phenotype Ontology releases *for your own term lis
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "Margarita Solosenko"}]
+authors = [{name = "Margarita Soloshenko", email = "msoloshenk@gmail.com"}]
 keywords = ["HPO", "Human Phenotype Ontology", "ontology", "semantic similarity", "reproducibility", "phenotype"]
 classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Bio-Informatics"]
 dependencies = ["obonet>=1.0", "networkx>=3.0", "requests>=2.31"]
