@@ -19,32 +19,87 @@
   },
   "terms": [
     {
-      "tid": "HP:0001369",
+      "tid": "HP:0001263",
       "status": "unchanged",
-      "old_name": "Arthritis",
-      "new_name": "Arthritis",
+      "old_name": "Global developmental delay",
+      "new_name": "Global developmental delay",
       "replaced_by": [],
       "parents_added": [],
       "parents_removed": [],
-      "ic_old": 0.6812143293212605,
-      "ic_new": 0.6656854342176715
+      "ic_old": 0.8363684609193078,
+      "ic_new": 0.836746004512859
     },
     {
-      "tid": "HP:0000554",
+      "tid": "HP:0001249",
       "status": "unchanged",
-      "old_name": "Uveitis",
-      "new_name": "Uveitis",
+      "old_name": "Intellectual disability",
+      "new_name": "Intellectual disability",
       "replaced_by": [],
       "parents_added": [],
       "parents_removed": [],
-      "ic_old": 0.8021593314394488,
-      "ic_new": 0.7771236228117809
+      "ic_old": 0.8178318297667195,
+      "ic_new": 0.8182521425377594
     },
     {
-      "tid": "HP:0001945",
+      "tid": "HP:0001250",
       "status": "unchanged",
-      "old_name": "Fever",
-      "new_name": "Fever",
+      "old_name": "Seizure",
+      "new_name": "Seizure",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.4052991986015947,
+      "ic_new": 0.4066713391981397
+    },
+    {
+      "tid": "HP:0000252",
+      "status": "unchanged",
+      "old_name": "Microcephaly",
+      "new_name": "Microcephaly",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.8363684609193078,
+      "ic_new": 0.836746004512859
+    },
+    {
+      "tid": "HP:0001252",
+      "status": "unchanged",
+      "old_name": "Hypotonia",
+      "new_name": "Hypotonia",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.739221620304257,
+      "ic_new": 0.7398233087510193
+    },
+    {
+      "tid": "HP:0004322",
+      "status": "unchanged",
+      "old_name": "Short stature",
+      "new_name": "Short stature",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.6727369218386156,
+      "ic_new": 0.673492009025718
+    },
+    {
+      "tid": "HP:0000175",
+      "status": "unchanged",
+      "old_name": "Cleft palate",
+      "new_name": "Cleft palate",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.7246725587295517,
+      "ic_new": 0.7253078159187495
+    },
+    {
+      "tid": "HP:0000589",
+      "status": "unchanged",
+      "old_name": "Coloboma",
+      "new_name": "Coloboma",
       "replaced_by": [],
       "parents_added": [],
       "parents_removed": [],
@@ -52,131 +107,106 @@
       "ic_new": 0.7771236228117809
     },
     {
-      "tid": "HP:0001954",
+      "tid": "HP:0000365",
       "status": "unchanged",
-      "old_name": "Recurrent fever",
-      "new_name": "Recurrent fever",
+      "old_name": "Hearing impairment",
+      "new_name": "Hearing impairment",
       "replaced_by": [],
       "parents_added": [],
       "parents_removed": [],
-      "ic_old": 0.8590554639129512,
-      "ic_new": 0.8593806622637378
+      "ic_old": 0.630166645599617,
+      "ic_new": 0.6310199542858268
     },
     {
-      "tid": "HP:0000988",
+      "tid": "HP:0000028",
       "status": "unchanged",
-      "old_name": "Skin rash",
-      "new_name": "Skin rash",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 0.7316870633959245,
-      "ic_new": 0.7323061361666807
-    },
-    {
-      "tid": "HP:0001433",
-      "status": "unchanged",
-      "old_name": "Hepatosplenomegaly",
-      "new_name": "Hepatosplenomegaly",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 1.0,
-      "ic_new": 1.0
-    },
-    {
-      "tid": "HP:0002716",
-      "status": "unchanged",
-      "old_name": "Lymphadenopathy",
-      "new_name": "Lymphadenopathy",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 0.739221620304257,
-      "ic_new": 0.7323061361666807
-    },
-    {
-      "tid": "HP:0001701",
-      "status": "unchanged",
-      "old_name": "Pericarditis",
-      "new_name": "Pericarditis",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 0.9295277319564755,
-      "ic_new": 0.836746004512859
-    },
-    {
-      "tid": "HP:0000155",
-      "status": "unchanged",
-      "old_name": "Oral ulcer",
-      "new_name": "Oral ulcer",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 1.0,
-      "ic_new": 1.0
-    },
-    {
-      "tid": "HP:0100686",
-      "status": "unchanged",
-      "old_name": "Enthesitis",
-      "new_name": "Enthesitis",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 1.0,
-      "ic_new": 1.0
-    },
-    {
-      "tid": "HP:0003765",
-      "status": "unchanged",
-      "old_name": "Psoriasiform dermatitis",
-      "new_name": "Psoriasiform dermatitis",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 1.0,
-      "ic_new": 1.0
-    },
-    {
-      "tid": "HP:0011227",
-      "status": "unchanged",
-      "old_name": "Elevated circulating C-reactive protein concentration",
-      "new_name": "Elevated circulating C-reactive protein concentration",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 1.0,
-      "ic_new": 1.0
-    },
-    {
-      "tid": "HP:0045073",
-      "status": "unchanged",
-      "old_name": "Serositis",
-      "new_name": "Serositis",
-      "replaced_by": [],
-      "parents_added": [],
-      "parents_removed": [],
-      "ic_old": 0.8363684609193078,
-      "ic_new": 0.7890709933956066
-    },
-    {
-      "tid": "HP:0003326",
-      "status": "unchanged",
-      "old_name": "Myalgia",
-      "new_name": "Myalgia",
+      "old_name": "Cryptorchidism",
+      "new_name": "Cryptorchidism",
       "replaced_by": [],
       "parents_added": [],
       "parents_removed": [],
       "ic_old": 0.8883040978102439,
       "ic_new": 0.8885618114058904
+    },
+    {
+      "tid": "HP:0000508",
+      "status": "unchanged",
+      "old_name": "Ptosis",
+      "new_name": "Ptosis",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.7885831958694267,
+      "ic_new": 0.7890709933956066
+    },
+    {
+      "tid": "HP:0000316",
+      "status": "unchanged",
+      "old_name": "Hypertelorism",
+      "new_name": "Hypertelorism",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 1.0,
+      "ic_new": 1.0
+    },
+    {
+      "tid": "HP:0001631",
+      "status": "unchanged",
+      "old_name": "Atrial septal defect",
+      "new_name": "Atrial septal defect",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 0.8178318297667195,
+      "ic_new": 0.8182521425377594
+    },
+    {
+      "tid": "HP:0000637",
+      "status": "unchanged",
+      "old_name": "Long palpebral fissure",
+      "new_name": "Long palpebral fissure",
+      "replaced_by": [],
+      "parents_added": [],
+      "parents_removed": [],
+      "ic_old": 1.0,
+      "ic_new": 1.0
     }
   ],
   "pairs": [
     {
-      "a": "HP:0001369",
-      "b": "HP:0000554",
+      "a": "HP:0001263",
+      "b": "HP:0001249",
+      "resnik_old": 0.608555525573001,
+      "resnik_new": 0.6052316100696236,
+      "lin_old": 0.7357700624277146,
+      "lin_new": 0.7313985349750515,
+      "mica_old": "HP:0012759",
+      "mica_new": "HP:0012759"
+    },
+    {
+      "a": "HP:0001263",
+      "b": "HP:0001250",
+      "resnik_old": 0.25137542604922336,
+      "resnik_new": 0.25278161169787483,
+      "lin_old": 0.40489969134932063,
+      "lin_new": 0.4065917416648607,
+      "mica_old": "HP:0012638",
+      "mica_new": "HP:0012638"
+    },
+    {
+      "a": "HP:0001263",
+      "b": "HP:0000252",
+      "resnik_old": 0.19318889695506913,
+      "resnik_new": 0.19389569728526568,
+      "lin_old": 0.23098539218315628,
+      "lin_new": 0.2317258716976472,
+      "mica_old": "HP:0000707",
+      "mica_new": "HP:0000707"
+    },
+    {
+      "a": "HP:0001263",
+      "b": "HP:0001252",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -185,8 +215,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0001945",
+      "a": "HP:0001263",
+      "b": "HP:0004322",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -195,8 +225,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0001954",
+      "a": "HP:0001263",
+      "b": "HP:0000175",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -205,8 +235,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0000988",
+      "a": "HP:0001263",
+      "b": "HP:0000589",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -215,8 +245,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0001433",
+      "a": "HP:0001263",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -225,8 +255,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0002716",
+      "a": "HP:0001263",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -235,8 +265,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0001701",
+      "a": "HP:0001263",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -245,8 +275,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0000155",
+      "a": "HP:0001263",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -255,18 +285,268 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0100686",
+      "a": "HP:0001263",
+      "b": "HP:0001631",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001263",
+      "b": "HP:0000637",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0001250",
+      "resnik_old": 0.25137542604922336,
+      "resnik_new": 0.25278161169787483,
+      "lin_old": 0.41103597279281534,
+      "lin_new": 0.4127304529090186,
+      "mica_old": "HP:0012638",
+      "mica_new": "HP:0012638"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000252",
+      "resnik_old": 0.19318889695506913,
+      "resnik_new": 0.19389569728526568,
+      "lin_old": 0.23357376738816812,
+      "lin_new": 0.23431530437760104,
+      "mica_old": "HP:0000707",
+      "mica_new": "HP:0000707"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0001252",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0004322",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000175",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000589",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000365",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000028",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000508",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000316",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0001631",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001249",
+      "b": "HP:0000637",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000252",
+      "resnik_old": 0.19318889695506913,
+      "resnik_new": 0.19389569728526568,
+      "lin_old": 0.3111764979521349,
+      "lin_new": 0.3118754909861252,
+      "mica_old": "HP:0000707",
+      "mica_new": "HP:0000707"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0001252",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0004322",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000175",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000589",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000365",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000028",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000508",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000316",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0001631",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0001250",
+      "b": "HP:0000637",
+      "resnik_old": 0.0,
+      "resnik_new": 0.0,
+      "lin_old": 0.0,
+      "lin_new": 0.0,
+      "mica_old": "HP:0000118",
+      "mica_new": "HP:0000118"
+    },
+    {
+      "a": "HP:0000252",
+      "b": "HP:0001252",
       "resnik_old": 0.13993773350079852,
       "resnik_new": 0.14149314329419826,
-      "lin_old": 0.16647221125850642,
-      "lin_new": 0.1698917939576675,
+      "lin_old": 0.17763215847630406,
+      "lin_new": 0.1794949858579619,
       "mica_old": "HP:0033127",
       "mica_new": "HP:0033127"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0003765",
+      "a": "HP:0000252",
+      "b": "HP:0004322",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -275,8 +555,18 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0011227",
+      "a": "HP:0000252",
+      "b": "HP:0000175",
+      "resnik_old": 0.262252320400597,
+      "resnik_new": 0.2628155741634284,
+      "lin_old": 0.33599670617186983,
+      "lin_new": 0.3365000241679384,
+      "mica_old": "HP:0000234",
+      "mica_new": "HP:0000234"
+    },
+    {
+      "a": "HP:0000252",
+      "b": "HP:0000589",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -285,8 +575,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0045073",
+      "a": "HP:0000252",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -295,8 +585,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001369",
-      "b": "HP:0003326",
+      "a": "HP:0000252",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -305,8 +595,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0001945",
+      "a": "HP:0000252",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -315,8 +605,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0001954",
+      "a": "HP:0000252",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -325,48 +615,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0000988",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.5963211827077958,
-      "lin_new": 0.5638888142223223,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0001433",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.29468366486686476,
-      "lin_new": 0.2710863697653516,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0002716",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.34453969076354535,
-      "lin_new": 0.31916290815568177,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0001701",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.5281930642056162,
-      "lin_new": 0.5273973451952425,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0000155",
+      "a": "HP:0000252",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -375,8 +625,18 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0100686",
+      "a": "HP:0000252",
+      "b": "HP:0000637",
+      "resnik_old": 0.262252320400597,
+      "resnik_new": 0.2628155741634284,
+      "lin_old": 0.2856205886582373,
+      "lin_new": 0.28617519626305893,
+      "mica_old": "HP:0000234",
+      "mica_new": "HP:0000234"
+    },
+    {
+      "a": "HP:0001252",
+      "b": "HP:0004322",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -385,18 +645,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0003765",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.5075384181096478,
-      "lin_new": 0.47894842318034836,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0011227",
+      "a": "HP:0001252",
+      "b": "HP:0000175",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -405,18 +655,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000554",
-      "b": "HP:0045073",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.5582237301837917,
-      "lin_new": 0.5434513362096409,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000554",
-      "b": "HP:0003326",
+      "a": "HP:0001252",
+      "b": "HP:0000589",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -425,18 +665,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0001954",
-      "resnik_old": 0.7766081956204878,
-      "resnik_new": 0.7771236228117809,
-      "lin_old": 0.9495939964112298,
-      "lin_new": 0.9497361295035284,
-      "mica_old": "HP:0001945",
-      "mica_new": "HP:0001945"
-    },
-    {
-      "a": "HP:0001945",
-      "b": "HP:0000988",
+      "a": "HP:0001252",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -445,8 +675,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0001433",
+      "a": "HP:0001252",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -455,8 +685,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0002716",
+      "a": "HP:0001252",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -465,8 +695,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0001701",
+      "a": "HP:0001252",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -475,8 +705,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0000155",
+      "a": "HP:0001252",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -485,8 +715,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0100686",
+      "a": "HP:0001252",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -495,8 +725,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0003765",
+      "a": "HP:0004322",
+      "b": "HP:0000175",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -505,18 +735,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0011227",
-      "resnik_old": 0.2051820866649433,
-      "resnik_new": 0.20726126270252698,
-      "lin_old": 0.23098180811136315,
-      "lin_new": 0.2332547494637389,
-      "mica_old": "HP:0001939",
-      "mica_new": "HP:0001939"
-    },
-    {
-      "a": "HP:0001945",
-      "b": "HP:0045073",
+      "a": "HP:0004322",
+      "b": "HP:0000589",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -525,8 +745,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001945",
-      "b": "HP:0003326",
+      "a": "HP:0004322",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -535,8 +755,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0000988",
+      "a": "HP:0004322",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -545,8 +765,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0001433",
+      "a": "HP:0004322",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -555,8 +775,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0002716",
+      "a": "HP:0004322",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -565,8 +785,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0001701",
+      "a": "HP:0004322",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -575,8 +795,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0000155",
+      "a": "HP:0004322",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -585,8 +805,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0100686",
+      "a": "HP:0000175",
+      "b": "HP:0000589",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -595,8 +815,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0003765",
+      "a": "HP:0000175",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -605,18 +825,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0011227",
-      "resnik_old": 0.2051820866649433,
-      "resnik_new": 0.20726126270252698,
-      "lin_old": 0.2207379937262063,
-      "lin_new": 0.22293580535595425,
-      "mica_old": "HP:0001939",
-      "mica_new": "HP:0001939"
-    },
-    {
-      "a": "HP:0001954",
-      "b": "HP:0045073",
+      "a": "HP:0000175",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -625,8 +835,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001954",
-      "b": "HP:0003326",
+      "a": "HP:0000175",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -635,38 +845,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000988",
-      "b": "HP:0001433",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.306676031534905,
-      "lin_new": 0.2780998008806579,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0000988",
-      "b": "HP:0002716",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.3610468293155064,
-      "lin_new": 0.32892936965821307,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0000988",
-      "b": "HP:0001701",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.550600138416349,
-      "lin_new": 0.542461614165114,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000988",
-      "b": "HP:0000155",
+      "a": "HP:0000175",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -675,8 +855,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000988",
-      "b": "HP:0100686",
+      "a": "HP:0000175",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -685,18 +865,18 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000988",
-      "b": "HP:0003765",
-      "resnik_old": 0.5740378374598682,
-      "resnik_new": 0.5349219412014925,
-      "lin_old": 0.6629810311502258,
-      "lin_new": 0.6175836130040965,
-      "mica_old": "HP:0011123",
-      "mica_new": "HP:0011123"
+      "a": "HP:0000175",
+      "b": "HP:0000637",
+      "resnik_old": 0.2867125769544966,
+      "resnik_new": 0.28709150194142974,
+      "lin_old": 0.33248349143526484,
+      "lin_new": 0.33280032617084004,
+      "mica_old": "HP:0000271",
+      "mica_new": "HP:0000271"
     },
     {
-      "a": "HP:0000988",
-      "b": "HP:0011227",
+      "a": "HP:0000589",
+      "b": "HP:0000365",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -705,18 +885,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000988",
-      "b": "HP:0045073",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.5833116761982975,
-      "lin_new": 0.5594605968522306,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0000988",
-      "b": "HP:0003326",
+      "a": "HP:0000589",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -725,28 +895,28 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0002716",
-      "resnik_old": 0.5297790528001797,
-      "resnik_new": 0.5260096885006975,
-      "lin_old": 0.6092139686114307,
-      "lin_new": 0.6072941468240408,
-      "mica_old": "HP:0100763",
-      "mica_new": "HP:0100763"
+      "a": "HP:0000589",
+      "b": "HP:0000508",
+      "resnik_old": 0.2794064407030782,
+      "resnik_new": 0.280815144959084,
+      "lin_old": 0.35702527144250346,
+      "lin_new": 0.35859546706793155,
+      "mica_old": "HP:0000478",
+      "mica_new": "HP:0000478"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0001701",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.2578429314537556,
-      "lin_old": 0.2752315541607229,
-      "lin_new": 0.2807605742113925,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0001626"
+      "a": "HP:0000589",
+      "b": "HP:0000316",
+      "resnik_old": 0.3335169197002976,
+      "resnik_new": 0.3351990741005597,
+      "lin_old": 0.37545354177972307,
+      "lin_new": 0.3772377675900844,
+      "mica_old": "HP:0012372",
+      "mica_new": "HP:0012372"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0000155",
+      "a": "HP:0000589",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -755,8 +925,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0100686",
+      "a": "HP:0000589",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -765,18 +935,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0003765",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.2655334582312978,
-      "lin_new": 0.24087699576614785,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0001433",
-      "b": "HP:0011227",
+      "a": "HP:0000365",
+      "b": "HP:0000028",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -785,18 +945,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001433",
-      "b": "HP:0045073",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.2891940957190787,
-      "lin_new": 0.2692760618839055,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0001433",
-      "b": "HP:0003326",
+      "a": "HP:0000365",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -805,18 +955,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0002716",
-      "b": "HP:0001701",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.2578429314537556,
-      "lin_old": 0.3182424704723537,
-      "lin_new": 0.3286607560945509,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0001626"
-    },
-    {
-      "a": "HP:0002716",
-      "b": "HP:0000155",
+      "a": "HP:0000365",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -825,8 +965,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0002716",
-      "b": "HP:0100686",
+      "a": "HP:0000365",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -835,18 +975,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0002716",
-      "b": "HP:0003765",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.30534746708685206,
-      "lin_new": 0.2780998008806579,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0002716",
-      "b": "HP:0011227",
+      "a": "HP:0000365",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -855,18 +985,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0002716",
-      "b": "HP:0045073",
-      "resnik_old": 0.2655334582312978,
-      "resnik_new": 0.24087699576614785,
-      "lin_old": 0.337059063008433,
-      "lin_new": 0.3166565226801459,
-      "mica_old": "HP:0002715",
-      "mica_new": "HP:0002715"
-    },
-    {
-      "a": "HP:0002716",
-      "b": "HP:0003326",
+      "a": "HP:0000028",
+      "b": "HP:0000508",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -875,8 +995,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001701",
-      "b": "HP:0000155",
+      "a": "HP:0000028",
+      "b": "HP:0000316",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -885,8 +1005,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001701",
-      "b": "HP:0100686",
+      "a": "HP:0000028",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -895,18 +1015,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001701",
-      "b": "HP:0003765",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.47403573481313954,
-      "lin_new": 0.46340133848174203,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0001701",
-      "b": "HP:0011227",
+      "a": "HP:0000028",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -915,18 +1025,18 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0001701",
-      "b": "HP:0045073",
-      "resnik_old": 0.8363684609193078,
-      "resnik_new": 0.7890709933956066,
-      "lin_old": 0.9472453299276574,
-      "lin_new": 0.9706762746492478,
-      "mica_old": "HP:0045073",
-      "mica_new": "HP:0045073"
+      "a": "HP:0000508",
+      "b": "HP:0000316",
+      "resnik_old": 0.2794064407030782,
+      "resnik_new": 0.280815144959084,
+      "lin_old": 0.31243326153163287,
+      "lin_new": 0.31392286387261215,
+      "mica_old": "HP:0000478",
+      "mica_new": "HP:0000478"
     },
     {
-      "a": "HP:0001701",
-      "b": "HP:0003326",
+      "a": "HP:0000508",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -935,8 +1045,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000155",
-      "b": "HP:0100686",
+      "a": "HP:0000508",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -945,8 +1055,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000155",
-      "b": "HP:0003765",
+      "a": "HP:0000316",
+      "b": "HP:0001631",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -955,8 +1065,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000155",
-      "b": "HP:0011227",
+      "a": "HP:0000316",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,
@@ -965,118 +1075,8 @@
       "mica_new": "HP:0000118"
     },
     {
-      "a": "HP:0000155",
-      "b": "HP:0045073",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0000155",
-      "b": "HP:0003326",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0100686",
-      "b": "HP:0003765",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0100686",
-      "b": "HP:0011227",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0100686",
-      "b": "HP:0045073",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0100686",
-      "b": "HP:0003326",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0003765",
-      "b": "HP:0011227",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0003765",
-      "b": "HP:0045073",
-      "resnik_old": 0.4573325481301592,
-      "resnik_new": 0.4255752784711253,
-      "lin_old": 0.49808364482715317,
-      "lin_new": 0.4757500177937549,
-      "mica_old": "HP:0012649",
-      "mica_new": "HP:0012649"
-    },
-    {
-      "a": "HP:0003765",
-      "b": "HP:0003326",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0011227",
-      "b": "HP:0045073",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0011227",
-      "b": "HP:0003326",
-      "resnik_old": 0.0,
-      "resnik_new": 0.0,
-      "lin_old": 0.0,
-      "lin_new": 0.0,
-      "mica_old": "HP:0000118",
-      "mica_new": "HP:0000118"
-    },
-    {
-      "a": "HP:0045073",
-      "b": "HP:0003326",
+      "a": "HP:0001631",
+      "b": "HP:0000637",
       "resnik_old": 0.0,
       "resnik_new": 0.0,
       "lin_old": 0.0,

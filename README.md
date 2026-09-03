@@ -13,11 +13,11 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026, 14 paediatric-rheumatology terms. **None of them changed label, status or direct `is_a` parents.** And yet, with Seco intrinsic IC computed on the `is_a` graph under *Phenotypic abnormality*:
+Feb 2026 → Jun 2026, 14 terms of a syndromic neurodevelopmental presentation as a clinical geneticist records it (developmental delay, intellectual disability, seizures, microcephaly, hypotonia, short stature, cleft palate, coloboma, hearing impairment, cryptorchidism, ptosis, hypertelorism, ASD, long palpebral fissures). **None of them changed label, status or direct `is_a` parents.** And yet, with Seco intrinsic IC computed on the `is_a` graph under *Phenotypic abnormality*:
 
 ![Lin similarity drift](docs/lin-drift.png)
 
-**IC moved for 9 of 14 terms, and every pair with an informative common ancestor — 25 of 25 — moved in Lin and Resnik.** The other 66 pairs share only the root and stay at 0. Ontology-wide the release added 469 terms, obsoleted 22, renamed 266 and rewired the `is_a` graph by +886 / −185 edges. That is what moved your numbers.
+**IC moved for 12 of 14 terms, and every pair with an informative common ancestor — 13 of 13 — moved in Lin and Resnik.** The other 78 pairs share only the root and stay at 0. The shifts are small here (largest: Global developmental delay ↔ Intellectual disability, Lin 0.736 → 0.731), and that is the point: small, systematic, and invisible unless the release tag is in your Methods. Ontology-wide the release added 469 terms, obsoleted 22, renamed 266 and rewired the `is_a` graph by +886 / −185 edges. That is what moved your numbers.
 
 ![Information-content drift](docs/ic-drift.png)
 
