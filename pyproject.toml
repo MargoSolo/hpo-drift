@@ -13,7 +13,6 @@ authors = [{name = "Margarita Solosenko"}]
 keywords = ["HPO", "Human Phenotype Ontology", "ontology", "semantic similarity", "reproducibility", "phenotype"]
 classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Bio-Informatics"]
 dependencies = ["obonet>=1.0", "networkx>=3.0", "requests>=2.31"]
-keywords = ["HPO", "ontology", "phenotype", "reproducibility", "semantic-similarity"]
 
 [project.scripts]
 hpo-drift = "hpo_drift.cli:main"
@@ -23,3 +22,5 @@ where = ["src"]
 
 [project.urls]
 Homepage = "https://github.com/MargoSolo/hpo-drift"
+Documentation = "https://margosolo.github.io/hpo-drift/"
+Changelog = "https://github.com/MargoSolo/hpo-drift/blob/main/CHANGELOG.md"
