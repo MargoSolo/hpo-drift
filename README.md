@@ -36,11 +36,11 @@ active terms: 19389 → 19836 (added 469, obsoleted 22, renamed 266)
 is_a edges:   +886 / −185
 
 term        label          status     IC old → new
-HP:0001701  Pericarditis   unchanged  0.930 → 0.837
-HP:0045073  Serositis      unchanged  0.837 → 0.790
+HP:0001250  Seizure                      unchanged  0.405 → 0.407
+HP:0000365  Hearing impairment           unchanged  0.630 → 0.631
 …
-pair                                    Lin old → new   Δ       MICA
-Skin rash ↔ Psoriasiform dermatitis     0.667 → 0.621   −0.045  HP:0000951
+pair                                                  Lin old → new   Δ       MICA
+Global developmental delay ↔ Intellectual disability  0.736 → 0.731   −0.004  HP:0012759
 …
 ```
 Add `--json` for a machine-readable report. Releases are pulled from the official GitHub assets of `obophenotype/human-phenotype-ontology`; any tag like `v2026-06-23` works and is cached under `~/.cache/hpo-drift`.
@@ -56,10 +56,10 @@ hpo-drift lint --release v2026-06-23 --terms my_terms.txt
 ```
 ```
 ⚠️ Arthritis: matched by LABEL — labels get renamed; store the ID → HP:0001369
-❌ Dactylitis: label not found (exact match on names/synonyms)
+❌ Seizures: label not found (exact match on names/synonyms; the term is 'Seizure')
 ❌ HP:0002960: OBSOLETE → replaced_by HP:0025095
 ```
-Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is **exact** on purpose: it reproduces the failure mode of a pipeline that matches by label. In the example set, "Dactylitis" does not exist as a single HPO term (it is split into finger and toe dactylitis) and "Macrophage activation syndrome" is a disease-level concept, not an HPO phenotype — both are reasons to store IDs, and reasons why fuzzy resolution must suggest, never auto-map.
+Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is **exact** on purpose: it reproduces the failure mode of a pipeline that matches by label. In the example set, "Seizures" is not an exact HPO label (the term is *Seizure*) and "Developmental delay" resolves only through a synonym — both are reasons to store IDs, and reasons why fuzzy resolution must suggest, never auto-map.
 
 ### 3 · a monthly GitHub Action
 `.github/workflows/drift.yml` fetches the latest release, compares it with your pinned one (`PINNED_HPO`) and uploads the report. Add a threshold on `lin_delta` from the JSON and it becomes a failing check.

@@ -21,7 +21,7 @@ IDs are safest. Labels work, and `lint` will tell you which ones it matched by l
 ## 2. Run lint against the release you are pinning
 
 ```bash
-hpo-drift lint --release v2026-06-23 --terms examples/pediatric_rheum_terms.txt
+hpo-drift lint --release v2026-06-23 --terms examples/clinical_genetics_terms.txt
 ```
 
 Every label match is a warning with the ID to store; unknown labels and obsolete IDs are errors (exit code 1). In the example set two labels are unresolvable on purpose: "Dactylitis" is split into two HPO terms and "Macrophage activation syndrome" is a disease-level concept.
@@ -29,7 +29,7 @@ Every label match is a warning with the ID to store; unknown labels and obsolete
 ## 3. Run the report
 
 ```bash
-hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/pediatric_rheum_terms.txt
+hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/clinical_genetics_terms.txt
 ```
 
 Full output of this exact run:
