@@ -10,6 +10,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Margarita Solosenko"}]
+keywords = ["HPO", "Human Phenotype Ontology", "ontology", "semantic similarity", "reproducibility", "phenotype"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Bio-Informatics"]
 dependencies = ["obonet>=1.0", "networkx>=3.0", "requests>=2.31"]
 keywords = ["HPO", "ontology", "phenotype", "reproducibility", "semantic-similarity"]
 
@@ -18,3 +20,6 @@ hpo-drift = "hpo_drift.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/MargoSolo/hpo-drift"
