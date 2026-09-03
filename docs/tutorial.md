@@ -1,19 +1,12 @@
 # Tutorial: reading a drift report
 
-This walks through the real run behind the README figures — 14 terms of a syndromic neurodevelopmental presentation as a clinical geneticist records it, HPO v2026-02-16 → v2026-06-23 — and shows how to read each part of the report.
+This walks through the real run behind the README figures — the HPO-annotated phenotype profile of severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971), HPO v2026-02-16 → v2026-06-23 — and shows how to read each part of the report.
 
 ## 1. The term list
 
-`examples/scid_omim608971_terms.txt`, IDs with the label as a comment, plus two label-only lines left in on purpose:
+`examples/scid_omim608971_terms.txt`: the 15 phenotypic-abnormality terms annotated to the disease in `phenotype.hpoa`, IDs with the label as a comment. Inheritance and onset terms were removed: they sit outside *Phenotypic abnormality* and carry no IC.
 
-```
-HP:0001263   # Global developmental delay
-HP:0001249   # Intellectual disability
-HP:0001250   # Seizure
-…
-Seizures                        # not an exact HPO label ('Seizure' is) → lint error
-Developmental delay             # synonym → resolves, with a warning to store the ID
-```
+Why this disease? `examples/rank_profiles.py` scores every OMIM profile with 12–18 terms by mean |ΔLin| over its informative pairs. This one ranks first of 1 345 (0.085 vs a median of 0.001); the whole top of the list is inborn errors of immunity, because the immunology branch was restructured between the two releases.
 
 ## 2. Lint first
 
@@ -21,7 +14,7 @@ Developmental delay             # synonym → resolves, with a warning to store 
 hpo-drift lint --release v2026-06-23 --terms examples/scid_omim608971_terms.txt
 ```
 
-Every label match is a warning with the ID to store; unknown labels and obsolete IDs are errors (exit code 1). "Seizures" fails because matching is exact on purpose — the same failure mode a label-matching pipeline has; "Developmental delay" resolves through a synonym to HP:0001263 with a warning.
+All IDs resolve; nothing is obsolete. For a label-based list you would see warnings with the ID to store and errors for labels that are not exact HPO names (e.g. "Recurrent infection" vs the term *Recurrent infections*).
 
 ## 3. The report
 
@@ -29,46 +22,47 @@ Every label match is a warning with the ID to store; unknown labels and obsolete
 hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/scid_omim608971_terms.txt
 ```
 
-The header states the method: Seco 2004 intrinsic IC on the `is_a` graph under root HP:0000118 (Phenotypic abnormality), with N = 18 690 → 19 120 active terms. Then the ontology-wide counts, then your terms:
+The header states the method: Seco 2004 intrinsic IC on the `is_a` graph under root HP:0000118 (Phenotypic abnormality), N = 18 690 → 19 120 active terms. Then the ontology-wide counts, then your terms:
 
-## Your 14 terms
+## Your 15 terms
 
 | term | status | old → new label | parents | IC old → new |
 |---|---|---|---|---|
-| HP:0001263 | unchanged | Global developmental delay | = | 0.836 → 0.837 |
-| HP:0001249 | unchanged | Intellectual disability | = | 0.818 → 0.818 |
-| HP:0001250 | unchanged | Seizure | = | 0.405 → 0.407 |
-| HP:0000252 | unchanged | Microcephaly | = | 0.836 → 0.837 |
-| HP:0001252 | unchanged | Hypotonia | = | 0.739 → 0.740 |
-| HP:0004322 | unchanged | Short stature | = | 0.673 → 0.673 |
-| HP:0000175 | unchanged | Cleft palate | = | 0.725 → 0.725 |
-| HP:0000589 | unchanged | Coloboma | = | 0.777 → 0.777 |
-| HP:0000365 | unchanged | Hearing impairment | = | 0.630 → 0.631 |
-| HP:0000028 | unchanged | Cryptorchidism | = | 0.888 → 0.889 |
-| HP:0000508 | unchanged | Ptosis | = | 0.789 → 0.789 |
-| HP:0000316 | unchanged | Hypertelorism | = | 1.000 → 1.000 |
-| HP:0001631 | unchanged | Atrial septal defect | = | 0.818 → 0.818 |
-| HP:0000637 | unchanged | Long palpebral fissure | = | 1.000 → 1.000 |
+| HP:0000155 | unchanged | Oral ulcer | = | 1.000 → 1.000 |
+| HP:0000388 | unchanged | Otitis media | = | 0.818 → 0.803 |
+| HP:0000403 | unchanged | Recurrent otitis media | = | 1.000 → 1.000 |
+| HP:0000964 | unchanged | Eczematoid dermatitis | = | 0.766 → 0.757 |
+| HP:0001744 | unchanged | Splenomegaly | = | 0.888 → 0.889 |
+| HP:0002014 | unchanged | Diarrhea | = | 0.747 → 0.748 |
+| HP:0002020 | unchanged | Gastroesophageal reflux | = | 1.000 → 1.000 |
+| HP:0002090 | unchanged | Pneumonia | +HP:5210123 −HP:0011947 | 0.802 → 0.789 |
+| HP:0002240 | unchanged | Hepatomegaly | = | 0.888 → 0.889 |
+| HP:0002716 | unchanged | Lymphadenopathy | = | 0.739 → 0.732 |
+| HP:0002728 | renamed | Chronic mucocutaneous candidiasis → Recurrent mucocutaneous candidiasis | +HP:5210236 | 0.859 → 0.859 |
+| HP:0004430 | unchanged | Severe combined immunodeficiency | = | 1.000 → 1.000 |
+| HP:0005390 | unchanged | Recurrent opportunistic infections | = | 1.000 → 1.000 |
+| HP:0005403 | unchanged | Decreased total T cell count | +HP:5210411 −HP:0011839 | 1.000 → 1.000 |
+| HP:0008866 | unchanged | Failure to thrive secondary to recurrent infections |  −HP:0002719,HP:0032169 | 1.000 → 1.000 |
 
-Status is about the term record itself (label, obsoletion, direct `is_a` parents). IC moves anyway, because IC is a function of the whole graph below the term and of N.
+Four terms changed direct parents. Three gained a new intermediate parent (`HP:5210123` Unusual lower respiratory tract infection, `HP:5210236` Unusual fungal skin infection, `HP:5210411` Decreased total T cell number). One — `HP:0008866` *Failure to thrive secondary to recurrent infections* — lost *Recurrent infections* and *Severe infection* as parents.
 
 ## 4. Similarity drift
 
-## Similarity drift (91 pairs; 13 moved)
+## Similarity drift (105 pairs; 61 moved)
 
 | pair | Lin old → new | Δ | Resnik old → new | MICA old → new |
 |---|---|---|---|---|
-| HP:0001263 ↔ HP:0001249 | 0.736 → 0.731 | -0.004 | 0.609 → 0.605 | HP:0012759 → HP:0012759 |
-| HP:0000252 ↔ HP:0001252 | 0.178 → 0.179 | +0.002 | 0.140 → 0.141 | HP:0033127 → HP:0033127 |
-| HP:0000589 ↔ HP:0000316 | 0.375 → 0.377 | +0.002 | 0.334 → 0.335 | HP:0012372 → HP:0012372 |
-| HP:0001249 ↔ HP:0001250 | 0.411 → 0.413 | +0.002 | 0.251 → 0.253 | HP:0012638 → HP:0012638 |
-| HP:0001263 ↔ HP:0001250 | 0.405 → 0.407 | +0.002 | 0.251 → 0.253 | HP:0012638 → HP:0012638 |
-| HP:0000589 ↔ HP:0000508 | 0.357 → 0.359 | +0.002 | 0.279 → 0.281 | HP:0000478 → HP:0000478 |
-| HP:0000508 ↔ HP:0000316 | 0.312 → 0.314 | +0.001 | 0.279 → 0.281 | HP:0000478 → HP:0000478 |
-| HP:0001249 ↔ HP:0000252 | 0.234 → 0.234 | +0.001 | 0.193 → 0.194 | HP:0000707 → HP:0000707 |
+| HP:0002728 ↔ HP:0008866 | 0.604 → 0.000 | -0.604 | 0.561 → 0.000 | HP:0002719 → HP:0000118 |
+| HP:0000403 ↔ HP:0008866 | 0.561 → 0.000 | -0.561 | 0.561 → 0.000 | HP:0002719 → HP:0000118 |
+| HP:0005390 ↔ HP:0008866 | 0.561 → 0.000 | -0.561 | 0.561 → 0.000 | HP:0002719 → HP:0000118 |
+| HP:0000964 ↔ HP:0008866 | 0.336 → 0.000 | -0.336 | 0.297 → 0.000 | HP:0010978 → HP:0000118 |
+| HP:0002090 ↔ HP:0008866 | 0.329 → 0.000 | -0.329 | 0.297 → 0.000 | HP:0010978 → HP:0000118 |
+| HP:0000388 ↔ HP:0008866 | 0.327 → 0.000 | -0.327 | 0.297 → 0.000 | HP:0010978 → HP:0000118 |
+| HP:0002716 ↔ HP:0008866 | 0.305 → 0.000 | -0.305 | 0.266 → 0.000 | HP:0002715 → HP:0000118 |
+| HP:0004430 ↔ HP:0008866 | 0.297 → 0.000 | -0.297 | 0.297 → 0.000 | HP:0010978 → HP:0000118 |
 
-Only pairs whose most-informative common ancestor is below the root carry a non-zero Lin; here 13 of 91 pairs do, and all 13 moved. The remaining 78 pairs share only *Phenotypic abnormality* and stay at 0 in both releases. Shifts are small in this set (largest −0.004) — small, systematic, and invisible unless the release tag is written down.
+Losing those parents moves `HP:0008866` out of the immune branch: its most-informative common ancestor with every infection term becomes the root, and Lin drops from 0.60 (with *Recurrent mucocutaneous candidiasis*) to 0.00. That is one edit to one term, and it changes 14 of the profile's pairwise scores at once. All 61 informative pairs moved; the 44 root-only pairs stay at 0.
 
 ## 5. What to write in Methods
 
-"Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23." One sentence; `hpo-drift` gives you the numbers to justify it.
+"Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23." One sentence; `hpo-drift` gives you the numbers to justify it, and `rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
