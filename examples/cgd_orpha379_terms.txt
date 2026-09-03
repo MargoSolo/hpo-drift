@@ -1,0 +1,23 @@
+# Chronic granulomatous disease (ORPHA:379): its HPO-annotated phenotype profile from phenotype.hpoa — 22 phenotypic-abnormality terms
+HP:0000230   # Gingivitis
+HP:0000246   # Sinusitis
+HP:0000388   # Otitis media
+HP:0000964   # Eczematoid dermatitis
+HP:0000992   # Cutaneous photosensitivity
+HP:0001034   # Hypermelanotic macule
+HP:0001287   # Meningitis
+HP:0001744   # Splenomegaly
+HP:0001874   # Abnormality of neutrophils
+HP:0001945   # Fever
+HP:0002021   # Pyloric stenosis
+HP:0002024   # Malabsorption
+HP:0002205   # Recurrent respiratory infections
+HP:0002240   # Hepatomegaly
+HP:0002575   # Tracheoesophageal fistula
+HP:0006510   # Chronic pulmonary obstruction
+HP:0012733   # Macule
+HP:0100523   # Liver abscess
+HP:0100533   # Inflammatory abnormality of the eye
+HP:0100721   # Mediastinal lymphadenopathy
+HP:0100806   # Sepsis
+HP:0200042   # Skin ulcer

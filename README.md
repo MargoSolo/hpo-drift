@@ -13,30 +13,30 @@ The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted 
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of a real disease** — severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971), 15 phenotypic-abnormality terms straight from `phenotype.hpoa` — and it was chosen by ranking all 1 345 OMIM profiles with 12–18 terms by how much their Lin similarities drifted between the two releases (`examples/rank_profiles.py`). The whole top of that ranking is inborn errors of immunity: the immunology branch was restructured in this interval.
+Feb 2026 → Jun 2026. The example is not a hand-picked list: it is the **HPO-annotated phenotype profile of chronic granulomatous disease** (ORPHA:379), 22 phenotypic-abnormality terms straight from `phenotype.hpoa`. It was chosen by drift: `examples/rank_profiles.py` scores every OMIM profile with 12–18 terms by mean |ΔLin| between the two releases, and the same scoring over well-known syndromes puts CGD at the top. The whole upper part of that ranking is inborn errors of immunity — the immunology branch was restructured in this interval.
 
 ![Lin similarity drift](docs/lin-drift.png)
 
 What happened to this profile, computed with Seco intrinsic IC on the `is_a` graph under *Phenotypic abnormality*:
 
-- **4 of 15 terms were re-parented.** New intermediate terms appeared above *Pneumonia*, *Recurrent mucocutaneous candidiasis* and *Decreased total T cell count* (e.g. `HP:5210123` *Unusual lower respiratory tract infection*). And **`HP:0008866` *Failure to thrive secondary to recurrent infections* lost its parents *Recurrent infections* and *Severe infection*.**
-- Consequence: its similarity to every infection term in the profile **collapsed to zero** — *Recurrent mucocutaneous candidiasis* ↔ *Failure to thrive secondary to recurrent infections* went from Lin 0.60 to 0.00 because their most-informative common ancestor became the root.
-- **IC moved for 8 of 15 terms; all 61 informative pairs moved** (44 pairs share only the root). Mean |ΔLin| over informative pairs: **0.085**; the median disease profile in the same ranking: 0.001.
+- **Two terms gained a parent.** HPO introduced an *Unusual infection* hierarchy: *Gingivitis* (`HP:0000230`) is now also an *Unusual oral cavity infection* (`HP:5210280`), *Sinusitis* (`HP:0000246`) also an *Unusual upper respiratory tract infection* (`HP:5210121`). No label changed, nothing was obsoleted.
+- Consequence: *Gingivitis* entered the immune branch. Its Lin similarity with *Meningitis* went **0.00 → 0.55**, with *Recurrent respiratory infections* 0.00 → 0.46, with *Sepsis* 0.00 → 0.43 — their most-informative common ancestor is no longer the root but *Unusual infection*. *Sinusitis* ↔ *Recurrent respiratory infections* rose 0.48 → 0.78.
+- **IC moved for 18 of 22 terms; all 95 informative pairs moved**, 15 of them by more than 0.1 (136 pairs share only the root). Mean |ΔLin| 0.067; the median disease profile: 0.001.
 
 ![Information-content drift](docs/ic-drift.png)
 
-**Consequence for any study using HPO similarity:** a patient with this profile is scored differently by Phenomizer-style tools on the two releases, for reasons that have nothing to do with the patient. Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release. `hpo-drift` gives you that sentence with real figures — and `examples/rank_profiles.py` tells you which disease profiles are most exposed.
+This edit is an *improvement* — the new hierarchy is clinically right — and it still changes how a CGD patient scores against every other disease, for reasons that have nothing to do with the patient. **Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release.** `hpo-drift` gives you that sentence with real figures; `examples/rank_profiles.py` tells you whether your disease of interest is among the exposed ones.
 
-| rank | disease profile (OMIM) | terms | informative pairs moved | mean \|ΔLin\| | max \|ΔLin\| |
+| rank | disease profile (12–18 terms) | terms | informative pairs moved | mean \|ΔLin\| | max \|ΔLin\| |
 |---|---|---|---|---|---|
-| 1 | Severe combined immunodeficiency, AR, T−B+NK+ (608971) | 15 | 61 / 61 | 0.085 | 0.604 |
-| 2 | Leukocyte adhesion deficiency, type I (116920) | 17 | 51 / 51 | 0.084 | 0.517 |
-| 3 | Severe combined immunodeficiency, AR (601457) | 16 | 60 / 60 | 0.082 | 0.561 |
-| 4 | Hypophosphatemic rickets and hyperparathyroidism (612089) | 14 | 28 / 28 | 0.071 | 0.924 |
-| 5 | Fanconi renotubular syndrome 5 (618913) | 14 | 29 / 29 | 0.065 | 0.924 |
+| 1 | Severe combined immunodeficiency, AR, T−B+NK+ (OMIM:608971) | 15 | 61 / 61 | 0.085 | 0.604 |
+| 2 | Leukocyte adhesion deficiency, type I (OMIM:116920) | 17 | 51 / 51 | 0.084 | 0.517 |
+| 3 | Severe combined immunodeficiency, AR (OMIM:601457) | 16 | 60 / 60 | 0.082 | 0.561 |
+| 4 | Hypophosphatemic rickets and hyperparathyroidism (OMIM:612089) | 14 | 28 / 28 | 0.071 | 0.924 |
+| 5 | Fanconi renotubular syndrome 5 (OMIM:618913) | 14 | 29 / 29 | 0.065 | 0.924 |
 | … | median of 1 345 profiles | | | 0.001 | |
 
-Full ranking: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv).
+Full ranking: [`examples/profiles-v2026-02-16_v2026-06-23.csv`](examples/profiles-v2026-02-16_v2026-06-23.csv). Among well-known syndromes: chronic granulomatous disease 0.067, hyper-IgE syndrome 0.047, X-linked agammaglobulinemia 0.033, Wiskott–Aldrich 0.020, cystic fibrosis 0.023 — and, for contrast, Kabuki, Noonan or Marfan profiles did not reach 0.01.
 
 ## 30-second start
 

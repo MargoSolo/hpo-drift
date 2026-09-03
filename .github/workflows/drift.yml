@@ -14,6 +14,6 @@ jobs:
         id: rel
         run: echo "tag=$(curl -s https://api.github.com/repos/obophenotype/human-phenotype-ontology/releases/latest | python -c 'import sys,json;print(json.load(sys.stdin)["tag_name"])')" >> $GITHUB_OUTPUT
       - name: report vs pinned release
-        run: hpo-drift report --old "${PINNED_HPO:-v2026-06-23}" --new "${{ steps.rel.outputs.tag }}" --terms examples/scid_omim608971_terms.txt > drift.md
+        run: hpo-drift report --old "${PINNED_HPO:-v2026-06-23}" --new "${{ steps.rel.outputs.tag }}" --terms examples/cgd_orpha379_terms.txt > drift.md
       - uses: actions/upload-artifact@v4
         with: {name: drift-report, path: drift.md}
