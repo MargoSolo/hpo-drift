@@ -39,7 +39,7 @@ class Release:
 
     def __init__(self, tag: str, path: Path | None = None):
         self.tag = tag
-        self.g = obonet.read_obo(str(path or fetch(tag)))
+        self.g = obonet.read_obo(str(path or fetch(tag)), ignore_obsolete=False)  # keep obsolete terms so `obsoleted → replaced_by` and lint can see them
         self.alt: dict[str, str] = {}
         self.labels: dict[str, str] = {}
         for tid, d in self.g.nodes(data=True):
