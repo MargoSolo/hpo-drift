@@ -3,6 +3,11 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results"
 version: 0.1.2
+doi: 10.5281/zenodo.22286171
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22286170
+    description: Concept DOI (all versions)
 date-released: "2026-09-03"
 license: MIT
 repository-code: "https://github.com/MargoSolo/hpo-drift"

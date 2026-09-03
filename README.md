@@ -1,6 +1,7 @@
 # hpo-drift <img src="docs/logo.svg" align="right" width="110" alt="">
 
 [![ci](https://github.com/MargoSolo/hpo-drift/actions/workflows/ci.yml/badge.svg)](https://github.com/MargoSolo/hpo-drift/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22286170.svg)](https://doi.org/10.5281/zenodo.22286170)
 [![drift check](https://github.com/MargoSolo/hpo-drift/actions/workflows/drift.yml/badge.svg)](https://github.com/MargoSolo/hpo-drift/actions/workflows/drift.yml)
 ![coverage](https://img.shields.io/badge/coverage-91%25-brightgreen) ![python](https://img.shields.io/badge/python-3.10%2B-3776ab)
 ![HPO releases](https://img.shields.io/badge/HPO-any%20release%20tag-8e44ad)
@@ -89,5 +90,7 @@ IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), so it
 `--ic annotations` · fuzzy label suggestions in `lint` · Phenopackets v2 export · `--pairs` file for patient × disease scoring · JOSS paper.
 
 ## Cite
+
+DOI (all versions): 10.5281/zenodo.22286170 · this version: 10.5281/zenodo.22286171
 
 Soloshenko M. *hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.* 2026, v0.1.0. MIT License.
