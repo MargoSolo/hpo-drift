@@ -37,9 +37,14 @@ def fetch(tag: str) -> Path:
 class Release:
     """One HPO release, parsed. Edges in the obonet graph go child -> parent."""
 
-    def __init__(self, tag: str, path: Path | None = None):
+    def __init__(self, tag: str, path: Path | None = None, root: str = ROOT):
         self.tag = tag
+        self.root = root
         self.g = obonet.read_obo(str(path or fetch(tag)), ignore_obsolete=False)  # keep obsolete terms so `obsoleted → replaced_by` and lint can see them
+        # IC / ancestors / MICA are computed on the is_a graph only (child -> parent), never on other relationship types
+        self.isa = nx.DiGraph()
+        self.isa.add_nodes_from(self.g.nodes())
+        self.isa.add_edges_from((u, v) for u, v, k in self.g.edges(keys=True) if k == "is_a")
         self.alt: dict[str, str] = {}
         self.labels: dict[str, str] = {}
         for tid, d in self.g.nodes(data=True):
@@ -52,7 +57,10 @@ class Release:
                 m = SYN_RE.match(s)
                 if m:
                     self.labels.setdefault(m.group(1).lower(), tid)
-        self._n_active = sum(1 for _, d in self.g.nodes(data=True) if not self.obsolete(_))
+        # N for Seco IC = active terms inside the root's is_a closure (default: Phenotypic abnormality), not the whole ontology
+        self._domain = ({t for t in nx.ancestors(self.isa, root)} | {root}) if root in self.isa else set(self.isa.nodes())
+        self._domain = {t for t in self._domain if not self.obsolete(t)}
+        self._n_active = len(self._domain)
 
     def has(self, tid: str) -> bool:
         return tid in self.g
@@ -71,21 +79,21 @@ class Release:
 
     def ancestors(self, tid: str) -> set[str]:
         """All superclasses (following child->parent edges) incl. self."""
-        return (nx.descendants(self.g, tid) | {tid}) if tid in self.g else set()
+        return (nx.descendants(self.isa, tid) | {tid}) if tid in self.isa else set()
 
     @lru_cache(maxsize=None)
     def n_descendants(self, tid: str) -> int:
-        return len(nx.ancestors(self.g, tid)) if tid in self.g else 0
+        return len(nx.ancestors(self.isa, tid) & self._domain) if tid in self.isa else 0
 
     def ic(self, tid: str) -> float:
         """Intrinsic information content (Seco 2004): 1 - log(desc+1)/log(N).
         Structure-only, so drift here isolates the effect of ontology edits."""
-        if tid not in self.g or self.obsolete(tid):
-            return float("nan")
+        if tid not in self._domain:
+            return float("nan")   # obsolete, or outside the root closure (e.g. inheritance / frequency / modifier branches)
         return 1.0 - math.log(self.n_descendants(tid) + 1) / math.log(self._n_active)
 
     def mica(self, a: str, b: str) -> tuple[str | None, float]:
-        common = self.ancestors(a) & self.ancestors(b)
+        common = (self.ancestors(a) & self.ancestors(b)) & self._domain   # only ancestors inside the root closure carry IC
         if not common:
             return None, 0.0
         best = max(common, key=self.ic)

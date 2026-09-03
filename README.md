@@ -9,15 +9,15 @@
 
 **What did a new HPO release change for *your* phenotype terms — and by how much did your similarity scores move?**
 
-The Human Phenotype Ontology is updated roughly monthly. Terms get renamed, obsoleted and merged — and, the part nobody notices, the hierarchy gets new edges. New edges change information content, and information content is what Resnik and Lin similarity are made of. So the **same patient set, scored against two HPO releases, gives different numbers even if none of your terms were touched.** `hpo-drift` shows you exactly that, for the term list you actually use, in about three seconds.
+The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted and merged — and, the part nobody notices, the hierarchy gets new edges. New edges change information content, and information content is what Resnik and Lin similarity are made of. So the **same patient set, scored against two HPO releases, gives different numbers even if none of your terms were touched.** `hpo-drift` shows you exactly that, for the term list you actually use, in about three seconds.
 
 ## The headline result
 
-Feb 2026 → Jun 2026, 14 paediatric-rheumatology terms. **Not one of them was edited** — no rename, no parent change. And yet:
+Feb 2026 → Jun 2026, 14 paediatric-rheumatology terms. **None of them changed label, status or direct `is_a` parents.** And yet, with Seco intrinsic IC computed on the `is_a` graph under *Phenotypic abnormality*:
 
 ![Lin similarity drift](docs/lin-drift.png)
 
-**91 of 91 pairwise scores moved.** Ontology-wide the release added 469 terms, obsoleted 22, renamed 266 and rewired the `is_a` graph by +886 / −185 edges. That is what moved your numbers.
+**IC moved for 9 of 14 terms, and every pair with an informative common ancestor — 25 of 25 — moved in Lin and Resnik.** The other 66 pairs share only the root and stay at 0. Ontology-wide the release added 469 terms, obsoleted 22, renamed 266 and rewired the `is_a` graph by +886 / −185 edges. That is what moved your numbers.
 
 ![Information-content drift](docs/ic-drift.png)
 
@@ -26,7 +26,7 @@ Feb 2026 → Jun 2026, 14 paediatric-rheumatology terms. **Not one of them was e
 ## 30-second start
 
 ```bash
-pip install git+https://github.com/MargoSolo/hpo-drift
+pip install hpo-drift
 
 # one term per line — HP IDs (recommended) or labels
 hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms my_terms.txt
@@ -78,7 +78,7 @@ flowchart LR
   G --> R
 ```
 
-IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), so it depends only on the graph — the drift measured here is caused purely by ontology edits, which is the effect this tool isolates. Annotation-based IC (from `phenotype.hpoa`) adds a second, independent source of drift and is on the roadmap as an option.
+IC is **intrinsic** (Seco et al. 2004: `1 − log(descendants+1)/log(N)`), computed on the **`is_a` graph only**, with `N` and descendant counts taken inside the closure of a root — `HP:0000118` *Phenotypic abnormality* by default (`--root` to change; inheritance, frequency and modifier branches are excluded, and the root's IC is exactly 0). Every report states the method, the root and `N`. Because this IC depends only on the graph, the drift measured here is caused purely by ontology edits, which is the effect this tool isolates. Annotation-based IC (from `phenotype.hpoa`) adds a second, independent source of drift and is the next option on the roadmap — then the two can be shown side by side.
 
 ## Companion tools
 

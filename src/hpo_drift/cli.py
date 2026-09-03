@@ -46,7 +46,7 @@ def _report(old: Release, new: Release, tokens: list[str], top: int) -> str:
     g = global_counts(old, new)
     changes = diff_terms(old, new, ids)
     drift = similarity_drift(old, new, ids)
-    L = [f"# hpo-drift: {old.tag} → {new.tag}", ""]
+    L = [f"# hpo-drift: {old.tag} → {new.tag}", "", f"_IC: Seco 2004 intrinsic, on the `is_a` graph under root {old.root} ({old.name(old.root) or '?'}); N = {old._n_active} → {new._n_active} active terms. Similarity: Resnik / Lin via MICA._", ""]
     L += ["## Ontology-wide",
           f"- active terms: {g['terms_old']} → {g['terms_new']} (added {g['added']}, obsoleted {g['obsoleted']}, renamed {g['renamed']})",
           f"- `is_a` edges: +{g['is_a_added']} / −{g['is_a_removed']}  ← edge changes move information content, hence every similarity score", ""]
@@ -70,11 +70,12 @@ def _report(old: Release, new: Release, tokens: list[str], top: int) -> str:
 
 
 def cmd_report(a):
-    old, new = Release(a.old), Release(a.new)
+    old, new = Release(a.old, root=a.root), Release(a.new, root=a.root)
     tokens = read_terms(a.terms)
     if a.json:
         ids = _resolve_all(old, tokens)
-        out = {"old": a.old, "new": a.new, "global": global_counts(old, new),
+        out = {"old": a.old, "new": a.new, "ic": {"method": "Seco 2004 intrinsic IC on the is_a graph", "root": a.root, "n_terms_old": old._n_active, "n_terms_new": new._n_active},
+               "similarity": "Resnik and Lin via most-informative common ancestor (is_a only)", "global": global_counts(old, new),
                "terms": [c.__dict__ | {"parents_added": sorted(c.parents_added), "parents_removed": sorted(c.parents_removed)} for c in diff_terms(old, new, ids)],
                "pairs": [d.__dict__ for d in similarity_drift(old, new, ids)]}
         print(json.dumps(out, ensure_ascii=False, indent=2, default=str)); return
@@ -89,9 +90,9 @@ def main(argv=None):
     l = s.add_parser("lint", help="check a term list against one release"); l.add_argument("--release", required=True); l.add_argument("--terms", required=True); l.add_argument("--json", action="store_true"); l.set_defaults(fn=cmd_lint)
     r = s.add_parser("report", help="diff + similarity drift between two releases for your terms")
     r.add_argument("--old", required=True); r.add_argument("--new", required=True); r.add_argument("--terms", required=True)
-    r.add_argument("--top", type=int, default=15); r.add_argument("--json", action="store_true"); r.set_defaults(fn=cmd_report)
+    r.add_argument("--top", type=int, default=15); r.add_argument("--json", action="store_true"); r.add_argument("--root", default="HP:0000118", help="root of the is_a closure used for IC (default Phenotypic abnormality)"); r.set_defaults(fn=cmd_report)
     for alias, target in (("diff", cmd_report), ("sim", cmd_report)):
-        d = s.add_parser(alias, help=f"alias of report"); d.add_argument("--old", required=True); d.add_argument("--new", required=True); d.add_argument("--terms", required=True); d.add_argument("--top", type=int, default=15); d.add_argument("--json", action="store_true"); d.set_defaults(fn=target)
+        d = s.add_parser(alias, help=f"alias of report"); d.add_argument("--old", required=True); d.add_argument("--new", required=True); d.add_argument("--terms", required=True); d.add_argument("--top", type=int, default=15); d.add_argument("--json", action="store_true"); d.add_argument("--root", default="HP:0000118"); d.set_defaults(fn=target)
     a = p.parse_args(argv); a.fn(a)
 
 

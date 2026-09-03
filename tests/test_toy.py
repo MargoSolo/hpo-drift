@@ -1,3 +1,4 @@
+import math
 """Toy-ontology tests: two hand-written releases where every expected change is known."""
 import json, pytest
 from pathlib import Path
@@ -62,7 +63,8 @@ def test_resolve_and_ic(rels):
     assert old.resolve("alpha thing") == ("HP:0000010", "label")
     assert new.resolve("HP:0000099") == ("HP:0000012", "alt_id")
     assert old.resolve("HP:0009999") == (None, "unknown-id") and old.resolve("Nope") == (None, "unknown-label")
-    assert old.ic("HP:0000011") == 1.0 and old.ic("HP:0000001") == 0.0     # leaf / root, intrinsic IC
+    assert old.ic("HP:0000011") == 1.0 and old.ic("HP:0000118") == 0.0     # leaf / root of the IC domain (Phenotypic abnormality)
+    assert math.isnan(old.ic("HP:0000001"))                                 # "All" sits above the domain root: no IC
     assert old.ic("HP:0000010") > old.ic("HP:0000118")
     assert new.ic("HP:0000010") < old.ic("HP:0000010"), "Alpha gained a descendant in the new release"
 
