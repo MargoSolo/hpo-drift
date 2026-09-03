@@ -57,15 +57,17 @@ pip install hpo-drift
 hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms my_terms.txt
 ```
 ```
+IC: Seco 2004 intrinsic, on the is_a graph under root HP:0000118 (Phenotypic abnormality); N = 18690 → 19120
 active terms: 19389 → 19836 (added 469, obsoleted 22, renamed 266)
 is_a edges:   +886 / −185
 
-term        label          status     IC old → new
-HP:0001250  Seizure                      unchanged  0.405 → 0.407
-HP:0000365  Hearing impairment           unchanged  0.630 → 0.631
+term        label        status     parents        IC old → new
+HP:0000230  Gingivitis   unchanged  +HP:5210280    1.000 → 0.859
+HP:0000246  Sinusitis    unchanged  +HP:5210121    1.000 → 0.880
 …
-pair                                                  Lin old → new   Δ       MICA
-Global developmental delay ↔ Intellectual disability  0.736 → 0.731   −0.004  HP:0012759
+pair                                   Lin old → new   Δ       MICA
+Gingivitis ↔ Meningitis                0.000 → 0.553   +0.553  HP:0000118 → HP:0032158
+Sinusitis ↔ Recurrent respiratory inf. 0.480 → 0.781   +0.301  HP:0012252 → HP:0011947
 …
 ```
 Add `--json` for a machine-readable report. Releases are pulled from the official GitHub assets of `obophenotype/human-phenotype-ontology`; any tag like `v2026-06-23` works and is cached under `~/.cache/hpo-drift`.
