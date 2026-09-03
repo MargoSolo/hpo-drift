@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 (2026-09-03)
+
+Author name and ORCID corrected in package metadata and citation. No functional changes.
+
 ## 0.1.1 (2026-09-03)
 
 Public release: PyPI package, Zenodo archiving, PyPI metadata, trusted-publishing workflow. No functional changes.
