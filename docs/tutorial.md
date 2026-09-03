@@ -1,98 +1,74 @@
-# Tutorial: measuring drift for your own term list
+# Tutorial: reading a drift report
 
-This walks through the real run behind the README figures — 14 paediatric-rheumatology terms, HPO v2026-02-16 → v2026-06-23 — and shows how to read each part of the report.
+This walks through the real run behind the README figures — 14 terms of a syndromic neurodevelopmental presentation as a clinical geneticist records it, HPO v2026-02-16 → v2026-06-23 — and shows how to read each part of the report.
 
-## 1. Write your terms, one per line
+## 1. The term list
+
+`examples/clinical_genetics_terms.txt`, IDs with the label as a comment, plus two label-only lines left in on purpose:
 
 ```
-Arthritis
-Uveitis
-Fever
-Recurrent fever
-Skin rash
-Hepatosplenomegaly
-Macrophage activation syndrome   # not an HPO label → lint error; HPO captures it as HP:0012156 (Hemophagocytosis)
-Lymphadenopathy
+HP:0001263   # Global developmental delay
+HP:0001249   # Intellectual disability
+HP:0001250   # Seizure
 …
+Seizures                        # not an exact HPO label ('Seizure' is) → lint error
+Developmental delay             # synonym → resolves, with a warning to store the ID
 ```
 
-IDs are safest. Labels work, and `lint` will tell you which ones it matched by label so you can replace them with IDs.
+## 2. Lint first
 
-## 2. Run lint against the release you are pinning
-
-```bash
+```
 hpo-drift lint --release v2026-06-23 --terms examples/clinical_genetics_terms.txt
 ```
 
-Every label match is a warning with the ID to store; unknown labels and obsolete IDs are errors (exit code 1). In the example set two labels are unresolvable on purpose: "Dactylitis" is split into two HPO terms and "Macrophage activation syndrome" is a disease-level concept.
+Every label match is a warning with the ID to store; unknown labels and obsolete IDs are errors (exit code 1). "Seizures" fails because matching is exact on purpose — the same failure mode a label-matching pipeline has; "Developmental delay" resolves through a synonym to HP:0001263 with a warning.
 
-## 3. Run the report
+## 3. The report
 
-```bash
+```
 hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms examples/clinical_genetics_terms.txt
 ```
 
-Full output of this exact run:
-
-```
-# hpo-drift: v2026-02-16 → v2026-06-23
-
-## Ontology-wide
-- active terms: 19389 → 19836 (added 469, obsoleted 22, renamed 266)
-- `is_a` edges: +886 / −185  ← edge changes move information content, hence every similarity score
+The header states the method: Seco 2004 intrinsic IC on the `is_a` graph under root HP:0000118 (Phenotypic abnormality), with N = 18 690 → 19 120 active terms. Then the ontology-wide counts, then your terms:
 
 ## Your 14 terms
 
 | term | status | old → new label | parents | IC old → new |
 |---|---|---|---|---|
-| HP:0001369 | unchanged | Arthritis | = | 0.682 → 0.667 |
-| HP:0000554 | unchanged | Uveitis | = | 0.803 → 0.778 |
-| HP:0001945 | unchanged | Fever | = | 0.777 → 0.778 |
-| HP:0001954 | unchanged | Recurrent fever | = | 0.860 → 0.860 |
-| HP:0000988 | unchanged | Skin rash | = | 0.733 → 0.733 |
-| HP:0001433 | unchanged | Hepatosplenomegaly | = | 1.000 → 1.000 |
-| HP:0002716 | unchanged | Lymphadenopathy | = | 0.740 → 0.733 |
-| HP:0001701 | unchanged | Pericarditis | = | 0.930 → 0.837 |
-| HP:0000155 | unchanged | Oral ulcer | = | 1.000 → 1.000 |
-| HP:0100686 | unchanged | Enthesitis | = | 1.000 → 1.000 |
-| HP:0003765 | unchanged | Psoriasiform dermatitis | = | 1.000 → 1.000 |
-| HP:0011227 | unchanged | Elevated circulating C-reactive protein concentration | = | 1.000 → 1.000 |
-| HP:0045073 | unchanged | Serositis | = | 0.837 → 0.790 |
-| HP:0003326 | unchanged | Myalgia | = | 0.889 → 0.889 |
+| HP:0001263 | unchanged | Global developmental delay | = | 0.836 → 0.837 |
+| HP:0001249 | unchanged | Intellectual disability | = | 0.818 → 0.818 |
+| HP:0001250 | unchanged | Seizure | = | 0.405 → 0.407 |
+| HP:0000252 | unchanged | Microcephaly | = | 0.836 → 0.837 |
+| HP:0001252 | unchanged | Hypotonia | = | 0.739 → 0.740 |
+| HP:0004322 | unchanged | Short stature | = | 0.673 → 0.673 |
+| HP:0000175 | unchanged | Cleft palate | = | 0.725 → 0.725 |
+| HP:0000589 | unchanged | Coloboma | = | 0.777 → 0.777 |
+| HP:0000365 | unchanged | Hearing impairment | = | 0.630 → 0.631 |
+| HP:0000028 | unchanged | Cryptorchidism | = | 0.888 → 0.889 |
+| HP:0000508 | unchanged | Ptosis | = | 0.789 → 0.789 |
+| HP:0000316 | unchanged | Hypertelorism | = | 1.000 → 1.000 |
+| HP:0001631 | unchanged | Atrial septal defect | = | 0.818 → 0.818 |
+| HP:0000637 | unchanged | Long palpebral fissure | = | 1.000 → 1.000 |
 
-IC changed for **9/14** of your terms even where nothing about the term itself changed.
+Status is about the term record itself (label, obsoletion, direct `is_a` parents). IC moves anyway, because IC is a function of the whole graph below the term and of N.
 
-## Similarity drift (91 pairs; 91 moved)
+## 4. Similarity drift
+
+## Similarity drift (91 pairs; 13 moved)
 
 | pair | Lin old → new | Δ | Resnik old → new | MICA old → new |
 |---|---|---|---|---|
-| HP:0000988 ↔ HP:0003765 | 0.664 → 0.619 | -0.045 | 0.576 → 0.537 | HP:0011123 → HP:0011123 |
-| HP:0000554 ↔ HP:0000988 | 0.598 → 0.566 | -0.032 | 0.459 → 0.428 | HP:0012649 → HP:0012649 |
-| HP:0000988 ↔ HP:0002716 | 0.364 → 0.332 | -0.032 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0000988 ↔ HP:0001433 | 0.310 → 0.281 | -0.028 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0000554 ↔ HP:0003765 | 0.510 → 0.481 | -0.028 | 0.459 → 0.428 | HP:0012649 → HP:0012649 |
-| HP:0002716 ↔ HP:0003765 | 0.308 → 0.281 | -0.027 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0000554 ↔ HP:0002716 | 0.348 → 0.323 | -0.025 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0001433 ↔ HP:0003765 | 0.268 → 0.244 | -0.025 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0000988 ↔ HP:0045073 | 0.585 → 0.562 | -0.024 | 0.459 → 0.428 | HP:0012649 → HP:0012649 |
-| HP:0000554 ↔ HP:0001433 | 0.298 → 0.274 | -0.023 | 0.268 → 0.244 | HP:0002715 → HP:0002715 |
-| HP:0001701 ↔ HP:0045073 | 0.947 → 0.971 | +0.023 | 0.837 → 0.790 | HP:0045073 → HP:0045073 |
-| HP:0003765 ↔ HP:0045073 | 0.500 → 0.478 | -0.022 | 0.459 → 0.428 | HP:0012649 → HP:0012649 |
+| HP:0001263 ↔ HP:0001249 | 0.736 → 0.731 | -0.004 | 0.609 → 0.605 | HP:0012759 → HP:0012759 |
+| HP:0000252 ↔ HP:0001252 | 0.178 → 0.179 | +0.002 | 0.140 → 0.141 | HP:0033127 → HP:0033127 |
+| HP:0000589 ↔ HP:0000316 | 0.375 → 0.377 | +0.002 | 0.334 → 0.335 | HP:0012372 → HP:0012372 |
+| HP:0001249 ↔ HP:0001250 | 0.411 → 0.413 | +0.002 | 0.251 → 0.253 | HP:0012638 → HP:0012638 |
+| HP:0001263 ↔ HP:0001250 | 0.405 → 0.407 | +0.002 | 0.251 → 0.253 | HP:0012638 → HP:0012638 |
+| HP:0000589 ↔ HP:0000508 | 0.357 → 0.359 | +0.002 | 0.279 → 0.281 | HP:0000478 → HP:0000478 |
+| HP:0000508 ↔ HP:0000316 | 0.312 → 0.314 | +0.001 | 0.279 → 0.281 | HP:0000478 → HP:0000478 |
+| HP:0001249 ↔ HP:0000252 | 0.234 → 0.234 | +0.001 | 0.193 → 0.194 | HP:0000707 → HP:0000707 |
 
-_Lin/Resnik use intrinsic IC (Seco 2004), so this drift is caused purely by ontology structure edits — pin your HPO release in Methods._
-…
-```
+Only pairs whose most-informative common ancestor is below the root carry a non-zero Lin; here 13 of 91 pairs do, and all 13 moved. The remaining 78 pairs share only *Phenotypic abnormality* and stay at 0 in both releases. Shifts are small in this set (largest −0.004) — small, systematic, and invisible unless the release tag is written down.
 
-## 4. Reading it
+## 5. What to write in Methods
 
-- **Ontology-wide counts** tell you how busy the release was.
-- **Per term:** `unchanged` with a moved IC is the key case — the term was not touched, the graph around it was.
-- **Per pair:** the MICA column explains a move; if the MICA changed, the two terms now share a different most-informative ancestor.
-
-## 5. Machine-readable
-
-```bash
-hpo-drift report --old v2026-02-16 --new v2026-06-23 --terms my_terms.txt --json > drift.json
-```
-
-The README figures are generated from that JSON. A threshold on `lin_delta` turns the monthly Action into a failing check.
+"Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23." One sentence; `hpo-drift` gives you the numbers to justify it.
