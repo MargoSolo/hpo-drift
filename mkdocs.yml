@@ -1,0 +1,20 @@
+site_name: hpo-drift
+site_description: "What did an HPO release change for your phenotype terms?"
+site_url: https://margosolo.github.io/hpo-drift/
+repo_url: https://github.com/MargoSolo/hpo-drift
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      toggle: {icon: material/brightness-7, name: dark}
+    - scheme: slate
+      primary: deep purple
+      toggle: {icon: material/brightness-4, name: light}
+  features: [navigation.sections, content.code.copy, toc.integrate]
+markdown_extensions: [admonition, tables, pymdownx.superfences, pymdownx.details, toc]
+nav:
+  - Overview: index.md
+  - Tutorial: tutorial.md
+  - Changelog: changelog.md
+  - Contributing: contributing.md
