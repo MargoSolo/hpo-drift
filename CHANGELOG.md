@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0 (2026-09-03) — feature release: disease profiles, disease ranking, provenance
+
+New user-facing commands. `profiles`: symmetric Best Match Average of Lin between a query term list and a target term list in both releases, with the query terms whose best match changed most. `rank-diseases`: the query against every disease profile in `phenotype.hpoa`, ranked in each release, with score and rank change per disease, a CSV and a `.meta.json` sidecar (query, annotation-file version and SHA-256, both `hp.obo` SHA-256). MICA cached (a full ranking of 12 935 profiles takes ~3 s per query after load). README claim narrowed to what is computed.
+
+Validation evidence (not a feature; protocol declared before running): `examples/sweep_synthetic_patients.py` builds synthetic patients (random 60 % of one disease's annotations, ≥ 3 terms, + 2 noise terms; `--noise-mode global` = Noise-A, `neighbor` = Noise-B from nearby phenotype branches) and ranks them against every disease in both releases; `examples/summarize_sweep.py` reports the endpoints. Results for v2026-02-16 → v2026-06-23 are in the README with their caveat.
+
 ## 0.1.7 (2026-09-03)
 
 Documentation only. Headline example changed to familial isolated hypoparathyroidism (OMIM:146200, 11 terms): between v2026-02-16 and v2026-06-23 *Hypocalcemic seizures* lost its `is_a Hypocalcemia` edge, so Lin(Hypocalcemic seizures, Hypocalcemia) went 0.941 → 0.000; the profile is 20th of 11 947 in the full cohort and the same edit drives four of the top five. The CGD profile stays in the cohort table but is no longer the headline. `examples/figures.py` regenerates the two report figures from `--json`.

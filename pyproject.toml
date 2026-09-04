@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hpo-drift"
-version = "0.1.7"
+version = "0.2.0"
 description = "Diff two Human Phenotype Ontology releases *for your own term list*: renames, obsoletions, parent changes, and how semantic-similarity scores drift."
 readme = "README.md"
 requires-python = ">=3.10"

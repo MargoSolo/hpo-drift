@@ -9,23 +9,39 @@
 
 **What did a new HPO release change for *your* phenotype terms — and by how much did your similarity scores move?**
 
-The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted and merged — and, the part nobody notices, the hierarchy gets new edges. New edges change information content, and information content is what Resnik and Lin similarity are made of. So the **same patient set, scored against two HPO releases, gives different numbers even if none of your terms were touched.** `hpo-drift` shows you exactly that, for the term list you actually use, in about three seconds.
+The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted and merged — and, the part nobody notices, the hierarchy gets new edges. New edges change information content, and information content is what Resnik and Lin similarity are made of. So **the same HPO term set can yield different semantic-similarity values across releases, even if none of your terms were touched** — and, through Best Match Average scoring, a different position of a disease in a patient's differential-diagnosis list. `hpo-drift` shows you exactly that, for the term list you actually use, in about three seconds.
 
 ## The headline result
 
-Feb 2026 → Jun 2026. The example is the **HPO-annotated phenotype profile of familial isolated hypoparathyroidism** (OMIM:146200): 11 phenotypic-abnormality terms straight from `phenotype.hpoa`. I chose it because the mechanism is a single edit that any clinician can judge. Then, as a sanity check, `hpo-drift cohort` ran over the **complete** `phenotype.hpoa` corpus — 12 935 disease profiles, no size cutoff: 11 947 have at least one informative pair, 705 are single-term, 283 have root-only pairs, all of them stay in the table with a status — and `hpo-drift rank` ordered the rankable ones by mean |ΔLin|. This profile is **20th of 11 947** (median profile 0.0013, 99th percentile 0.043); the same edit drives four of the top five (isolated hypoparathyroidism ×2, parathyroid agenesis, pseudohypoparathyroidism type 2).
+**Same patient. Same disease annotations. Different HPO release.** Does the diagnosis move?
+
+`examples/sweep_synthetic_patients.py`, protocol declared before running: 500 synthetic patients, each a random 60 % of one disease's `phenotype.hpoa` terms (at least 3) plus 2 random noise terms, drawn with seed 0 from all 12 935 disease profiles, no size filter. Each patient is scored (symmetric Best Match Average of Lin, Seco intrinsic IC) against **every** disease profile in HPO v2026-02-16 and in v2026-06-23.
+
+| endpoint | Noise-A: 2 random terms from the whole domain | Noise-B: 2 terms from neighbouring branches |
+|---|---|---|
+| true diagnosis changed rank | **1 / 500** (rank 4 → 5, cone-rod dystrophy 12) | **0 / 500** |
+| top-1 disease changed | **0 / 500** | **0 / 500** |
+| top-5 membership changed | 50 / 500 (10 %) | 43 / 500 (8.6 %) |
+| true diagnosis at rank 1 | 486 → 486; within top 10: 498 → 498 | 485 → 485; within top 10: 500 → 500 |
+| Spearman ρ of all 12 935 disease ranks | median 0.9997, min 0.973 | median 0.9998, min 0.894 |
+
+So in both stress tests **the diagnostic ranking was robust** to the release change, while the raw numbers underneath it were not: every one of the 11 947 rankable disease profiles had at least one pairwise Lin score move (`hpo-drift cohort`, below), and a single removed `is_a` edge can take a pair from 0.94 to 0.00 (the familial-isolated-hypoparathyroidism example, below). The 10 % of patients whose top-5 list was reshuffled show where that raw drift does reach a result: not the first place, but the order of the differential just below it.
+
+Full per-patient tables (kept terms, noise terms, ranks and scores in both releases): [Noise-A](https://github.com/MargoSolo/hpo-drift/blob/main/examples/sweep-synthetic-patients-v2026-02-16_v2026-06-23.csv), [Noise-B](https://github.com/MargoSolo/hpo-drift/blob/main/examples/sweep-synthetic-patients-neighbor-v2026-02-16_v2026-06-23.csv); summarise with `python examples/summarize_sweep.py <csv>`. Caveat stated once: a patient built from 60 % of the true disease's own annotations is an easy query (rank 1 in 97 % of cases), so this test bounds the effect for well-annotated presentations; sparser or noisier patients are one flag away (`--keep`, `--noise`, `--noise-mode`).
+
+### Where the raw drift comes from: one edge, one profile
+
+Familial isolated hypoparathyroidism (OMIM:146200), 11 phenotypic-abnormality terms from `phenotype.hpoa` (`examples/fih_omim146200_terms.txt`):
 
 ![Lin similarity drift](lin-drift.png)
 
-What happened to this profile, computed with Seco intrinsic IC on the `is_a` graph under *Phenotypic abnormality*:
-
-- **One term lost one parent.** *Hypocalcemic seizures* (`HP:0002199`) was `is_a` *Hypocalcemia* (`HP:0002901`) and `is_a` *Symptomatic seizures*; in v2026-06-23 the *Hypocalcemia* edge is gone (so is the same edge under *Hypocalcemic tetany*, `HP:0003472`). No label changed, nothing was obsoleted, the other 10 terms were not touched.
-- Consequence: *Hypocalcemic seizures* ↔ *Hypocalcemia* went **0.94 → 0.00** — their most-informative common ancestor is now the root. *Hypocalcemic seizures* ↔ *Hyperphosphatemia* 0.59 → 0.00, ↔ *Decreased circulating PTH level* 0.21 → 0.00. *Hypocalcemia* itself, having lost its last child, became a leaf: IC 0.888 → 1.000, which nudges its pairs with *Hyperphosphatemia* (0.63 → 0.59) and *PTH level*.
-- **14 informative pairs, all 14 moved**, 3 of them by more than 0.1; 41 pairs share only the root (ROOT_ONLY, 0 → 0). IC moved by more than 0.01 for 1 of 11 terms. Mean |ΔLin| 0.129; the median disease profile: 0.0013.
+- **One term lost one parent.** *Hypocalcemic seizures* (`HP:0002199`) was `is_a` *Hypocalcemia* (`HP:0002901`) and `is_a` *Symptomatic seizures*; in v2026-06-23 the *Hypocalcemia* edge is gone (likewise under *Hypocalcemic tetany*). No label changed, nothing was obsoleted, the other 10 terms were not touched.
+- Consequence: *Hypocalcemic seizures* ↔ *Hypocalcemia* went **0.94 → 0.00** — their most-informative common ancestor is now the root; ↔ *Hyperphosphatemia* 0.59 → 0.00. *Hypocalcemia* lost its last child and became a leaf (IC 0.888 → 1.000). All 14 informative pairs in the profile moved, 3 by more than 0.1; 41 pairs share only the root (ROOT_ONLY, 0 → 0).
+- Whether the edit is right is an ontology-design question (a seizure *caused by* hypocalcemia is arguably not a *kind of* hypocalcemia). What `hpo-drift` shows is the size of its numerical footprint: this profile is 20th of 11 947 by mean |ΔLin| in the full cohort, and the same edit drives four of the top five.
 
 ![Information-content drift](ic-drift.png)
 
-Whether the edit is right is an ontology-design question (a seizure *caused by* hypocalcemia is arguably not a *kind of* hypocalcemia). What is not a matter of opinion: a phenotype-similarity score between two terms that share half their name went from near-identical to zero, **without changing the input phenotype profile.** Pin the release tag in Methods, match on IDs, and report how much the numbers depend on the release. `hpo-drift` gives you that sentence with real figures; `hpo-drift cohort` tells you where your disease of interest sits.
+**What to do with this:** pin the release tag in Methods, match on IDs, and report how much your numbers depend on the release — `hpo-drift report` gives the sentence, `hpo-drift rank-diseases` tells you whether it reached your ranking.
 
 ![Drift across all disease profiles](drift-distribution.png)
 
@@ -76,7 +92,7 @@ Hypocalcemic seizures ↔ Hyperphosphatemia 0.594 → 0.000   −0.594  HP:00031
 ```
 Add `--json` for a machine-readable report. Releases are pulled from the official GitHub assets of `obophenotype/human-phenotype-ontology`; any tag like `v2026-06-23` works and is cached under `~/.cache/hpo-drift`.
 
-## Four things it does
+## Five things it does
 
 ### 1 · `report` — the drift itself
 Per term: status (`unchanged` / `renamed` / `obsoleted` → replacement / `merged` / `missing`), label change, parents added or removed, IC before and after. Per pair: Resnik and Lin in both releases, the delta, and the most-informative common ancestor — so you can see *why* a pair moved. Plus the ontology-wide counts.
@@ -101,7 +117,14 @@ hpo-drift rank all_profiles.csv --metric mean_abs_dlin --top 20
 
 **Provenance.** Every `hp.obo` is downloaded atomically, hashed, checked against the SHA-256 the official HPO GitHub release publishes for the asset, and cached only after that check; reports, JSON and `cohort` sidecars record the SHA-256 of both ontology inputs and of the annotation file.
 
-### 4 · a monthly GitHub Action
+### 4 · `profiles` and `rank-diseases` — the question a genomicist actually asks
+```bash
+hpo-drift profiles --query patient.txt --target disease.txt --old v2026-02-16 --new v2026-06-23
+hpo-drift rank-diseases --query patient.txt --hpoa phenotype.hpoa --old v2026-02-16 --new v2026-06-23 --out ranks.csv
+```
+Set-to-set similarity between two term lists — symmetric **Best Match Average** of Lin (mean over query terms of their best match in the target, averaged with the reverse direction) — in both releases, with the query terms whose best match changed most. `rank-diseases` scores the query against **every** disease profile in `phenotype.hpoa` in each release and reports rank and score per disease, so you can see whether a differential-diagnosis list is stable across the release change. `examples/sweep_synthetic_patients.py` runs the clinical version of this question on synthetic patients: a random 60 % subset of a disease’s annotations plus 2 noise terms, scored against every disease in both releases; it records the rank of the true diagnosis in each release, top-1 changes, top-5 overlap and Spearman ρ.
+
+### 5 · a monthly GitHub Action
 `.github/workflows/drift.yml` fetches the latest release, compares it with your pinned one (`PINNED_HPO`) and uploads the report. Add a threshold on `lin_delta` from the JSON and it becomes a failing check.
 
 ## How it works

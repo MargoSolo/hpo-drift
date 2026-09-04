@@ -32,6 +32,22 @@ Every term is `unchanged`: no rename, nothing obsoleted. One row has a `parents`
 
 Removing that edge takes *Hypocalcemic seizures* out of the metabolism branch entirely: it now lives only under the nervous-system branch, so it shares nothing below the root with any calcium or phosphate term.
 
-## 5 · What to write in Methods
+## 5 · From terms to a diagnosis: `profiles` and `rank-diseases`
+
+Pairwise term drift is the mechanism; the clinical question is whether a patient's differential-diagnosis list changes. Two commands answer it:
+
+```bash
+# one patient list against one disease list, in both releases (symmetric Best Match Average of Lin)
+hpo-drift profiles --query patient.txt --target examples/fih_omim146200_terms.txt --old v2026-02-16 --new v2026-06-23
+
+# the same patient against every disease profile in phenotype.hpoa, ranked in each release
+hpo-drift rank-diseases --query patient.txt --hpoa phenotype.hpoa --old v2026-02-16 --new v2026-06-23 --top 20 --out ranks.csv
+```
+
+`profiles` prints the profile similarity in each release, the delta, and the query terms whose best match changed most. `rank-diseases` prints the top diseases with score and rank in both releases and the largest rank changes among them; `--out` writes the full table plus a `.meta.json` with the query, the annotation file's version and hash, and both ontology hashes.
+
+`examples/sweep_synthetic_patients.py` runs this at scale with a protocol declared before running: N synthetic patients, each a random 60 % of one disease's annotations plus 2 noise terms (`--noise-mode global` = Noise-A, `--noise-mode neighbor` = Noise-B, terms from nearby phenotype branches), ranked against every disease in both releases. `examples/summarize_sweep.py` turns the per-patient table into the endpoints reported in the README: how often the true diagnosis changed rank, how often the top-1 changed, how often the top-5 list was reshuffled, and the |Δrank| quantiles.
+
+## 6 · What to write in Methods
 
 "Phenotype similarity was computed with Lin similarity on Seco intrinsic IC over the HPO `is_a` graph (root HP:0000118), release v2026-06-23 (hp.obo SHA-256 a5092cbd…)." One sentence; `hpo-drift` gives you the numbers to justify it, and `hpo-drift cohort` tells you where your disease of interest sits in the whole annotation corpus.
