@@ -3,7 +3,7 @@ import math
 import csv, json, pytest
 from pathlib import Path
 from hpo_drift import core, cli
-from hpo_drift.core import Release, diff_terms, global_counts, similarity_drift, lint, read_terms, profile_drift, read_hpoa, resolve_across, disposition, PROFILE_COLUMNS
+from hpo_drift.core import Release, diff_terms, global_counts, similarity_drift, lint, read_terms, profile_drift, read_hpoa, resolve_across, disposition, PROFILE_COLUMNS, best_match_average, profile_similarity, rank_diseases
 
 OLD = """format-version: 1.2
 
@@ -231,3 +231,22 @@ def test_fetch_is_atomic_and_verified(tmp_path, monkeypatch):
     p = core.fetch("vX"); assert p.read_bytes() == body and (tmp_path / "hp-vX.obo.sha256").read_text() == hashlib.sha256(body).hexdigest()
     (tmp_path / "hp-vY.obo").write_bytes(b"format-version: 1.2\n[Term]\nid: HP:00")           # a stale partial file without sidecar is NOT trusted
     monkeypatch.setattr(core.requests, "get", lambda *a, **k: R(body)); core.fetch("vY"); assert (tmp_path / "hp-vY.obo").read_bytes() == body
+
+
+def test_profile_similarity_and_ranking(rels, tmp_path, monkeypatch, capsys):
+    old, new, d = rels
+    s, m = best_match_average(old, ["HP:0000011"], ["HP:0000011", "HP:0000020"]); assert s == pytest.approx((1.0 + (1.0 + 0.0) / 2) / 2) and m[0][1] == "HP:0000011"
+    assert best_match_average(old, ["HP:0000011"], ["HP:0000011"])[0] == 1.0
+    assert math.isnan(best_match_average(old, ["HP:0000001"], ["HP:0000011"])[0])          # out-of-domain query: undefined, not 0
+    r = profile_similarity(old, new, ["HP:0000011"], ["HP:0000010"]); assert r["score_new"] != r["score_old"] and r["matches"][0]["query"] == "HP:0000011"
+    prof = {"D1": ("d1", ["HP:0000011"]), "D2": ("d2", ["HP:0000020"]), "D3": ("d3", ["HP:0000010", "HP:0000020"])}
+    rows = {r["disease"]: r for r in rank_diseases(old, new, ["HP:0000011"], prof)}
+    assert rows["D1"]["rank_old"] == 1 and rows["D1"]["rank_new"] == 1 and rows["D2"]["rank_old"] == 3 and all("rank_change" in r for r in rows.values())
+    monkeypatch.setattr(core, "fetch", lambda tag: {"vOLD": d / "old.obo", "vNEW": d / "new.obo"}[tag])
+    q = tmp_path / "q.txt"; q.write_text("HP:0000011\n"); tg = tmp_path / "t.txt"; tg.write_text("HP:0000010\nHP:0000020\n")
+    cli.main(["profiles", "--query", str(q), "--target", str(tg), "--old", "vOLD", "--new", "vNEW"]); out = capsys.readouterr().out
+    assert "profile similarity" in out and "vOLD" in out and "Δ" in out
+    h = tmp_path / "p.hpoa"; h.write_text("#version: x\ndatabase_id\tdisease_name\tqualifier\thpo_id\treference\tevidence\tonset\tfrequency\tsex\tmodifier\taspect\tbiocuration\n"
+                                        "OMIM:1\tD1\t\tHP:0000011\tp\tPCS\t\t\t\t\tP\tx\nOMIM:2\tD2\t\tHP:0000020\tp\tPCS\t\t\t\t\tP\tx\n")
+    o = tmp_path / "r.csv"; cli.main(["rank-diseases", "--query", str(q), "--hpoa", str(h), "--old", "vOLD", "--new", "vNEW", "--out", str(o)]); capsys.readouterr()
+    rk = {r["disease"]: r for r in csv.DictReader(open(o))}; assert rk["OMIM:1"]["rank_old"] == "1" and rk["OMIM:2"]["rank_new"] == "2" and json.load(open(str(o) + ".meta.json"))["n_diseases"] == 2

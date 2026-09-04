@@ -141,7 +141,10 @@ class Release:
             return float("nan")   # obsolete, or outside the root closure (e.g. inheritance / frequency / modifier branches)
         return 1.0 - math.log(self.n_descendants(tid) + 1) / math.log(self._n_active)
 
+    @lru_cache(maxsize=4_000_000)
     def mica(self, a: str, b: str) -> tuple[str | None, float]:
+        if a > b:
+            return self.mica(b, a)
         common = (self.ancestors(a) & self.ancestors(b)) & self._domain   # only ancestors inside the root closure carry IC
         if not common:
             return None, 0.0
@@ -386,6 +389,57 @@ def read_hpoa(path: str) -> tuple[dict, dict[str, tuple[str, list[str]]]]:
     meta["n_disease_ids_in_file"] = len(seen)
     meta["n_diseases_without_positive_P"] = len(seen - set(profiles))
     return meta, profiles
+
+
+# ---------------------------------------------------------------- profile-to-profile similarity (the question a genomicist asks)
+def best_match_average(rel: Release, query: list[str], target: list[str]) -> tuple[float, list[tuple[str, str, float]]]:
+    """Symmetric Best Match Average of Lin similarity between two term sets within ONE release
+    (mean over query terms of their best match in the target, averaged with the reverse direction).
+    Only terms that carry IC in this release are used. Returns (score, best match per query term)."""
+    q = [t for t in dict.fromkeys(query) if rel.in_domain(t)]
+    d = [t for t in dict.fromkeys(target) if rel.in_domain(t)]
+    if not q or not d:
+        return float("nan"), []
+    matches = []
+    for a in q:
+        b = max(d, key=lambda t: rel.lin(a, t))
+        matches.append((a, b, rel.lin(a, b)))
+    q2d = sum(m[2] for m in matches) / len(matches)
+    d2q = sum(max(rel.lin(a, b) for a in q) for b in d) / len(d)
+    return (q2d + d2q) / 2, matches
+
+
+def profile_similarity(old: Release, new: Release, query: list[str], target: list[str]) -> dict:
+    """Score the same query × target pair in both releases; list the query terms whose best match changed most."""
+    so, mo = best_match_average(old, query, target)
+    sn, mn = best_match_average(new, query, target)
+    mo_d, mn_d = {m[0]: m for m in mo}, {m[0]: m for m in mn}
+    changed = []
+    for a in dict.fromkeys(query):
+        if a in mo_d and a in mn_d:
+            changed.append({"query": a, "best_old": mo_d[a][1], "lin_old": mo_d[a][2], "best_new": mn_d[a][1], "lin_new": mn_d[a][2], "delta": mn_d[a][2] - mo_d[a][2]})
+    changed.sort(key=lambda r: -abs(r["delta"]))
+    return {"score_old": so, "score_new": sn, "delta": sn - so, "n_query_used_old": len(mo), "n_query_used_new": len(mn),
+            "n_target_used_old": sum(1 for t in dict.fromkeys(target) if old.in_domain(t)), "n_target_used_new": sum(1 for t in dict.fromkeys(target) if new.in_domain(t)),
+            "matches": changed}
+
+
+def rank_diseases(old: Release, new: Release, query: list[str], profiles: dict[str, tuple[str, list[str]]]) -> list[dict]:
+    """Score one query against every disease profile in both releases; rank within each release (1 = most similar).
+    Diseases whose profile has no usable term in a release get NaN there and sort last."""
+    rows = []
+    for d, (name, terms) in profiles.items():
+        so, _ = best_match_average(old, query, terms)
+        sn, _ = best_match_average(new, query, terms)
+        rows.append({"disease": d, "name": name, "n_terms": len(terms), "score_old": so, "score_new": sn, "delta": sn - so})
+    key = lambda k: (lambda r: (math.isnan(r[k]), -(0 if math.isnan(r[k]) else r[k])))
+    for k, rk in (("score_old", "rank_old"), ("score_new", "rank_new")):
+        for i, r in enumerate(sorted(rows, key=key(k)), 1):
+            r[rk] = i
+    for r in rows:
+        r["rank_change"] = r["rank_new"] - r["rank_old"]
+    rows.sort(key=lambda r: r["rank_new"])
+    return rows
 
 
 # ---------------------------------------------------------------- lint

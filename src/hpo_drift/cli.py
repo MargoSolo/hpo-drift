@@ -9,7 +9,7 @@ import statistics
 import sys
 
 from . import __version__
-from .core import PROFILE_COLUMNS, PROFILE_STATUSES, Release, diff_terms, fetch, global_counts, lint, profile_drift, read_hpoa, read_terms, similarity_drift, usable_terms
+from .core import PROFILE_COLUMNS, PROFILE_STATUSES, Release, diff_terms, fetch, global_counts, lint, profile_drift, profile_similarity, rank_diseases, read_hpoa, read_terms, similarity_drift, usable_terms
 
 
 def _f(x: float) -> str:
@@ -164,6 +164,51 @@ def cmd_rank(a):
     print("# not ranked (kept in the cohort table): " + ", ".join(f"{k} {v}" for k, v in skipped.items()), file=sys.stderr)
 
 
+def _ids(old: Release, new: Release, tokens: list[str]) -> list[str]:
+    return list(dict.fromkeys(c.tid for c in diff_terms(old, new, _dedupe(tokens)) if c.status not in ("unknown", "ambiguous")))
+
+
+def cmd_profiles(a):
+    """Set-to-set similarity (symmetric Best Match Average of Lin) between a query and a target term list, in both releases."""
+    old, new = Release(a.old, root=a.root), Release(a.new, root=a.root)
+    q, t = _ids(old, new, read_terms(a.query)), _ids(old, new, read_terms(a.target))
+    r = profile_similarity(old, new, q, t)
+    if a.json:
+        print(json.dumps({"old": a.old, "new": a.new, "old_ontology": old.provenance(), "new_ontology": new.provenance(), "method": "symmetric Best Match Average of Lin (Seco intrinsic IC, is_a graph)", "root": a.root, "query": q, "target": t} | r, indent=2, default=str)); return
+    print(f"# hpo-drift profiles: {a.query} × {a.target}\n")
+    print(f"_Symmetric Best Match Average of Lin; Seco intrinsic IC on the `is_a` graph under {a.root}. Query terms used {r['n_query_used_old']} → {r['n_query_used_new']} of {len(q)}; target {r['n_target_used_old']} → {r['n_target_used_new']} of {len(t)}._\n")
+    print("| release | profile similarity |\n|---|---|"); print(f"| {a.old} | {_f(r['score_old'])} |"); print(f"| {a.new} | {_f(r['score_new'])} |"); print(f"| Δ | {r['delta']:+.3f} |\n")
+    print("| query term | best match old → new | Lin old → new | Δ |\n|---|---|---|---|")
+    for m in r["matches"][: a.top]:
+        bm = f"{m['best_old']} {old.name(m['best_old'])}" + ("" if m["best_old"] == m["best_new"] else f" → {m['best_new']} {new.name(m['best_new'])}")
+        print(f"| {m['query']} {old.name(m['query']) or new.name(m['query'])} | {bm} | {_f(m['lin_old'])} → {_f(m['lin_new'])} | {m['delta']:+.3f} |")
+
+
+def cmd_rank_diseases(a):
+    """Rank every disease profile in phenotype.hpoa against a query in both releases; report rank and score changes."""
+    old, new = Release(a.old, root=a.root), Release(a.new, root=a.root)
+    q = _ids(old, new, read_terms(a.query))
+    meta, profiles = read_hpoa(a.hpoa)
+    rows = rank_diseases(old, new, q, profiles)
+    cols = ["disease", "name", "n_terms", "score_old", "rank_old", "score_new", "rank_new", "rank_change", "delta"]
+    if a.out:
+        with open(a.out, "w", newline="", encoding="utf-8") as fh:
+            w = csv.writer(fh); w.writerow(cols); [w.writerow([_fmt(r[k]) for k in cols]) for r in rows]
+        with open(a.out + ".meta.json", "w", encoding="utf-8") as fh:
+            json.dump({"query_file": a.query, "query": q, "hpoa": {k: meta[k] for k in ("path", "version", "sha256")}, "old_ontology": old.provenance(), "new_ontology": new.provenance(),
+                       "method": "symmetric Best Match Average of Lin (Seco intrinsic IC, is_a graph)", "root": a.root, "n_diseases": len(rows)}, fh, indent=2)
+    print(f"# hpo-drift rank-diseases: {a.query} ({len(q)} terms) × {len(rows)} disease profiles, {a.old} → {a.new}\n")
+    print(f"| disease | terms | score old → new | rank old → new |\n|---|---|---|---|")
+    for r in rows[: a.top]:
+        print(f"| {r['name']} ({r['disease']}) | {r['n_terms']} | {_f(r['score_old'])} → {_f(r['score_new'])} | {r['rank_old']} → {r['rank_new']} |")
+    moved = sorted([r for r in rows if r["rank_old"] <= a.top or r["rank_new"] <= a.top], key=lambda r: -abs(r["rank_change"]))[:10]
+    print(f"\nLargest rank changes among diseases in either top {a.top}:\n\n| disease | rank old → new | score old → new |\n|---|---|---|")
+    for r in moved:
+        print(f"| {r['name']} ({r['disease']}) | {r['rank_old']} → {r['rank_new']} | {_f(r['score_old'])} → {_f(r['score_new'])} |")
+    if a.out:
+        print(f"\nFull table: {a.out} (+ .meta.json with query, hpoa and ontology provenance)", file=sys.stderr)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="hpo-drift", description="What did an HPO release change for YOUR terms?")
     p.add_argument("--version", action="version", version=__version__)
@@ -178,6 +223,12 @@ def main(argv=None):
     co.add_argument("--root", default="HP:0000118"); co.add_argument("--progress", action="store_true"); co.set_defaults(fn=cmd_cohort)
     rk = s.add_parser("rank", help="optional: rank the RANKABLE rows of a cohort table by a metric")
     rk.add_argument("csv"); rk.add_argument("--metric", default="mean_abs_dlin"); rk.add_argument("--top", type=int, default=0); rk.set_defaults(fn=cmd_rank)
+    pf = s.add_parser("profiles", help="query × target set-to-set similarity (Best Match Average of Lin) in both releases")
+    pf.add_argument("--query", required=True); pf.add_argument("--target", required=True); pf.add_argument("--old", required=True); pf.add_argument("--new", required=True)
+    pf.add_argument("--root", default="HP:0000118"); pf.add_argument("--top", type=int, default=15); pf.add_argument("--json", action="store_true"); pf.set_defaults(fn=cmd_profiles)
+    rd = s.add_parser("rank-diseases", help="rank every phenotype.hpoa disease profile against a query in both releases")
+    rd.add_argument("--query", required=True); rd.add_argument("--hpoa", required=True); rd.add_argument("--old", required=True); rd.add_argument("--new", required=True)
+    rd.add_argument("--root", default="HP:0000118"); rd.add_argument("--top", type=int, default=20); rd.add_argument("--out"); rd.set_defaults(fn=cmd_rank_diseases)
     for alias, target in (("diff", cmd_report), ("sim", cmd_report)):
         d = s.add_parser(alias, help=f"alias of report"); d.add_argument("--old", required=True); d.add_argument("--new", required=True); d.add_argument("--terms", required=True); d.add_argument("--top", type=int, default=15); d.add_argument("--json", action="store_true"); d.add_argument("--root", default="HP:0000118"); d.set_defaults(fn=target)
     a = p.parse_args(argv); a.fn(a)
