@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2026-09-05) — documentation
+
+README rewritten as a product page (pitch, install, three commands, one figure, findings, links); long material moved to `docs/methods.md` and `docs/evidence.md`. Evidence extended with the 3 y 8 m interval v2022-10-05 → v2026-06-23 (Noise-A and Noise-B, 500 patients each): top-1 diagnosis changed 8 / 1 000, top-5 reshuffled 412 / 1 000, 1 303 of 12 935 disease profiles have < 3 terms representable in the 2022 release; mechanism case gamma-glutamyl transpeptidase deficiency rank 1 → 28 (3 of 10 annotations are post-2022 terms), reproducible from `examples/ggt_orpha33573_patient.txt`. `disease` helper command: print a disease's phenotype.hpoa profile as a term list.
+
 ## 0.2.0 (2026-09-03) — feature release: disease profiles, disease ranking, provenance
 
 New user-facing commands. `profiles`: symmetric Best Match Average of Lin between a query term list and a target term list in both releases, with the query terms whose best match changed most. `rank-diseases`: the query against every disease profile in `phenotype.hpoa`, ranked in each release, with score and rank change per disease, a CSV and a `.meta.json` sidecar (query, annotation-file version and SHA-256, both `hp.obo` SHA-256). MICA cached (a full ranking of 12 935 profiles takes ~3 s per query after load). README claim narrowed to what is computed.

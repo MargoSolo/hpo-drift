@@ -16,5 +16,7 @@ markdown_extensions: [admonition, tables, pymdownx.superfences, pymdownx.details
 nav:
   - Overview: index.md
   - Tutorial: tutorial.md
+  - Methods: methods.md
+  - Evidence: evidence.md
   - Changelog: changelog.md
   - Contributing: contributing.md

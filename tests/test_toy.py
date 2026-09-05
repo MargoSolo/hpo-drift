@@ -250,3 +250,13 @@ def test_profile_similarity_and_ranking(rels, tmp_path, monkeypatch, capsys):
                                         "OMIM:1\tD1\t\tHP:0000011\tp\tPCS\t\t\t\t\tP\tx\nOMIM:2\tD2\t\tHP:0000020\tp\tPCS\t\t\t\t\tP\tx\n")
     o = tmp_path / "r.csv"; cli.main(["rank-diseases", "--query", str(q), "--hpoa", str(h), "--old", "vOLD", "--new", "vNEW", "--out", str(o)]); capsys.readouterr()
     rk = {r["disease"]: r for r in csv.DictReader(open(o))}; assert rk["OMIM:1"]["rank_old"] == "1" and rk["OMIM:2"]["rank_new"] == "2" and json.load(open(str(o) + ".meta.json"))["n_diseases"] == 2
+
+
+def test_disease_command(rels, tmp_path, capsys):
+    hdr = "#version: 2099-01-01\ndatabase_id\tdisease_name\tqualifier\thpo_id\treference\tevidence\tonset\tfrequency\tsex\tmodifier\taspect\tbiocuration\n"
+    row = lambda db, t, asp="P", q="": f"{db}\tDisease {db}\t{q}\t{t}\tPMID:1\tPCS\t\t\t\t\t{asp}\tx\n"
+    h = tmp_path / "p.hpoa"; h.write_text(hdr + row("OMIM:1", "HP:0000010") + row("OMIM:1", "HP:0000011") + row("OMIM:1", "HP:0000020", q="NOT"))
+    cli.main(["disease", "OMIM:1", "--hpoa", str(h)]); out = capsys.readouterr().out.splitlines()
+    assert out[0].startswith("# Disease OMIM:1 (OMIM:1) — 2 terms") and out[1:] == ["HP:0000010", "HP:0000011"]
+    with pytest.raises(SystemExit):
+        cli.main(["disease", "OMIM:404", "--hpoa", str(h)])

@@ -209,6 +209,18 @@ def cmd_rank_diseases(a):
         print(f"\nFull table: {a.out} (+ .meta.json with query, hpoa and ontology provenance)", file=sys.stderr)
 
 
+def cmd_disease(a):
+    """Print one disease's phenotype.hpoa profile as a term list (one HP id per line, label as comment) — pipe it into --terms or --target."""
+    meta, profiles = read_hpoa(a.hpoa)
+    if a.disease not in profiles:
+        sys.exit(f"{a.disease} has no positive phenotypic-abnormality annotation in {a.hpoa} (version {meta['version']})")
+    name, terms = profiles[a.disease]
+    print(f"# {name} ({a.disease}) — {len(terms)} terms from phenotype.hpoa {meta['version']} sha256 {meta['sha256'][:12]}")
+    rel = Release(a.release) if a.release else None
+    for t in terms:
+        print(f"{t}   # {rel.name(t)}" if rel and rel.name(t) else t)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="hpo-drift", description="What did an HPO release change for YOUR terms?")
     p.add_argument("--version", action="version", version=__version__)
@@ -221,6 +233,8 @@ def main(argv=None):
     co = s.add_parser("cohort", help="drift summary for EVERY disease profile in a phenotype.hpoa (no size cutoff; statuses instead)")
     co.add_argument("--hpoa", required=True); co.add_argument("--old", required=True); co.add_argument("--new", required=True); co.add_argument("--out", required=True)
     co.add_argument("--root", default="HP:0000118"); co.add_argument("--progress", action="store_true"); co.set_defaults(fn=cmd_cohort)
+    di = s.add_parser("disease", help="print a disease's phenotype.hpoa profile as a term list (for --terms / --target)")
+    di.add_argument("disease"); di.add_argument("--hpoa", required=True); di.add_argument("--release", help="release tag used only to print labels as comments"); di.set_defaults(fn=cmd_disease)
     rk = s.add_parser("rank", help="optional: rank the RANKABLE rows of a cohort table by a metric")
     rk.add_argument("csv"); rk.add_argument("--metric", default="mean_abs_dlin"); rk.add_argument("--top", type=int, default=0); rk.set_defaults(fn=cmd_rank)
     pf = s.add_parser("profiles", help="query × target set-to-set similarity (Best Match Average of Lin) in both releases")
