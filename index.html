@@ -1,0 +1,885 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="What did an HPO release change for your phenotype terms?">
+      
+      
+      
+        <link rel="canonical" href="https://margosolo.github.io/hpo-drift/">
+      
+      
+      
+        <link rel="next" href="tutorial/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>hpo-drift</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hpo-drift" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="hpo-drift" class="md-header__button md-logo" aria-label="hpo-drift" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hpo-drift
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="dark"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="dark" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="light"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MargoSolo/hpo-drift" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="hpo-drift" class="md-nav__button md-logo" aria-label="hpo-drift" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    hpo-drift
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MargoSolo/hpo-drift" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-headline-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The headline result
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The headline result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-the-raw-drift-comes-from-one-edge-one-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the raw drift comes from: one edge, one profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-second-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30-second start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-things-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five things it does
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five things it does">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-report-the-drift-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · report — the drift itself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lint-hygiene-for-a-term-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · lint — hygiene for a term list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cohort-and-rank-the-whole-annotation-corpus-no-cutoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · cohort and rank — the whole annotation corpus, no cutoffs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-profiles-and-rank-diseases-the-question-a-genomicist-actually-asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · profiles and rank-diseases — the question a genomicist actually asks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-a-monthly-github-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · a monthly GitHub Action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#companion-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Companion tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cite
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hpo-drift">hpo-drift</h1>
+<p><a href="https://github.com/MargoSolo/hpo-drift/actions/workflows/ci.yml"><img alt="ci" src="https://github.com/MargoSolo/hpo-drift/actions/workflows/ci.yml/badge.svg" /></a>
+<a href="https://doi.org/10.5281/zenodo.22286170"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.22286170.svg" /></a>
+<a href="https://github.com/MargoSolo/hpo-drift/actions/workflows/drift.yml"><img alt="drift check" src="https://github.com/MargoSolo/hpo-drift/actions/workflows/drift.yml/badge.svg" /></a>
+<img alt="coverage" src="https://img.shields.io/badge/coverage-91%25-brightgreen" /> <img alt="python" src="https://img.shields.io/badge/python-3.10%2B-3776ab" />
+<img alt="HPO releases" src="https://img.shields.io/badge/HPO-any%20release%20tag-8e44ad" />
+<img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue" /></p>
+<p><strong>What did a new HPO release change for <em>your</em> phenotype terms — and by how much did your similarity scores move?</strong></p>
+<p>The Human Phenotype Ontology is updated regularly. Terms get renamed, obsoleted and merged — and, the part nobody notices, the hierarchy gets new edges. New edges change information content, and information content is what Resnik and Lin similarity are made of. So <strong>the same HPO term set can yield different semantic-similarity values across releases, even if none of your terms were touched</strong> — and, through Best Match Average scoring, a different position of a disease in a patient's differential-diagnosis list. <code>hpo-drift</code> shows you exactly that, for the term list you actually use, in about three seconds.</p>
+<h2 id="the-headline-result">The headline result</h2>
+<p><strong>Same patient. Same disease annotations. Different HPO release.</strong> Does the diagnosis move?</p>
+<p><code>examples/sweep_synthetic_patients.py</code>, protocol declared before running: 500 synthetic patients, each a random 60 % of one disease's <code>phenotype.hpoa</code> terms (at least 3) plus 2 random noise terms, drawn with seed 0 from all 12 935 disease profiles, no size filter. Each patient is scored (symmetric Best Match Average of Lin, Seco intrinsic IC) against <strong>every</strong> disease profile in HPO v2026-02-16 and in v2026-06-23.</p>
+<table>
+<thead>
+<tr>
+<th>endpoint</th>
+<th>Noise-A: 2 random terms from the whole domain</th>
+<th>Noise-B: 2 terms from neighbouring branches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true diagnosis changed rank</td>
+<td><strong>1 / 500</strong> (rank 4 → 5, cone-rod dystrophy 12)</td>
+<td><strong>0 / 500</strong></td>
+</tr>
+<tr>
+<td>top-1 disease changed</td>
+<td><strong>0 / 500</strong></td>
+<td><strong>0 / 500</strong></td>
+</tr>
+<tr>
+<td>top-5 membership changed</td>
+<td>50 / 500 (10 %)</td>
+<td>43 / 500 (8.6 %)</td>
+</tr>
+<tr>
+<td>true diagnosis at rank 1</td>
+<td>486 → 486; within top 10: 498 → 498</td>
+<td>485 → 485; within top 10: 500 → 500</td>
+</tr>
+<tr>
+<td>Spearman ρ of all 12 935 disease ranks</td>
+<td>median 0.9997, min 0.973</td>
+<td>median 0.9998, min 0.894</td>
+</tr>
+</tbody>
+</table>
+<p>So in both stress tests <strong>the diagnostic ranking was robust</strong> to the release change, while the raw numbers underneath it were not: every one of the 11 947 rankable disease profiles had at least one pairwise Lin score move (<code>hpo-drift cohort</code>, below), and a single removed <code>is_a</code> edge can take a pair from 0.94 to 0.00 (the familial-isolated-hypoparathyroidism example, below). The 10 % of patients whose top-5 list was reshuffled show where that raw drift does reach a result: not the first place, but the order of the differential just below it.</p>
+<p>Full per-patient tables (kept terms, noise terms, ranks and scores in both releases): <a href="https://github.com/MargoSolo/hpo-drift/blob/main/examples/sweep-synthetic-patients-v2026-02-16_v2026-06-23.csv">Noise-A</a>, <a href="https://github.com/MargoSolo/hpo-drift/blob/main/examples/sweep-synthetic-patients-neighbor-v2026-02-16_v2026-06-23.csv">Noise-B</a>; summarise with <code>python examples/summarize_sweep.py &lt;csv&gt;</code>. Caveat stated once: a patient built from 60 % of the true disease's own annotations is an easy query (rank 1 in 97 % of cases), so this test bounds the effect for well-annotated presentations; sparser or noisier patients are one flag away (<code>--keep</code>, <code>--noise</code>, <code>--noise-mode</code>).</p>
+<h3 id="where-the-raw-drift-comes-from-one-edge-one-profile">Where the raw drift comes from: one edge, one profile</h3>
+<p>Familial isolated hypoparathyroidism (OMIM:146200), 11 phenotypic-abnormality terms from <code>phenotype.hpoa</code> (<code>examples/fih_omim146200_terms.txt</code>):</p>
+<p><img alt="Lin similarity drift" src="lin-drift.png" /></p>
+<ul>
+<li><strong>One term lost one parent.</strong> <em>Hypocalcemic seizures</em> (<code>HP:0002199</code>) was <code>is_a</code> <em>Hypocalcemia</em> (<code>HP:0002901</code>) and <code>is_a</code> <em>Symptomatic seizures</em>; in v2026-06-23 the <em>Hypocalcemia</em> edge is gone (likewise under <em>Hypocalcemic tetany</em>). No label changed, nothing was obsoleted, the other 10 terms were not touched.</li>
+<li>Consequence: <em>Hypocalcemic seizures</em> ↔ <em>Hypocalcemia</em> went <strong>0.94 → 0.00</strong> — their most-informative common ancestor is now the root; ↔ <em>Hyperphosphatemia</em> 0.59 → 0.00. <em>Hypocalcemia</em> lost its last child and became a leaf (IC 0.888 → 1.000). All 14 informative pairs in the profile moved, 3 by more than 0.1; 41 pairs share only the root (ROOT_ONLY, 0 → 0).</li>
+<li>Whether the edit is right is an ontology-design question (a seizure <em>caused by</em> hypocalcemia is arguably not a <em>kind of</em> hypocalcemia). What <code>hpo-drift</code> shows is the size of its numerical footprint: this profile is 20th of 11 947 by mean |ΔLin| in the full cohort, and the same edit drives four of the top five.</li>
+</ul>
+<p><img alt="Information-content drift" src="ic-drift.png" /></p>
+<p><strong>What to do with this:</strong> pin the release tag in Methods, match on IDs, and report how much your numbers depend on the release — <code>hpo-drift report</code> gives the sentence, <code>hpo-drift rank-diseases</code> tells you whether it reached your ranking.</p>
+<p><img alt="Drift across all disease profiles" src="drift-distribution.png" /></p>
+<table>
+<thead>
+<tr>
+<th>rank</th>
+<th>disease profile</th>
+<th>retained terms</th>
+<th>informative pairs</th>
+<th>changed</th>
+<th>mean |ΔLin|</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hypoparathyroidism, familial isolated 2 (OMIM:618883)</td>
+<td>4</td>
+<td>6</td>
+<td>6</td>
+<td>0.298</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deafness, autosomal recessive 37 (OMIM:607821)</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>0.257</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cortisone reductase deficiency 2 (OMIM:614662)</td>
+<td>7</td>
+<td>4</td>
+<td>4</td>
+<td>0.243</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Familial isolated hypoparathyroidism due to agenesis of parathyroid gland (ORPHA:2239)</td>
+<td>8</td>
+<td>12</td>
+<td>12</td>
+<td>0.214</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pseudohypoparathyroidism type 2 (ORPHA:94090)</td>
+<td>12</td>
+<td>20</td>
+<td>20</td>
+<td>0.209</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cone-Rod dystrophy, X-linked, 2 (OMIM:300085)</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0.207</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Immunodeficiency 65, susceptibility to viral infections (OMIM:618648)</td>
+<td>5</td>
+<td>6</td>
+<td>6</td>
+<td>0.175</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ACTH-independent macronodular adrenal hyperplasia 2 (OMIM:615954)</td>
+<td>12</td>
+<td>8</td>
+<td>8</td>
+<td>0.172</td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>20</strong></td>
+<td><strong>Hypoparathyroidism, familial isolated (OMIM:146200)</strong></td>
+<td>11</td>
+<td>14</td>
+<td>14</td>
+<td>0.129</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Chronic granulomatous disease (ORPHA:379)</td>
+<td>22</td>
+<td>95</td>
+<td>95</td>
+<td>0.067</td>
+</tr>
+<tr>
+<td>median of 11 947</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.0013</td>
+</tr>
+</tbody>
+</table>
+<p>Reproduce (the annotation file is pinned: <code>phenotype.hpoa</code> from HPO release <strong>v2026-06-23</strong>, <code>#version: 2026-06-23</code>, SHA-256 <code>89004f85b253f980ffe84218d2c080665cbf67a57bbb322111d6a2db5eb31dff</code>; the script prints the version and hash of the file it was given):
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LO<span class="w"> </span>https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-06-23/phenotype.hpoa
+hpo-drift<span class="w"> </span>cohort<span class="w"> </span>--hpoa<span class="w"> </span>phenotype.hpoa<span class="w"> </span>--old<span class="w"> </span>v2026-02-16<span class="w"> </span>--new<span class="w"> </span>v2026-06-23<span class="w"> </span>--out<span class="w"> </span>all_profiles.csv<span class="w">   </span><span class="c1"># every profile, ~30 s</span>
+hpo-drift<span class="w"> </span>rank<span class="w"> </span>all_profiles.csv<span class="w"> </span>--metric<span class="w"> </span>mean_abs_dlin<span class="w"> </span>&gt;<span class="w"> </span>ranked.csv<span class="w">                                  </span><span class="c1"># optional</span>
+</code></pre></div>
+Output as run on 2026-09-03: <a href="https://github.com/MargoSolo/hpo-drift/blob/main/examples/cohort-v2026-02-16_v2026-06-23.csv"><code>examples/cohort-v2026-02-16_v2026-06-23.csv</code></a> (all 12 935 profiles with status, plus a <code>.meta.json</code> recording the annotation file's version and hash) and <a href="https://github.com/MargoSolo/hpo-drift/blob/main/examples/ranked-v2026-02-16_v2026-06-23.csv"><code>examples/ranked-v2026-02-16_v2026-06-23.csv</code></a>. Where familiar syndromes sit: X-linked agammaglobulinemia 0.033, autosomal dominant hyper-IgE syndrome 0.029, cystic fibrosis 0.023, Wiskott–Aldrich 0.020, Kabuki / Noonan / Marfan about 0.001.</p>
+<h2 id="30-second-start">30-second start</h2>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>hpo-drift
+
+<span class="c1"># one term per line — HP IDs (recommended) or labels</span>
+hpo-drift<span class="w"> </span>report<span class="w"> </span>--old<span class="w"> </span>v2026-02-16<span class="w"> </span>--new<span class="w"> </span>v2026-06-23<span class="w"> </span>--terms<span class="w"> </span>examples/fih_omim146200_terms.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>IC: Seco 2004 intrinsic, on the is_a graph under root HP:0000118 (Phenotypic abnormality); N = 18690 → 19120
+active terms: 19389 → 19836 (added 469, obsoleted 22, renamed 266)
+is_a edges:   +886 / −185
+
+term        label                  status     parents        IC old → new
+HP:0002199  Hypocalcemic seizures  unchanged  −HP:0002901    1.000 → 1.000
+HP:0002901  Hypocalcemia           unchanged  =              0.888 → 1.000
+…
+pair                                      Lin old → new   Δ       MICA
+Hypocalcemic seizures ↔ Hypocalcemia      0.941 → 0.000   −0.941  HP:0002901 → HP:0000118
+Hypocalcemic seizures ↔ Hyperphosphatemia 0.594 → 0.000   −0.594  HP:0003111 → HP:0000118
+…
+</code></pre></div>
+Add <code>--json</code> for a machine-readable report. Releases are pulled from the official GitHub assets of <code>obophenotype/human-phenotype-ontology</code>; any tag like <code>v2026-06-23</code> works and is cached under <code>~/.cache/hpo-drift</code>.</p>
+<h2 id="five-things-it-does">Five things it does</h2>
+<h3 id="1-report-the-drift-itself">1 · <code>report</code> — the drift itself</h3>
+<p>Per term: status (<code>unchanged</code> / <code>renamed</code> / <code>obsoleted</code> → replacement / <code>merged</code> / <code>missing</code>), label change, parents added or removed, IC before and after. Per pair: Resnik and Lin in both releases, the delta, and the most-informative common ancestor — so you can see <em>why</em> a pair moved. Plus the ontology-wide counts.</p>
+<h3 id="2-lint-hygiene-for-a-term-list">2 · <code>lint</code> — hygiene for a term list</h3>
+<p><div class="highlight"><pre><span></span><code>hpo-drift<span class="w"> </span>lint<span class="w"> </span>--release<span class="w"> </span>v2026-06-23<span class="w"> </span>--terms<span class="w"> </span>my_terms.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>⚠️ Arthritis: matched by LABEL — labels get renamed; store the ID → HP:0001369
+❌ Recurrent infection: label not found (exact match on names/synonyms; the term is 'Recurrent infections')
+❌ HP:0002961: OBSOLETE term → replaced_by HP:0010701
+</code></pre></div>
+Exit code 1 on errors, so it works as a CI gate for a phenotype spreadsheet. Matching is <strong>exact</strong> on purpose: it reproduces the failure mode of a pipeline that matches by label. Store IDs, not labels: 266 labels changed in this interval alone, and fuzzy resolution (roadmap) must suggest, never auto-map.</p>
+<h3 id="3-cohort-and-rank-the-whole-annotation-corpus-no-cutoffs">3 · <code>cohort</code> and <code>rank</code> — the whole annotation corpus, no cutoffs</h3>
+<p><div class="highlight"><pre><span></span><code>hpo-drift<span class="w"> </span>cohort<span class="w"> </span>--hpoa<span class="w"> </span>phenotype.hpoa<span class="w"> </span>--old<span class="w"> </span>v2026-02-16<span class="w"> </span>--new<span class="w"> </span>v2026-06-23<span class="w"> </span>--out<span class="w"> </span>all_profiles.csv
+hpo-drift<span class="w"> </span>rank<span class="w"> </span>all_profiles.csv<span class="w"> </span>--metric<span class="w"> </span>mean_abs_dlin<span class="w"> </span>--top<span class="w"> </span><span class="m">20</span>
+</code></pre></div>
+<code>cohort</code> computes the drift summary for <strong>every disease with at least one positive phenotypic-abnormality annotation</strong> in <code>phenotype.hpoa</code> — a profile is the unique HP ids of a disease's rows with aspect <code>P</code> and no <code>NOT</code> qualifier (in v2026-06-23: 12 956 disease ids in the file, 12 935 profiles, 21 ids have only negated or non-<code>P</code> rows; the sidecar <code>.meta.json</code> records both counts). There is no minimum or maximum size: a profile that cannot support pairwise analysis stays in the table with a status — <code>NO_USABLE_TERMS</code>, <code>TERM_ONLY</code> (IC drift only), <code>NO_INFORMATIVE_PAIRS</code> (every pair shares only the root) or <code>RANKABLE</code>. Columns: a mutually exclusive disposition of every raw term (<code>retained</code>, <code>unknown</code>, <code>new_only</code>, <code>missing_new</code>, <code>merged_or_alt</code>, <code>obsolete</code>, <code>out_of_domain</code> — they add up to <code>n_raw_terms</code>), IC changes, pairs split into informative and root-only, pairs changed and pairs moved by &gt; 0.01 / &gt; 0.1, mean and max |ΔLin|. <code>rank</code> is a separate, optional step over that complete table. <code>report</code> follows the same rules for any list you give it: 0, 1 or N terms, root-only pairs marked <code>ROOT_ONLY</code>, terms outside the root marked <code>OUT_OF_DOMAIN</code> with a pointer to <code>--root</code>. IDs and labels are resolved against <strong>both</strong> releases: a term that exists only in the new release is reported as <code>new-in-new</code> (not silently dropped), a label the two releases map to different ids as <code>ambiguous</code>, an unresolvable token as <code>unknown</code>.</p>
+<p><strong>Provenance.</strong> Every <code>hp.obo</code> is downloaded atomically, hashed, checked against the SHA-256 the official HPO GitHub release publishes for the asset, and cached only after that check; reports, JSON and <code>cohort</code> sidecars record the SHA-256 of both ontology inputs and of the annotation file.</p>
+<h3 id="4-profiles-and-rank-diseases-the-question-a-genomicist-actually-asks">4 · <code>profiles</code> and <code>rank-diseases</code> — the question a genomicist actually asks</h3>
+<p><div class="highlight"><pre><span></span><code>hpo-drift<span class="w"> </span>profiles<span class="w"> </span>--query<span class="w"> </span>patient.txt<span class="w"> </span>--target<span class="w"> </span>disease.txt<span class="w"> </span>--old<span class="w"> </span>v2026-02-16<span class="w"> </span>--new<span class="w"> </span>v2026-06-23
+hpo-drift<span class="w"> </span>rank-diseases<span class="w"> </span>--query<span class="w"> </span>patient.txt<span class="w"> </span>--hpoa<span class="w"> </span>phenotype.hpoa<span class="w"> </span>--old<span class="w"> </span>v2026-02-16<span class="w"> </span>--new<span class="w"> </span>v2026-06-23<span class="w"> </span>--out<span class="w"> </span>ranks.csv
+</code></pre></div>
+Set-to-set similarity between two term lists — symmetric <strong>Best Match Average</strong> of Lin (mean over query terms of their best match in the target, averaged with the reverse direction) — in both releases, with the query terms whose best match changed most. <code>rank-diseases</code> scores the query against <strong>every</strong> disease profile in <code>phenotype.hpoa</code> in each release and reports rank and score per disease, so you can see whether a differential-diagnosis list is stable across the release change. <code>examples/sweep_synthetic_patients.py</code> runs the clinical version of this question on synthetic patients: a random 60 % subset of a disease’s annotations plus 2 noise terms, scored against every disease in both releases; it records the rank of the true diagnosis in each release, top-1 changes, top-5 overlap and Spearman ρ.</p>
+<h3 id="5-a-monthly-github-action">5 · a monthly GitHub Action</h3>
+<p><code>.github/workflows/drift.yml</code> fetches the latest release, compares it with your pinned one (<code>PINNED_HPO</code>) and uploads the report. Add a threshold on <code>lin_delta</code> from the JSON and it becomes a failing check.</p>
+<h2 id="how-it-works">How it works</h2>
+<div class="highlight"><pre><span></span><code>flowchart LR
+  A["release tag&lt;br/&gt;v2026-02-16"] --&gt;|hp.obo| C[parse: terms · is_a · alt_id · obsolete]
+  B["release tag&lt;br/&gt;v2026-06-23"] --&gt;|hp.obo| C
+  C --&gt; D["intrinsic IC&lt;br/&gt;Seco 2004"]
+  T[your term list] --&gt; E[resolve IDs / labels]
+  E --&gt; F[per-term status · parents · IC Δ]
+  D --&gt; G[Resnik / Lin per pair · MICA · Δ]
+  F --&gt; R[report · JSON · lint]
+  G --&gt; R
+</code></pre></div>
+<p>IC is <strong>intrinsic</strong> (Seco et al. 2004: <code>1 − log(descendants+1)/log(N)</code>), computed on the <strong><code>is_a</code> graph only</strong>, with <code>N</code> and descendant counts taken inside the closure of a root — <code>HP:0000118</code> <em>Phenotypic abnormality</em> by default (<code>--root</code> to change; inheritance, frequency and modifier branches are excluded, and the root's IC is exactly 0). Every report states the method, the root and <code>N</code>. Because this IC depends only on the graph, the drift measured here is caused purely by ontology edits, which is the effect this tool isolates. Annotation-based IC (from <code>phenotype.hpoa</code>) adds a second, independent source of drift and is the next option on the roadmap — then the two can be shown side by side.</p>
+<h2 id="companion-tools">Companion tools</h2>
+<ul>
+<li><a href="https://github.com/MargoSolo/hpotools"><code>hpotools</code></a> — HPO in R: release-pinned loading, similarity, Phenomizer-style ranking, enrichment.</li>
+<li><a href="https://github.com/MargoSolo/awesome-human-phenotype-ontology"><code>awesome-human-phenotype-ontology</code></a> — link-verified list of HPO tools.</li>
+</ul>
+<h2 id="roadmap">Roadmap</h2>
+<p><code>--ic annotations</code> · fuzzy label suggestions in <code>lint</code> · Phenopackets v2 export · <code>--pairs</code> file for patient × disease scoring · JOSS paper.</p>
+<h2 id="cite">Cite</h2>
+<p>DOI (all versions): <a href="https://doi.org/10.5281/zenodo.22286170">10.5281/zenodo.22286170</a> — each release has its own version DOI on that Zenodo page; cite the version you ran (<code>hpo-drift --version</code>).</p>
+<p>Soloshenko M. <em>hpo-drift: quantifying the effect of HPO release changes on phenotype-similarity results.</em> 2026. MIT License.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "content.code.copy", "toc.integrate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
