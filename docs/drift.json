@@ -3,12 +3,12 @@
   "new": "v2026-06-23",
   "old_ontology": {
     "tag": "v2026-02-16",
-    "file": "/Users/margo/.cache/hpo-drift/hp-v2026-02-16.obo",
+    "file": "hp-v2026-02-16.obo",
     "sha256": "8d6c23798667d4506767ce643fc3c028f0d1c85e7e1d8810e491181a345d53cd"
   },
   "new_ontology": {
     "tag": "v2026-06-23",
-    "file": "/Users/margo/.cache/hpo-drift/hp-v2026-06-23.obo",
+    "file": "hp-v2026-06-23.obo",
     "sha256": "a5092cbdf605f568403cf7380d9173014015692433b2cc631bc5c1b053876b1b"
   },
   "ic": {

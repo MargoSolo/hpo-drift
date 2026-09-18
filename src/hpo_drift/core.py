@@ -103,7 +103,7 @@ class Release:
         self._n_active = len(self._domain)
 
     def provenance(self) -> dict:
-        return {"tag": self.tag, "file": str(self.path), "sha256": self.sha256}
+        return {"tag": self.tag, "file": self.path.name, "sha256": self.sha256}   # file name only: provenance must not leak local paths
 
     def has(self, tid: str) -> bool:
         return tid in self.g
@@ -366,7 +366,7 @@ def read_hpoa(path: str) -> tuple[dict, dict[str, tuple[str, list[str]]]]:
     phenotypes, negated rows are not present phenotypes). Every disease with at least one such row is kept, whatever its size; a disease id
     that has only NOT or non-P rows has no positive phenotype profile and is counted in meta['n_diseases_without_positive_P']."""
     raw = Path(path).read_bytes()
-    meta = {"path": str(path), "sha256": hashlib.sha256(raw).hexdigest(), "version": None, "n_rows": 0, "n_disease_ids_in_file": 0, "n_diseases_without_positive_P": 0}
+    meta = {"path": Path(path).name, "sha256": hashlib.sha256(raw).hexdigest(), "version": None, "n_rows": 0, "n_disease_ids_in_file": 0, "n_diseases_without_positive_P": 0}
     seen: set[str] = set()
     profiles: dict[str, tuple[str, list[str]]] = {}
     for line in raw.decode("utf-8", "replace").splitlines():
